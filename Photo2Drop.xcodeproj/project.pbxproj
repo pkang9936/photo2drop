@@ -1,0 +1,505 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60675FAC1BFA76DB0079077E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FAB1BFA76DB0079077E /* AppDelegate.swift */; };
+		60675FAE1BFA76DB0079077E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FAD1BFA76DB0079077E /* ViewController.swift */; };
+		60675FB11BFA76DB0079077E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60675FAF1BFA76DB0079077E /* Main.storyboard */; };
+		60675FB31BFA76DB0079077E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60675FB21BFA76DB0079077E /* Assets.xcassets */; };
+		60675FB61BFA76DB0079077E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */; };
+		60675FC11BFA76DB0079077E /* Photo2DropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FC01BFA76DB0079077E /* Photo2DropTests.swift */; };
+		60675FCC1BFA76DB0079077E /* Photo2DropUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FCB1BFA76DB0079077E /* Photo2DropUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		60675FBD1BFA76DB0079077E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60675FA01BFA76DB0079077E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60675FA71BFA76DB0079077E;
+			remoteInfo = Photo2Drop;
+		};
+		60675FC81BFA76DB0079077E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 60675FA01BFA76DB0079077E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 60675FA71BFA76DB0079077E;
+			remoteInfo = Photo2Drop;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		60675FA81BFA76DB0079077E /* Photo2Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photo2Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60675FAB1BFA76DB0079077E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		60675FAD1BFA76DB0079077E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60675FB01BFA76DB0079077E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60675FB21BFA76DB0079077E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60675FB51BFA76DB0079077E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60675FB71BFA76DB0079077E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60675FBC1BFA76DB0079077E /* Photo2DropTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Photo2DropTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60675FC01BFA76DB0079077E /* Photo2DropTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo2DropTests.swift; sourceTree = "<group>"; };
+		60675FC21BFA76DB0079077E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60675FC71BFA76DB0079077E /* Photo2DropUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Photo2DropUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		60675FCB1BFA76DB0079077E /* Photo2DropUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo2DropUITests.swift; sourceTree = "<group>"; };
+		60675FCD1BFA76DB0079077E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60675FA51BFA76DB0079077E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FB91BFA76DB0079077E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FC41BFA76DB0079077E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60675F9F1BFA76DB0079077E = {
+			isa = PBXGroup;
+			children = (
+				60675FAA1BFA76DB0079077E /* Photo2Drop */,
+				60675FBF1BFA76DB0079077E /* Photo2DropTests */,
+				60675FCA1BFA76DB0079077E /* Photo2DropUITests */,
+				60675FA91BFA76DB0079077E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60675FA91BFA76DB0079077E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60675FA81BFA76DB0079077E /* Photo2Drop.app */,
+				60675FBC1BFA76DB0079077E /* Photo2DropTests.xctest */,
+				60675FC71BFA76DB0079077E /* Photo2DropUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60675FAA1BFA76DB0079077E /* Photo2Drop */ = {
+			isa = PBXGroup;
+			children = (
+				60675FAB1BFA76DB0079077E /* AppDelegate.swift */,
+				60675FAD1BFA76DB0079077E /* ViewController.swift */,
+				60675FAF1BFA76DB0079077E /* Main.storyboard */,
+				60675FB21BFA76DB0079077E /* Assets.xcassets */,
+				60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */,
+				60675FB71BFA76DB0079077E /* Info.plist */,
+			);
+			path = Photo2Drop;
+			sourceTree = "<group>";
+		};
+		60675FBF1BFA76DB0079077E /* Photo2DropTests */ = {
+			isa = PBXGroup;
+			children = (
+				60675FC01BFA76DB0079077E /* Photo2DropTests.swift */,
+				60675FC21BFA76DB0079077E /* Info.plist */,
+			);
+			path = Photo2DropTests;
+			sourceTree = "<group>";
+		};
+		60675FCA1BFA76DB0079077E /* Photo2DropUITests */ = {
+			isa = PBXGroup;
+			children = (
+				60675FCB1BFA76DB0079077E /* Photo2DropUITests.swift */,
+				60675FCD1BFA76DB0079077E /* Info.plist */,
+			);
+			path = Photo2DropUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60675FA71BFA76DB0079077E /* Photo2Drop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60675FD01BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2Drop" */;
+			buildPhases = (
+				60675FA41BFA76DB0079077E /* Sources */,
+				60675FA51BFA76DB0079077E /* Frameworks */,
+				60675FA61BFA76DB0079077E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Photo2Drop;
+			productName = Photo2Drop;
+			productReference = 60675FA81BFA76DB0079077E /* Photo2Drop.app */;
+			productType = "com.apple.product-type.application";
+		};
+		60675FBB1BFA76DB0079077E /* Photo2DropTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60675FD31BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2DropTests" */;
+			buildPhases = (
+				60675FB81BFA76DB0079077E /* Sources */,
+				60675FB91BFA76DB0079077E /* Frameworks */,
+				60675FBA1BFA76DB0079077E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60675FBE1BFA76DB0079077E /* PBXTargetDependency */,
+			);
+			name = Photo2DropTests;
+			productName = Photo2DropTests;
+			productReference = 60675FBC1BFA76DB0079077E /* Photo2DropTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		60675FC61BFA76DB0079077E /* Photo2DropUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60675FD61BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2DropUITests" */;
+			buildPhases = (
+				60675FC31BFA76DB0079077E /* Sources */,
+				60675FC41BFA76DB0079077E /* Frameworks */,
+				60675FC51BFA76DB0079077E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				60675FC91BFA76DB0079077E /* PBXTargetDependency */,
+			);
+			name = Photo2DropUITests;
+			productName = Photo2DropUITests;
+			productReference = 60675FC71BFA76DB0079077E /* Photo2DropUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60675FA01BFA76DB0079077E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Kang, Puthyrak";
+				TargetAttributes = {
+					60675FA71BFA76DB0079077E = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					60675FBB1BFA76DB0079077E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 60675FA71BFA76DB0079077E;
+					};
+					60675FC61BFA76DB0079077E = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = 60675FA71BFA76DB0079077E;
+					};
+				};
+			};
+			buildConfigurationList = 60675FA31BFA76DB0079077E /* Build configuration list for PBXProject "Photo2Drop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60675F9F1BFA76DB0079077E;
+			productRefGroup = 60675FA91BFA76DB0079077E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60675FA71BFA76DB0079077E /* Photo2Drop */,
+				60675FBB1BFA76DB0079077E /* Photo2DropTests */,
+				60675FC61BFA76DB0079077E /* Photo2DropUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60675FA61BFA76DB0079077E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60675FB61BFA76DB0079077E /* LaunchScreen.storyboard in Resources */,
+				60675FB31BFA76DB0079077E /* Assets.xcassets in Resources */,
+				60675FB11BFA76DB0079077E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FBA1BFA76DB0079077E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FC51BFA76DB0079077E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60675FA41BFA76DB0079077E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60675FAE1BFA76DB0079077E /* ViewController.swift in Sources */,
+				60675FAC1BFA76DB0079077E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FB81BFA76DB0079077E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60675FC11BFA76DB0079077E /* Photo2DropTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		60675FC31BFA76DB0079077E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60675FCC1BFA76DB0079077E /* Photo2DropUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		60675FBE1BFA76DB0079077E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60675FA71BFA76DB0079077E /* Photo2Drop */;
+			targetProxy = 60675FBD1BFA76DB0079077E /* PBXContainerItemProxy */;
+		};
+		60675FC91BFA76DB0079077E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 60675FA71BFA76DB0079077E /* Photo2Drop */;
+			targetProxy = 60675FC81BFA76DB0079077E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		60675FAF1BFA76DB0079077E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60675FB01BFA76DB0079077E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60675FB51BFA76DB0079077E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60675FCE1BFA76DB0079077E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		60675FCF1BFA76DB0079077E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60675FD11BFA76DB0079077E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Photo2Drop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2Drop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		60675FD21BFA76DB0079077E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Photo2Drop/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2Drop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		60675FD41BFA76DB0079077E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Photo2DropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2DropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photo2Drop.app/Photo2Drop";
+			};
+			name = Debug;
+		};
+		60675FD51BFA76DB0079077E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = Photo2DropTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2DropTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Photo2Drop.app/Photo2Drop";
+			};
+			name = Release;
+		};
+		60675FD71BFA76DB0079077E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Photo2DropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2DropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Photo2Drop;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		60675FD81BFA76DB0079077E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = Photo2DropUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = pkang.Photo2DropUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Photo2Drop;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60675FA31BFA76DB0079077E /* Build configuration list for PBXProject "Photo2Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60675FCE1BFA76DB0079077E /* Debug */,
+				60675FCF1BFA76DB0079077E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60675FD01BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2Drop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60675FD11BFA76DB0079077E /* Debug */,
+				60675FD21BFA76DB0079077E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		60675FD31BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2DropTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60675FD41BFA76DB0079077E /* Debug */,
+				60675FD51BFA76DB0079077E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		60675FD61BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2DropUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60675FD71BFA76DB0079077E /* Debug */,
+				60675FD81BFA76DB0079077E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60675FA01BFA76DB0079077E /* Project object */;
+}
