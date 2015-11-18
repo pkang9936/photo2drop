@@ -81,6 +81,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		602AF5A11BFD1CF700700980 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
+				60675FAD1BFA76DB0079077E /* ViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		602AF5A21BFD1D3900700980 /* Storyboad */ = {
+			isa = PBXGroup;
+			children = (
+				60675FAF1BFA76DB0079077E /* Main.storyboard */,
+			);
+			name = Storyboad;
+			sourceTree = "<group>";
+		};
 		60675F9F1BFA76DB0079077E = {
 			isa = PBXGroup;
 			children = (
@@ -105,10 +122,9 @@
 		60675FAA1BFA76DB0079077E /* Photo2Drop */ = {
 			isa = PBXGroup;
 			children = (
-				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
+				602AF5A21BFD1D3900700980 /* Storyboad */,
+				602AF5A11BFD1CF700700980 /* ViewController */,
 				60675FAB1BFA76DB0079077E /* AppDelegate.swift */,
-				60675FAD1BFA76DB0079077E /* ViewController.swift */,
-				60675FAF1BFA76DB0079077E /* Main.storyboard */,
 				60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */,
 				60675FB21BFA76DB0079077E /* Assets.xcassets */,
 				60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */,
