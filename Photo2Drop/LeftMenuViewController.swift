@@ -114,6 +114,7 @@ extension LeftMenuViewController: UITableViewDataSource {
         return menus.count
     }
     
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         /*
         if let menu = LeftMenu(rawValue: indexPath.item) {
@@ -129,7 +130,7 @@ extension LeftMenuViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(menus[indexPath.row], forIndexPath: indexPath) as UITableViewCell!
         
-        cell.textLabel?.text = menus[indexPath.row]
+        
         
         return cell
     }

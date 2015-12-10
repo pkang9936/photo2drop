@@ -411,20 +411,66 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nLs-tj-ahO" id="MW6-mk-5fs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo_album" translatesAutoresizingMaskIntoConstraints="NO" id="A9L-1C-ItE">
+                                                    <rect key="frame" x="8" y="8" width="37" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="37" id="4ag-zt-tda"/>
+                                                        <constraint firstAttribute="height" constant="27" id="NIs-4b-bkr"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo Album" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huC-yU-VLg">
+                                                    <rect key="frame" x="53" y="8" width="539" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="huC-yU-VLg" secondAttribute="trailing" id="PHv-Il-Bds"/>
+                                                <constraint firstItem="A9L-1C-ItE" firstAttribute="leading" secondItem="MW6-mk-5fs" secondAttribute="leadingMargin" id="TgE-CT-iHP"/>
+                                                <constraint firstItem="A9L-1C-ItE" firstAttribute="bottom" secondItem="MW6-mk-5fs" secondAttribute="bottomMargin" id="Thz-4U-e9s"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="huC-yU-VLg" secondAttribute="bottom" id="VmA-HM-f4P"/>
+                                                <constraint firstItem="huC-yU-VLg" firstAttribute="top" secondItem="MW6-mk-5fs" secondAttribute="topMargin" id="f9J-5b-EAY"/>
+                                                <constraint firstItem="huC-yU-VLg" firstAttribute="leading" secondItem="A9L-1C-ItE" secondAttribute="trailing" constant="8" id="wJw-ic-I1N"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="70h-TM-qr5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="dbR-I4-Lid"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Settings" id="cLu-SG-9Oj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Settings" id="sML-uR-m2r">
                                         <rect key="frame" x="0.0" y="249" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLu-SG-9Oj" id="TpN-Tz-iwl">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sML-uR-m2r" id="MSY-RR-YaV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings" translatesAutoresizingMaskIntoConstraints="NO" id="lsX-eY-iCO">
+                                                    <rect key="frame" x="8" y="8" width="37" height="27"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="37" id="Dll-eK-HaR"/>
+                                                        <constraint firstAttribute="height" constant="27" id="Gfq-Fg-h8B"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bbo-4j-5fM">
+                                                    <rect key="frame" x="53" y="8" width="539" height="27"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="bbo-4j-5fM" firstAttribute="leading" secondItem="lsX-eY-iCO" secondAttribute="trailing" constant="8" id="86M-yB-Ybl"/>
+                                                <constraint firstItem="lsX-eY-iCO" firstAttribute="bottom" secondItem="MSY-RR-YaV" secondAttribute="bottomMargin" id="9PY-Ap-QuO"/>
+                                                <constraint firstItem="lsX-eY-iCO" firstAttribute="leading" secondItem="MSY-RR-YaV" secondAttribute="leadingMargin" id="9dI-kk-ZfD"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="bbo-4j-5fM" secondAttribute="bottom" id="acN-rd-EBk"/>
+                                                <constraint firstItem="bbo-4j-5fM" firstAttribute="top" secondItem="MSY-RR-YaV" secondAttribute="topMargin" id="gcC-JM-sZp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="bbo-4j-5fM" secondAttribute="trailing" id="jZL-cV-div"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="w6W-BJ-fJc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="T72-kF-3yw"/>
+                                            <segue destination="w6W-BJ-fJc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="jLt-5O-Ct2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -524,6 +570,8 @@
     </scenes>
     <resources>
         <image name="background" width="1024" height="683"/>
+        <image name="photo_album" width="512" height="512"/>
+        <image name="settings" width="1024" height="1022"/>
         <image name="veata" width="960" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
