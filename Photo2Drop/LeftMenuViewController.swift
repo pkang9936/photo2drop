@@ -20,7 +20,7 @@ protocol LeftMenuProtocol: class {
 class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Photo Album", "Settings", "Java", "Go", "NonMenu"]
+    var menus = ["Photo Album", "Settings"]
     var imageHeaderView: ImageHeaderView!
     
     // MARK: - 
@@ -35,7 +35,7 @@ class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.registerCellClass(BaseTableViewCell.self)
+        //self.tableView.registerCellClass(BaseTableViewCell.self)
        /*
         self.imageHeaderView = ImageHeaderView.loadNib()
         self.view.addSubview(self.imageHeaderView)
@@ -115,6 +115,7 @@ extension LeftMenuViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        /*
         if let menu = LeftMenu(rawValue: indexPath.item) {
             switch menu {
             case .PhotoAlbum, .Setting:
@@ -124,6 +125,13 @@ extension LeftMenuViewController: UITableViewDataSource {
             }
         }
         return UITableViewCell()
+*/
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier(menus[indexPath.row], forIndexPath: indexPath) as UITableViewCell!
+        
+        cell.textLabel?.text = menus[indexPath.row]
+        
+        return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

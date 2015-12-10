@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: SWFrontViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

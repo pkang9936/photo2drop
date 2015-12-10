@@ -38,6 +38,7 @@
 		609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */; };
 		60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
+		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,7 @@
 		609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableHeader.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
+		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 				60086A0C1C0E0A6A00258603 /* HomeViewController.swift */,
 				607336B91C161BE70009DABC /* LeftMenuViewController.swift */,
 				605AA24A1C19EFF400D631DC /* SettingsViewController.swift */,
+				60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
+				60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */,
 				607336C41C173C1B0009DABC /* UIColor.swift in Sources */,
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
 				607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */,

@@ -62,7 +62,7 @@
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SH2-mn-z2i">
                                                                         <rect key="frame" x="5" y="0.0" width="41" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="9"/>
-                                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                         <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
                                                                             <rect key="frame" x="5" y="0.0" width="41" height="24"/>
@@ -79,7 +79,7 @@
                                                                     <rect key="frame" x="0.0" y="0.0" width="54" height="24"/>
                                                                 </variation>
                                                             </view>
-                                                            <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="54" id="4HE-8N-kzG"/>
                                                                 <constraint firstAttribute="height" constant="24" id="79a-2H-W72"/>
@@ -251,12 +251,9 @@
                     <toolbarItems>
                         <barButtonItem systemItem="action" id="weL-g2-0ZV"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Photo Albums" id="FLi-Ni-j0V">
-                        <barButtonItem key="leftBarButtonItem" image="reveal-icon" id="Vte-Mr-VPl"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Photo Albums" id="FLi-Ni-j0V"/>
                     <connections>
                         <outlet property="albumCollectionView" destination="wSA-ky-ht9" id="cGZ-od-eli"/>
-                        <outlet property="menuButton" destination="Vte-Mr-VPl" id="cNu-Zh-YKm"/>
                         <outlet property="photoBackgroundView" destination="bew-u1-BRR" id="Osx-fo-o8V"/>
                         <outlet property="photoThumbnailCollectionView" destination="gjv-CK-ZPv" id="GP9-uF-NKw"/>
                     </connections>
@@ -342,7 +339,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BLD-ld-aCr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="-586"/>
+            <point key="canvasLocation" x="1778" y="-586"/>
         </scene>
         <!--Left Menu View Controller-->
         <scene sceneID="6Ig-WM-bLn">
@@ -408,21 +405,27 @@
                                     </connections>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="nLs-tj-ahO">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Photo Album" id="nLs-tj-ahO">
                                         <rect key="frame" x="0.0" y="205" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nLs-tj-ahO" id="MW6-mk-5fs">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="70h-TM-qr5" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="dbR-I4-Lid"/>
+                                        </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="cLu-SG-9Oj">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Settings" id="cLu-SG-9Oj">
                                         <rect key="frame" x="0.0" y="249" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cLu-SG-9Oj" id="TpN-Tz-iwl">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="w6W-BJ-fJc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="T72-kF-3yw"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -447,7 +450,7 @@
             </objects>
             <point key="canvasLocation" x="-205" y="-617"/>
         </scene>
-        <!--Settings View Controller-->
+        <!--Settings-->
         <scene sceneID="fpJ-Sa-44d">
             <objects>
                 <viewController id="Ohh-DK-bGs" customClass="SettingsViewController" customModule="Photo2Drop" customModuleProvider="target" sceneMemberID="viewController">
@@ -462,7 +465,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings ~ Under Construction" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kYI-IN-sIy">
                                 <rect key="frame" x="184" y="289" width="233" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -472,10 +475,11 @@
                             <constraint firstItem="kYI-IN-sIy" firstAttribute="centerX" secondItem="xMe-1y-0Zb" secondAttribute="centerX" id="m2W-gw-V7x"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Settings" id="1Ky-yh-8bx"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81O-dx-vkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="518" y="-175"/>
+            <point key="canvasLocation" x="1326" y="-493"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LN3-vi-Y77">
@@ -499,10 +503,30 @@
             </objects>
             <point key="canvasLocation" x="-386" y="462"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="koz-Q5-5xD">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="w6W-BJ-fJc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kfm-fe-IaX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ohh-DK-bGs" kind="relationship" relationship="rootViewController" id="zDl-nR-kmk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="emE-X7-tAe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="-493"/>
+        </scene>
     </scenes>
     <resources>
         <image name="background" width="1024" height="683"/>
-        <image name="reveal-icon" width="22" height="17"/>
         <image name="veata" width="960" height="1280"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dbR-I4-Lid"/>
+    </inferredMetricsTieBreakers>
 </document>
