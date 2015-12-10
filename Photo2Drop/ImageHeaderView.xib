@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="ImageHeaderView" customModule="Photo2Drop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="258" height="142"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-pT-zrG">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
+                    </imageView>
+                    <visualEffectView alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGf-Hp-O2V">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
+                        <view key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YGX-YJ-ON8">
+                            <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="veata" translatesAutoresizingMaskIntoConstraints="NO" id="rLt-1f-1DQ">
+                                    <rect key="frame" x="14" y="44" width="80" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="IUg-bw-n0S"/>
+                                        <constraint firstAttribute="height" constant="80" id="uLK-yj-hkv"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="rLt-1f-1DQ" firstAttribute="leading" secondItem="YGX-YJ-ON8" secondAttribute="leading" constant="14" id="AAj-cL-vmz"/>
+                                <constraint firstItem="rLt-1f-1DQ" firstAttribute="top" secondItem="YGX-YJ-ON8" secondAttribute="top" constant="44" id="KmF-4s-OrL"/>
+                            </constraints>
+                        </view>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="Wd8-pT-zrG" secondAttribute="bottom" id="1iJ-LI-Myo"/>
+                    <constraint firstAttribute="trailing" secondItem="GGf-Hp-O2V" secondAttribute="trailing" id="9GJ-nQ-pzw"/>
+                    <constraint firstItem="Wd8-pT-zrG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="IUL-gG-Vm1"/>
+                    <constraint firstItem="Wd8-pT-zrG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="P9L-Lh-F96"/>
+                    <constraint firstAttribute="trailing" secondItem="Wd8-pT-zrG" secondAttribute="trailing" id="RzP-lG-arS"/>
+                    <constraint firstAttribute="bottom" secondItem="GGf-Hp-O2V" secondAttribute="bottom" id="TLd-ul-QrJ"/>
+                    <constraint firstItem="GGf-Hp-O2V" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="WxB-en-bDb"/>
+                    <constraint firstItem="GGf-Hp-O2V" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="mpG-9Y-Zwa"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="backgroundImage" destination="Wd8-pT-zrG" id="WDz-wY-czN"/>
+                <outlet property="profileImage" destination="rLt-1f-1DQ" id="pI6-QV-ivv"/>
+            </connections>
+            <point key="canvasLocation" x="492" y="328"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="background" width="1024" height="683"/>
+        <image name="veata" width="960" height="1280"/>
+    </resources>
+</document>

@@ -13,15 +13,17 @@ let reuseIdentifyPhotoCell = "PhotoCell"
 let reuseIdentifyAlbumCel = "AlbumCell"
 let albumName = "My App"
 
-class Photo2DropViewController: UIViewController{
+class Photo2DropViewController_bk: UIViewController{
+    
+    @IBOutlet weak var album1: UIImageView!
+    @IBOutlet weak var album2: UIImageView!
+    @IBOutlet weak var album3: UIImageView!
     
     var albumFound : Bool = false
     var assetCollection: PHAssetCollection!
     var photosAsset: PHFetchResult!
 
     @IBOutlet weak var photoCollectionView: UICollectionView!
-    
-    @IBOutlet weak var albumCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,18 +51,22 @@ class Photo2DropViewController: UIViewController{
             })
         }
         
+        //set album images
+        album1.didChangeRoundCorner()
+        album2.didChangeRoundCorner()
+        album3.didChangeRoundCorner()
         
     }
 
     override func viewWillAppear(animated: Bool) {
         //fetch the photos from collection
         navigationController!.hidesBarsOnTap = false
-        self.photosAsset = PHAsset.fetchAssetsInAssetCollection(self.assetCollection, options: nil)
+        //self.photosAsset = PHAsset.fetchAssetsInAssetCollection(self.assetCollection, options: nil)
         
         //Handle no photos in the assetCollection
         // ... have a label that say 'No Photo'...
         
-        self.photoCollectionView.reloadData()
+        //self.photoCollectionView.reloadData()
 
     }
     override func didReceiveMemoryWarning() {
@@ -109,38 +115,33 @@ class Photo2DropViewController: UIViewController{
     }
 }
 
-extension Photo2DropViewController: UICollectionViewDataSource {
+extension Photo2DropViewController_bk: UICollectionViewDataSource {
     
     internal func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (photosAsset != nil) ? photosAsset.count:0
+        if collectionView == photoCollectionView {
+            return (photosAsset != nil) ? photosAsset.count:0
+        }
+        return 3
     }
     
     internal func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell{
         
-        if collectionView == self.photoCollectionView {
-            let cell: PhotoThumbnailCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifyPhotoCell, forIndexPath: indexPath) as! PhotoThumbnailCollectionViewCell
-            
-            //modify cell
-            let asset: PHAsset = photosAsset[indexPath.item] as! PHAsset
-            PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFill, options: nil){
-                result , info in
-                cell.setThumbnailImage(result!)
-                
-            }
-            
-            return cell
-        } else {
-            let cell  = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifyAlbumCel, forIndexPath: indexPath)
-            
-            return cell
-        }
+        let cell: PhotoThumbnailCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifyPhotoCell, forIndexPath: indexPath) as! PhotoThumbnailCollectionViewCell
         
+        //modify cell
+        let asset: PHAsset = photosAsset[indexPath.item] as! PHAsset
+        PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFill, options: nil){
+            result , info in
+            cell.setThumbnailImage(result!)
+            
+        }
+        return cell
         
     }
     
 }
 
-extension Photo2DropViewController: UICollectionViewDelegateFlowLayout {
+extension Photo2DropViewController_bk: UICollectionViewDelegateFlowLayout {
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 2
     }
@@ -150,7 +151,7 @@ extension Photo2DropViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
-extension Photo2DropViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+extension Photo2DropViewController_bk: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {

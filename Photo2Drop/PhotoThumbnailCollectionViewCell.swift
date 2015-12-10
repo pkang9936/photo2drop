@@ -12,6 +12,16 @@ class PhotoThumbnailCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imgView: UIImageView!
     
+    var photo: PhotoInfo! {
+        didSet {
+            self.update()
+        }
+    }
+    
+    private func update() {
+        imgView.image = photo.image
+    }
+    
     func setThumbnailImage(thumbnailImage: UIImage) {
         imgView.image = thumbnailImage
     }
