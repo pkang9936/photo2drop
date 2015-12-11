@@ -22,6 +22,7 @@
 		60675FDA1BFA7A4F0079077E /* FullSizePhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */; };
 		60675FDC1BFB78F60079077E /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60675FDB1BFB78F60079077E /* Photos.framework */; };
 		60675FDE1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */; };
+		606A6A701C1B5AD6008621E3 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606A6A6F1C1B5AD6008621E3 /* SWRevealViewController.m */; };
 		607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607336B21C10EEDB0009DABC /* PhotoInfo.swift */; };
 		607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607336B91C161BE70009DABC /* LeftMenuViewController.swift */; };
 		607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607336BE1C17388D0009DABC /* BaseTableViewCell.swift */; };
@@ -79,6 +80,8 @@
 		60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FullSizePhotoViewController.swift; path = ../FullSizePhotoViewController.swift; sourceTree = "<group>"; };
 		60675FDB1BFB78F60079077E /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoThumbnailCollectionViewCell.swift; sourceTree = "<group>"; };
+		606A6A6E1C1B5AD6008621E3 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		606A6A6F1C1B5AD6008621E3 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		607336B21C10EEDB0009DABC /* PhotoInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoInfo.swift; sourceTree = "<group>"; };
 		607336B51C1249330009DABC /* Photo2Drop-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photo2Drop-Bridging-Header.h"; sourceTree = "<group>"; };
 		607336B91C161BE70009DABC /* LeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +231,8 @@
 		607336B41C1248530009DABC /* SWRevealViewController */ = {
 			isa = PBXGroup;
 			children = (
+				606A6A6E1C1B5AD6008621E3 /* SWRevealViewController.h */,
+				606A6A6F1C1B5AD6008621E3 /* SWRevealViewController.m */,
 				607336B51C1249330009DABC /* Photo2Drop-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
@@ -400,6 +405,7 @@
 				60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */,
 				607336C41C173C1B0009DABC /* UIColor.swift in Sources */,
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
+				606A6A701C1B5AD6008621E3 /* SWRevealViewController.m in Sources */,
 				607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */,
 				60675FDE1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				60086A101C0E0C2F00258603 /* PhotoAlbum.swift in Sources */,
