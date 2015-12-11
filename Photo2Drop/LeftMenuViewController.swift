@@ -130,7 +130,18 @@ extension LeftMenuViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(menus[indexPath.row], forIndexPath: indexPath) as UITableViewCell!
         
-        cell.imageView
+        
+        if let menu = LeftMenu(rawValue: indexPath.item) {
+            switch menu {
+            case .PhotoAlbum:
+                cell.imageView?.image = UIImage(named: "menu_album")
+            case .Setting:
+                cell.imageView?.image = UIImage(named: "menu_settings")
+            }
+        }
+
+        
+        cell.textLabel?.text = menus[indexPath.row]
         
         return cell
     }
