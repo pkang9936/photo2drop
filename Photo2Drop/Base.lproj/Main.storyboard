@@ -531,7 +531,7 @@
         <scene sceneID="LN3-vi-Y77">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="70h-TM-qr5" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Photos" id="7uw-Qd-N9W"/>
+                    <tabBarItem key="tabBarItem" title="Photos" image="tab_album" id="7uw-Qd-N9W"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uen-8z-HbK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -579,13 +579,14 @@
                     </tabBar>
                     <connections>
                         <segue destination="70h-TM-qr5" kind="relationship" relationship="viewControllers" id="1YM-hs-0wR"/>
+                        <segue destination="MXh-Mb-Oy3" kind="relationship" relationship="viewControllers" id="0la-ga-FDv"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PR4-39-VYi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-386" y="462"/>
         </scene>
-        <!--View Controller-->
+        <!--Map-->
         <scene sceneID="NqM-gA-4oN">
             <objects>
                 <viewController id="MXh-Mb-Oy3" sceneMemberID="viewController">
@@ -598,16 +599,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Map" image="tab_map" id="VuF-T3-l3g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vmb-7S-mDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="78" y="1098"/>
+            <point key="canvasLocation" x="308" y="1181"/>
         </scene>
     </scenes>
     <resources>
         <image name="background" width="1024" height="683"/>
         <image name="photo_album" width="512" height="512"/>
         <image name="settings" width="1024" height="1022"/>
+        <image name="tab_album" width="29" height="29"/>
+        <image name="tab_map" width="29" height="29"/>
         <image name="veata" width="960" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
