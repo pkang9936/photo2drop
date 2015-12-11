@@ -7,13 +7,29 @@
 //
 
 import UIKit
+import MapKit
+import CoreLocation
 
 class MapViewController: SWFrontViewController {
 
+    @IBOutlet weak var Map: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var location = CLLocationCoordinate2DMake(44.089642, 92.52457)
+        
+        var span = MKCoordinateSpanMake(0.0002, 0.0002)
+        var region = MKCoordinateRegion(center: location, span: span)
+        
+        Map.setRegion(region, animated: true)
+        
+        var annotation = MKPointAnnotation()
+        annotation.coordinate = location
+        annotation.title = "Veata home"
+        annotation.subtitle = "Rainalee fmaily"
+        Map.addAnnotation(annotation)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +37,5 @@ class MapViewController: SWFrontViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -551,9 +551,23 @@
                     <view key="view" contentMode="scaleToFill" id="jcc-4a-e28">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="5fd-8D-gfZ">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </mapView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5fd-8D-gfZ" firstAttribute="width" secondItem="jcc-4a-e28" secondAttribute="width" id="B5V-RR-qar"/>
+                            <constraint firstItem="5fd-8D-gfZ" firstAttribute="centerY" secondItem="jcc-4a-e28" secondAttribute="centerY" id="LgT-wm-6fC"/>
+                            <constraint firstItem="5fd-8D-gfZ" firstAttribute="centerX" secondItem="jcc-4a-e28" secondAttribute="centerX" id="VPD-fK-sIc"/>
+                            <constraint firstItem="5fd-8D-gfZ" firstAttribute="height" secondItem="jcc-4a-e28" secondAttribute="height" id="cNy-17-JSR"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="BvQ-aD-NQ5"/>
+                    <connections>
+                        <outlet property="Map" destination="5fd-8D-gfZ" id="N8W-1Z-S0r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vmb-7S-mDo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
