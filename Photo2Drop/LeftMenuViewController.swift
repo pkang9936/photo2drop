@@ -130,7 +130,7 @@ extension LeftMenuViewController: UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCellWithIdentifier(menus[indexPath.row], forIndexPath: indexPath) as UITableViewCell!
         
-        
+        cell.imageView
         
         return cell
     }
