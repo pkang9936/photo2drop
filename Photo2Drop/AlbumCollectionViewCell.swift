@@ -14,7 +14,7 @@ class AlbumCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var innerCellMask: UIView!
     @IBOutlet weak var titleLabel: UILabel!
-    var album: PhotoAlbum! {
+    var album: PhotoAlbumInfo! {
         didSet {
             updateCell()
         }

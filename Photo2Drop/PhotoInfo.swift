@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-class PhotoInfo {
+public class PhotoInfo {
     var date: String = ""
     var location: String = ""
     var image: UIImage!
     
+    init() {
+        
+    }
     init( date: String, location: String, img: UIImage!) {
         self.date = date
         self.location = location

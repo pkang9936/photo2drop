@@ -9,11 +9,16 @@
 import Foundation
 import UIKit
 
-class PhotoAlbum {
+public class PhotoAlbumInfo {
     var albumImage: UIImage!
+    var name = ""
     var title = ""
     var numberOfPhotos = 0
     var photos:[PhotoInfo] = []
+    
+    init() {
+        
+    }
     
     init(title: String, albumImage: UIImage!, numberOfPhotos: Int, photos: [PhotoInfo]!) {
         self.albumImage = albumImage
@@ -24,9 +29,9 @@ class PhotoAlbum {
     
     // MARK - Private
     
-    static func createPhotoAlbums() -> [PhotoAlbum] {
+    static func createPhotoAlbums() -> [PhotoAlbumInfo] {
         return [
-            PhotoAlbum(title: "Camera Roll", albumImage: UIImage(named: "_6"), numberOfPhotos: 1550, photos: [
+            PhotoAlbumInfo(title: "Camera Roll", albumImage: UIImage(named: "_6"), numberOfPhotos: 1550, photos: [
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "1_1")),
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "1_2")),
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "1_3")),
@@ -34,14 +39,14 @@ class PhotoAlbum {
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "2_2")),
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "2_3"))
                 ]),
-            PhotoAlbum(title: "Favorites", albumImage: UIImage(named: "_2"), numberOfPhotos: 52, photos: [
+            PhotoAlbumInfo(title: "Favorites", albumImage: UIImage(named: "_2"), numberOfPhotos: 52, photos: [
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "2_1")),
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "2_2")),
                 PhotoInfo(date: "12/3/2015", location: "Rochester", img: UIImage(named: "2_3"))
                 ]),
-            PhotoAlbum(title: "Selfies", albumImage: UIImage(named: "_3"), numberOfPhotos: 110, photos: []),
-            PhotoAlbum(title: "Video", albumImage: UIImage(named: "_4"), numberOfPhotos: 133, photos: []),
-            PhotoAlbum(title: "Burst", albumImage: UIImage(named: "_5"), numberOfPhotos: 8, photos: [])
+            PhotoAlbumInfo(title: "Selfies", albumImage: UIImage(named: "_3"), numberOfPhotos: 110, photos: []),
+            PhotoAlbumInfo(title: "Video", albumImage: UIImage(named: "_4"), numberOfPhotos: 133, photos: []),
+            PhotoAlbumInfo(title: "Burst", albumImage: UIImage(named: "_5"), numberOfPhotos: 8, photos: [])
         ]
     }
 }

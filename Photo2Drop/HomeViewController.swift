@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Photos
 
 class HomeViewController: SWFrontViewController {
 
@@ -14,8 +15,9 @@ class HomeViewController: SWFrontViewController {
     
     @IBOutlet weak var photoBackgroundView: UIView!
     // MARK: - UICollecitonViewDataSource
-    private var albums: [PhotoAlbum]!
-    private var currentAlbum: PhotoAlbum!
+    private var albums = [PhotoAlbumInfo]()
+    private var albumHandler = GetAlbumHandler()
+    private var photos = [PhotoInfo]()
     
     @IBOutlet weak var photoThumbnailCollectionView: UICollectionView!
     
@@ -28,14 +30,17 @@ class HomeViewController: SWFrontViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
 */
+      
         
         albumCollectionView.backgroundColor = UIColor.grayColor()
         
         //photoBackgroundView.layer.borderColor = UIColor.blueColor().CGColor
         //photoBackgroundView.layer.borderWidth = 1.0
         
-        albums = PhotoAlbum.createPhotoAlbums()
-        currentAlbum = albums[0]
+        //albums = PhotoAlbumInfo.createPhotoAlbums()
+        albumHandler.delegate = self
+       
+        
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
@@ -51,7 +56,45 @@ class HomeViewController: SWFrontViewController {
         }
         
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        /*
+        * Check the authorization status every time the root view controller appears and whenever the app is brought to the foreground
+        */
+        if self.determineStatus() {
+            albumHandler.getAllAlbums()
+            albumCollectionView.reloadData()
+            photoThumbnailCollectionView.reloadData()
+            
+        }
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        
+    }
+    
+    private func determineStatus() -> Bool {
+        let status = PHPhotoLibrary.authorizationStatus()
+        switch status {
+        case .Authorized:
+            return true
+        case .NotDetermined:
+            PHPhotoLibrary.requestAuthorization({ _ in            })
+            return false
+        case .Restricted:
+            return false
+        case .Denied:
+            let alert = UIAlertController(title: "Need Authorization", message: "Wouldn't you like to authorize this app to use your Photo library?", preferredStyle: .Alert)
+            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
+                let url = NSURL(string: UIApplicationOpenSettingsURLString)!
+                UIApplication.sharedApplication().openURL(url)
+            }))
+            self.presentViewController(alert, animated: true, completion: nil)
+            return false
+            
+        }
+    }
+    
     private struct Storyboard {
         static let AlbumCellIdentifier = "Album Cell"
         static let PhotoThumbnailCellIdentifer = "Photo Cell"
@@ -64,7 +107,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         if collectionView == self.albumCollectionView {
             return self.albums.count
         }
-        return self.currentAlbum.photos.count
+        return photos.count
     }
     
     
@@ -83,8 +126,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
         
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.PhotoThumbnailCellIdentifer, forIndexPath: indexPath) as! PhotoThumbnailCollectionViewCell
-        
-        let photos = currentAlbum.photos
         cell.photo = photos[indexPath.row]
         return cell
     }
@@ -104,7 +145,8 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             let cell = collectionView.cellForItemAtIndexPath(indexPath) as! AlbumCollectionViewCell
             cell.highlight()
-            currentAlbum = albums[indexPath.row]
+            let currAlbum = albums[indexPath.row]
+            albumHandler.getPhotosForAlbum(albumInfo: currAlbum)
             photoThumbnailCollectionView.reloadData()
             
             
@@ -113,6 +155,15 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
     
 }
 
-
+extension HomeViewController: GetAlbumHandlerDelegate {
+    func didGetAlbums(albums: [PhotoAlbumInfo]) {
+        self.albums = albums
+        self.albumHandler.getPhotosForAlbum(albumInfo: albums[0])
+    }
+    
+    func didGetPhotosForAlbum(photos : [PhotoInfo]) {
+        self.photos = photos
+    }
+}
 
 
