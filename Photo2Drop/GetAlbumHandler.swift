@@ -33,6 +33,15 @@ public class GetAlbumHandler {
                 album.title = collection.localizedTitle!
                 album.numberOfPhotos = collection.estimatedAssetCount
                 
+               let result = PHAsset.fetchAssetsInAssetCollection(collection, options: nil)
+                
+                if let lastAsset = result.lastObject as? PHAsset {
+                    PHImageManager.defaultManager().requestImageForAsset(lastAsset, targetSize: CGSizeMake(70,70), contentMode: .AspectFill, options: nil, resultHandler: { (img: UIImage?, info: [NSObject : AnyObject]?) -> Void in
+                        if let img = img {
+                            album.albumImage = img
+                        }
+                    })
+                }
                 
                 albums.append(album)
                 
@@ -76,5 +85,4 @@ public class GetAlbumHandler {
         (delegate as? GetAlbumHandlerDelegate)?.didGetPhotosForAlbum(photos)
         
     }
-    
 }

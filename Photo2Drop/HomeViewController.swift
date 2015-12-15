@@ -68,6 +68,7 @@ class HomeViewController: SWFrontViewController {
             photoThumbnailCollectionView.reloadData()
             
         }
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
     }
@@ -118,10 +119,6 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
             
             cell.album = albums[indexPath.row]
             
-            if indexPath.row == 1 {
-                cell.highlight()
-            }
-            
             return cell
         }
         
@@ -158,7 +155,7 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
 extension HomeViewController: GetAlbumHandlerDelegate {
     func didGetAlbums(albums: [PhotoAlbumInfo]) {
         self.albums = albums
-        self.albumHandler.getPhotosForAlbum(albumInfo: albums[0])
+        
     }
     
     func didGetPhotosForAlbum(photos : [PhotoInfo]) {
