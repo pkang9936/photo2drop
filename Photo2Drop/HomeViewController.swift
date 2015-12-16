@@ -62,44 +62,18 @@ class HomeViewController: SWFrontViewController {
         /*
         * Check the authorization status every time the root view controller appears and whenever the app is brought to the foreground
         */
-        if self.determineStatus() {
+       // if self.determineStatus() {
             albumHandler.getAllAlbums()
             albumCollectionView.reloadData()
             photoThumbnailCollectionView.reloadData()
             
-        }
+        //}
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
     }
     
-    private func determineStatus() -> Bool {
-        let status = PHPhotoLibrary.authorizationStatus()
-        switch status {
-        case .Authorized:
-            return true
-        case .NotDetermined:
-            PHPhotoLibrary.requestAuthorization({ _ in            })
-            return false
-        case .Restricted:
-            return false
-        case .Denied:
-            let alert = UIAlertController(title: "Need Authorization", message: "Wouldn't you like to authorize this app to use your Photo library?", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
-                let url = NSURL(string: UIApplicationOpenSettingsURLString)!
-                UIApplication.sharedApplication().openURL(url)
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-            return false
-            
-        }
-    }
-    
-    private struct Storyboard {
-        static let AlbumCellIdentifier = "Album Cell"
-        static let PhotoThumbnailCellIdentifer = "Photo Cell"
-    }
+   
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{

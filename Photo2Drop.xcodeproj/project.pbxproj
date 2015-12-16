@@ -40,6 +40,8 @@
 		60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */; };
 		60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */; };
 		60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */; };
+		60BCB4091C21FF6400E45EAD /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */; };
+		60BCB40B1C22045800E45EAD /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB40A1C22045800E45EAD /* Storyboard.swift */; };
 		60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
@@ -104,6 +106,8 @@
 		60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPhotoHandler.swift; sourceTree = "<group>"; };
 		60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlbumHandler.swift; sourceTree = "<group>"; };
 		60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
+		60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		60BCB40A1C22045800E45EAD /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableHeader.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		602AF5A11BFD1CF700700980 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				60BCB4071C21FF2700E45EAD /* Authorization */,
 				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
 				60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */,
 				60086A0A1BFF880300258603 /* SimpleViewController.swift */,
@@ -155,6 +160,7 @@
 				605AA24A1C19EFF400D631DC /* SettingsViewController.swift */,
 				60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */,
 				606A6A711C1B5CE2008621E3 /* MapViewController.swift */,
+				60BCB40A1C22045800E45EAD /* Storyboard.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -287,6 +293,14 @@
 				60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */,
 			);
 			name = PhotosAlbum;
+			sourceTree = "<group>";
+		};
+		60BCB4071C21FF2700E45EAD /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */,
+			);
+			name = Authorization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +452,8 @@
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
 				606A6A701C1B5AD6008621E3 /* SWRevealViewController.m in Sources */,
 				607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */,
+				60BCB40B1C22045800E45EAD /* Storyboard.swift in Sources */,
+				60BCB4091C21FF6400E45EAD /* SplashScreenViewController.swift in Sources */,
 				60675FDE1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift in Sources */,
 				60086A101C0E0C2F00258603 /* PhotoAlbumInfo.swift in Sources */,
 				607336CA1C1744E80009DABC /* UIImageView.swift in Sources */,
