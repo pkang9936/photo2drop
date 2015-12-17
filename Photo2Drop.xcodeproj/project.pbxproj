@@ -42,6 +42,11 @@
 		60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */; };
 		60BCB4091C21FF6400E45EAD /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */; };
 		60BCB40B1C22045800E45EAD /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB40A1C22045800E45EAD /* Storyboard.swift */; };
+		60BCB40D1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB40C1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift */; };
+		60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4121C2315D900E45EAD /* ExitAppHandler.m */; };
+		60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4151C2341B900E45EAD /* ActionsheetView.swift */; };
+		60BCB4181C2341B900E45EAD /* ActionsheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB4161C2341B900E45EAD /* ActionsheetView.xib */; };
+		60BCB41B1C23712200E45EAD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB41A1C23712200E45EAD /* Settings.bundle */; };
 		60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
@@ -108,6 +113,12 @@
 		60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
 		60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
 		60BCB40A1C22045800E45EAD /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
+		60BCB40C1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAuthorizationToUsePhotoAlbumHandler.swift; sourceTree = "<group>"; };
+		60BCB4111C2315D900E45EAD /* ExitAppHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExitAppHandler.h; sourceTree = "<group>"; };
+		60BCB4121C2315D900E45EAD /* ExitAppHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExitAppHandler.m; sourceTree = "<group>"; };
+		60BCB4151C2341B900E45EAD /* ActionsheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsheetView.swift; sourceTree = "<group>"; };
+		60BCB4161C2341B900E45EAD /* ActionsheetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionsheetView.xib; sourceTree = "<group>"; };
+		60BCB41A1C23712200E45EAD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableHeader.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +162,7 @@
 		602AF5A11BFD1CF700700980 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				60BCB4071C21FF2700E45EAD /* Authorization */,
+				60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */,
 				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
 				60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */,
 				60086A0A1BFF880300258603 /* SimpleViewController.swift */,
@@ -177,6 +188,7 @@
 		602AF5A51BFD32E300700980 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60BCB4141C23416E00E45EAD /* Actionsheet */,
 				607336BD1C162DB80009DABC /* TableViewCell */,
 				602AF5A31BFD32CE00700980 /* AlbumCollectionViewCell.swift */,
 				60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */,
@@ -211,6 +223,8 @@
 		60675FAA1BFA76DB0079077E /* Photo2Drop */ = {
 			isa = PBXGroup;
 			children = (
+				60BCB4191C2370F900E45EAD /* Settings */,
+				60BCB40E1C2314E200E45EAD /* Bridge-ObjC */,
 				60BCB3FF1C1F2EAF00E45EAD /* Handler */,
 				607336C01C1739820009DABC /* Extension */,
 				607336B41C1248530009DABC /* SWRevealViewController */,
@@ -291,16 +305,35 @@
 			children = (
 				60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */,
 				60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */,
+				60BCB40C1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift */,
 			);
 			name = PhotosAlbum;
 			sourceTree = "<group>";
 		};
-		60BCB4071C21FF2700E45EAD /* Authorization */ = {
+		60BCB40E1C2314E200E45EAD /* Bridge-ObjC */ = {
 			isa = PBXGroup;
 			children = (
-				60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */,
+				60BCB4111C2315D900E45EAD /* ExitAppHandler.h */,
+				60BCB4121C2315D900E45EAD /* ExitAppHandler.m */,
 			);
-			name = Authorization;
+			name = "Bridge-ObjC";
+			sourceTree = "<group>";
+		};
+		60BCB4141C23416E00E45EAD /* Actionsheet */ = {
+			isa = PBXGroup;
+			children = (
+				60BCB4151C2341B900E45EAD /* ActionsheetView.swift */,
+				60BCB4161C2341B900E45EAD /* ActionsheetView.xib */,
+			);
+			name = Actionsheet;
+			sourceTree = "<group>";
+		};
+		60BCB4191C2370F900E45EAD /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				60BCB41A1C23712200E45EAD /* Settings.bundle */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,9 +442,11 @@
 			files = (
 				60675FB61BFA76DB0079077E /* LaunchScreen.storyboard in Resources */,
 				607B605D1C178A350040E09B /* ImageHeaderView.xib in Resources */,
+				60BCB4181C2341B900E45EAD /* ActionsheetView.xib in Resources */,
 				60675FB31BFA76DB0079077E /* Assets.xcassets in Resources */,
 				60675FB11BFA76DB0079077E /* Main.storyboard in Resources */,
 				607336C81C173DC90009DABC /* DataTableViewCell.xib in Resources */,
+				60BCB41B1C23712200E45EAD /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,11 +475,14 @@
 				60675FDA1BFA7A4F0079077E /* FullSizePhotoViewController.swift in Sources */,
 				60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */,
 				60675FAE1BFA76DB0079077E /* Photo2DropViewController_bk.swift in Sources */,
+				60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */,
 				607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */,
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
 				60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */,
+				60BCB40D1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift in Sources */,
+				60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */,
 				606A6A721C1B5CE2008621E3 /* MapViewController.swift in Sources */,
 				60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */,
 				60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */,

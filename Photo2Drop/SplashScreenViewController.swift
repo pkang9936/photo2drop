@@ -7,78 +7,169 @@
 //
 
 import UIKit
-import Photos
+import Photos 
 
-class SplashScreenViewController: UIViewController {
+class SplashScreenViewController: UIViewController{
 
     @IBOutlet weak var activityIcon: UIActivityIndicatorView!
-    @IBOutlet weak var requestBtn: UIButton!
     
     @IBOutlet weak var accessLabel: UILabel!
+    
+    // MARK - Authorization to photo album
+    private var photoAlbumHandler: GetAuthorizationToUsePhotoAlbumHandler!
+    private var actionSheet: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.photoAlbumHandler = GetAuthorizationToUsePhotoAlbumHandler()
+        self.photoAlbumHandler.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func requestAuthorization(sender: AnyObject) {
+        PHPhotoLibrary.requestAuthorization({ _ in            })
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if self.determineStatus() {
-            accessLabel.text = "This App has access to your Photo Library"
-            requestBtn.hidden = true
-            
-        } else {
-            accessLabel.text = "This App needs access to use your Photo Library"
-            requestBtn.hidden = false
-        }
-        activityIcon.hidden = true
+        self.photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
+        self.activityIcon.hidden = true
+        
+        
+//        if self.determineStatus() {
+//            accessLabel.text = "This App has access to your Photo Library"
+//            requestBtn.hidden = true
+//            
+//        } else {
+//            accessLabel.text = "This App needs access to use your Photo Library"
+//            requestBtn.hidden = false
+//        }
+//        activityIcon.hidden = true
     }
     
-    private func determineStatus() -> Bool {
-        /*
-        let status = PHPhotoLibrary.authorizationStatus()
-        switch status {
-        case .Authorized:
-            return true
-        case .NotDetermined:
-            PHPhotoLibrary.requestAuthorization({ _ in            })
-            return false
-        case .Restricted:
-            return false
-        case .Denied:
-            let alert = UIAlertController(title: "Need Authorization", message: "Wouldn't you like to authorize this app to use your Photo library?", preferredStyle: .Alert)
-            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
-                let url = NSURL(string: UIApplicationOpenSettingsURLString)!
-                UIApplication.sharedApplication().openURL(url)
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-            return false
-            
-        }
-*/
-        let status = PHPhotoLibrary.authorizationStatus()
-        switch status {
-        case .Authorized:
-            return true
-        case .NotDetermined:
-            return false
-        case .Restricted:
-            return false
-        case .Denied:
-            return false
-            
-        }
-    }
+//    private func determineStatus() -> Bool {
+//        /*
+//        let status = PHPhotoLibrary.authorizationStatus()
+//        switch status {
+//        case .Authorized:
+//            return true
+//        case .NotDetermined:
+//            PHPhotoLibrary.requestAuthorization({ _ in            })
+//            return false
+//        case .Restricted:
+//            return false
+//        case .Denied:
+//            let alert = UIAlertController(title: "Need Authorization", message: "Wouldn't you like to authorize this app to use your Photo library?", preferredStyle: .Alert)
+//            alert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+//            alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { _ in
+//                let url = NSURL(string: UIApplicationOpenSettingsURLString)!
+//                UIApplication.sharedApplication().openURL(url)
+//            }))
+//            self.presentViewController(alert, animated: true, completion: nil)
+//            return false
+//            
+//        }
+//*/
+//        let status = PHPhotoLibrary.authorizationStatus()
+//        switch status {
+//        case .Authorized:
+//            return true
+//        case .NotDetermined:
+//            return false
+//        case .Restricted:
+//            return false
+//        case .Denied:
+//            return false
+//            
+//        }
+//    }
     
+    //self.navigationController?.popToRootViewControllerAnimated(true)
+   
 
-    @IBAction func rquestAccess(sender: AnyObject) {
-        PHPhotoLibrary.requestAuthorization({ _ in            })
+    @IBAction func appActionSheet(sender: AnyObject) {
+        
+        //topule
+        //need information about the status and
+        //need to return tupple
+        
+        self.actionSheet = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .ActionSheet)
+//        let requestAccessBtn = UIAlertAction(title: "Request Authorization", style: .Default) { (authSelected) -> Void in
+//            self.photoAlbumHandler.requestAuthorization()
+//        }
+        
+//        let quitAppBtn = UIAlertAction(title: "Quit App", style: .Default) { (_) -> Void in
+//            ExitAppHandler.quitApp()
+//        }
+        let cancelBtn = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        
+        let margin:CGFloat = 8.0
+        let rect = CGRectMake(margin, margin, self.actionSheet.view.bounds.size.width - margin * 4.0, 300.0)
+        //var customView = UIView(frame: rect)
+        let customView = ActionsheetView.loadNib()
+        customView.frame = rect
+        customView.delegate = self
+        
+        customView.backgroundColor = UIColor.clearColor()
+        self.actionSheet.view.addSubview(customView)
+
+        
+        //actionSheet.addAction(requestAccessBtn)
+        //actionSheet.addAction(quitAppBtn)
+        self.actionSheet.addAction(cancelBtn)
+
+        self.presentViewController(actionSheet, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension SplashScreenViewController: GetAuthorizationToUsePhotoAlbumHandlerDelegate {
+    func didAuthorized() {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.accessLabel.text = "This App is authorized to access the photo album"
+        }
+        
+    }
+    func didNotDetermined() {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.accessLabel.text = "User did not decide yet"
+        }
+    }
+    func didRestricted() {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.accessLabel.text = "This App has restricted access"
+        }
+    }
+    func didDenied() {
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.accessLabel.text = "This App was denied the access!"
+        }
+    }
+}
+
+extension SplashScreenViewController: ActionsheetViewDelegate {
+    func didClickOnRequestAuthorization() {
+        self.actionSheet.dismissViewControllerAnimated(true, completion: nil)
+        self.photoAlbumHandler.requestAuthorization()
+    }
+    
+    func didClickOnSettings() {
+        self.actionSheet.dismissViewControllerAnimated(true, completion: nil)
+        self.photoAlbumHandler.resetAuthorization()
+        
+    }
+    
+    func didClickOnQuitApp() {
+        ExitAppHandler.quitApp()
     }
 
 }
+
