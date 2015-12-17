@@ -29,9 +29,11 @@ class SplashScreenViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if self.determineStatus() {
+            accessLabel.text = "This App has access to your Photo Library"
+            requestBtn.hidden = true
             
         } else {
-            accessLabel.text = "This App need access to use your Photo Library"
+            accessLabel.text = "This App needs access to use your Photo Library"
             requestBtn.hidden = false
         }
         activityIcon.hidden = true
