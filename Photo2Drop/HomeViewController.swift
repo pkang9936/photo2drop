@@ -21,59 +21,40 @@ class HomeViewController: SWFrontViewController {
     
     @IBOutlet weak var photoThumbnailCollectionView: UICollectionView!
     
+    private var sizeClass: UIUserInterfaceSizeClass?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-*/
-      
-        
-        albumCollectionView.backgroundColor = UIColor.grayColor()
-        
-        //photoBackgroundView.layer.borderColor = UIColor.blueColor().CGColor
-        //photoBackgroundView.layer.borderWidth = 1.0
-        
-        //albums = PhotoAlbumInfo.createPhotoAlbums()
         albumHandler.delegate = self
-       
-        
     }
     
     override func traitCollectionDidChange(previousTraitCollection: UITraitCollection?) {
         super.traitCollectionDidChange(previousTraitCollection)
         if let layout = albumCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            
-            
             if traitCollection.verticalSizeClass == .Compact {
                 layout.scrollDirection = .Vertical
+                self.sizeClass = .Compact
             }else {
                 layout.scrollDirection = .Horizontal
+                self.sizeClass = .Regular
             }
+            self.photoThumbnailCollectionView.reloadData()
+            
         }
         
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        /*
-        * Check the authorization status every time the root view controller appears and whenever the app is brought to the foreground
-        */
-       // if self.determineStatus() {
-            albumHandler.getAllAlbums()
-            albumCollectionView.reloadData()
-            photoThumbnailCollectionView.reloadData()
-            
-        //}
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
+        albumHandler.getAllAlbums()
+        albumCollectionView.reloadData()
+        photoThumbnailCollectionView.reloadData()
+
+        
         
     }
-    
-   
+      
 }
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate{
@@ -124,6 +105,47 @@ extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelega
         }
     }
     
+}
+
+extension HomeViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        if collectionView == self.albumCollectionView {
+            return CGSize(width: 70.0  , height: 70.0);
+
+        }
+        
+        let screenWidth = collectionView.bounds.width //UIScreen.mainScreen().bounds.width
+        //let screenHeight = UIScreen.mainScreen().bounds.height
+        
+        if let sizeClass = self.sizeClass {
+            if sizeClass == .Compact {
+                return CGSize(width: screenWidth/6  , height: screenWidth/6);
+            }
+        }
+        return CGSize(width: screenWidth/4  , height: screenWidth/4);
+
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets{
+        return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 0)
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+        return 0.0
+    }
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+        
+        return 0.0
+    }
+//
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+//        
+//    }
+//    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+//        
+//    }
 }
 
 extension HomeViewController: GetAlbumHandlerDelegate {

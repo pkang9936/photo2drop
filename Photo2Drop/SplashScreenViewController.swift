@@ -24,30 +24,26 @@ class SplashScreenViewController: UIViewController{
 
         self.photoAlbumHandler = GetAuthorizationToUsePhotoAlbumHandler()
         self.photoAlbumHandler.delegate = self
+        self.photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func requestAuthorization(sender: AnyObject) {
-        PHPhotoLibrary.requestAuthorization({ _ in            })
-    }
+   
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
+        //self.photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
         self.activityIcon.hidden = true
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "determineStatus", name: UIApplicationWillEnterForegroundNotification, object: nil)
         
-//        if self.determineStatus() {
-//            accessLabel.text = "This App has access to your Photo Library"
-//            requestBtn.hidden = true
-//            
-//        } else {
-//            accessLabel.text = "This App needs access to use your Photo Library"
-//            requestBtn.hidden = false
-//        }
-//        activityIcon.hidden = true
+    }
+    
+    func determineStatus() {
+        photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
     }
     
 //    private func determineStatus() -> Bool {
@@ -131,7 +127,8 @@ extension SplashScreenViewController: GetAuthorizationToUsePhotoAlbumHandlerDele
     func didAuthorized() {
         
         dispatch_async(dispatch_get_main_queue()) {
-            self.accessLabel.text = "This App is authorized to access the photo album"
+            self.accessLabel.text = "This App is authorized!"
+            self.performSegueWithIdentifier(Storyboard.seqMainScreenIdentifier, sender: self)
         }
         
     }

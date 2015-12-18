@@ -69,7 +69,7 @@ public class GetAlbumHandler {
             let photoInfo = PhotoInfo()
             
             //load image
-            PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: CGSizeMake(50, 50), contentMode: .AspectFill, options: nil, resultHandler: { (im: UIImage?, info: [NSObject: AnyObject]?) -> Void in
+            PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: CGSizeMake(90, 90), contentMode: .AspectFill, options: nil, resultHandler: { (im: UIImage?, info: [NSObject: AnyObject]?) -> Void in
                 if let im = im {
                     photoInfo.image = im
                 }
