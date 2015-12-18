@@ -9,7 +9,8 @@
 import UIKit
 
 enum LeftMenu: Int {
-    case PhotoAlbum = 0
+    case Spacer = 0
+    case PhotoAlbum
     case Setting
 }
 
@@ -20,7 +21,7 @@ protocol LeftMenuProtocol: class {
 class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["Photo Album", "Settings"]
+    var menus = ["spacer","Photo Album", "Settings"]
     var imageHeaderView: ImageHeaderView!
     
     // MARK: - 
@@ -101,6 +102,8 @@ extension LeftMenuViewController : UITableViewDelegate {
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if let menu = LeftMenu(rawValue: indexPath.item) {
             switch menu {
+            case .Spacer:
+                return 10
             case .PhotoAlbum, .Setting:
                 return BaseTableViewCell.height()
             }
@@ -133,15 +136,19 @@ extension LeftMenuViewController: UITableViewDataSource {
         
         if let menu = LeftMenu(rawValue: indexPath.item) {
             switch menu {
+            case .Spacer:
+                print("")
             case .PhotoAlbum:
                 cell.imageView?.image = UIImage(named: "menu_album")
+                cell.textLabel?.text = menus[indexPath.row]
             case .Setting:
                 cell.imageView?.image = UIImage(named: "menu_settings")
+                cell.textLabel?.text = menus[indexPath.row]
             }
         }
 
         
-        cell.textLabel?.text = menus[indexPath.row]
+        
         
         return cell
     }

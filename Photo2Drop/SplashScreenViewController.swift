@@ -17,7 +17,7 @@ class SplashScreenViewController: UIViewController{
     
     // MARK - Authorization to photo album
     private var photoAlbumHandler: GetAuthorizationToUsePhotoAlbumHandler!
-    private var actionSheet: UIAlertController!
+    private var actionSheet: CustomActionSheetViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,29 +92,12 @@ class SplashScreenViewController: UIViewController{
         //need information about the status and
         //need to return tupple
         
-        self.actionSheet = UIAlertController(title: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .ActionSheet)
-//        let requestAccessBtn = UIAlertAction(title: "Request Authorization", style: .Default) { (authSelected) -> Void in
-//            self.photoAlbumHandler.requestAuthorization()
-//        }
-        
-//        let quitAppBtn = UIAlertAction(title: "Quit App", style: .Default) { (_) -> Void in
-//            ExitAppHandler.quitApp()
-//        }
-        let cancelBtn = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        
-        let margin:CGFloat = 8.0
-        let rect = CGRectMake(margin, margin, self.actionSheet.view.bounds.size.width - margin * 4.0, 300.0)
-        //var customView = UIView(frame: rect)
-        let customView = ActionsheetView.loadNib()
-        customView.frame = rect
-        customView.delegate = self
-        
-        customView.backgroundColor = UIColor.clearColor()
-        self.actionSheet.view.addSubview(customView)
+        self.actionSheet = CustomActionSheetViewController(title: "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", message: nil, preferredStyle: .ActionSheet)
 
-        
-        //actionSheet.addAction(requestAccessBtn)
-        //actionSheet.addAction(quitAppBtn)
+        let cancelBtn = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        let customView = ActionsheetView.loadNib()
+        customView.delegate = self
+        self.actionSheet.addContentView(customView)
         self.actionSheet.addAction(cancelBtn)
 
         self.presentViewController(actionSheet, animated: true, completion: nil)

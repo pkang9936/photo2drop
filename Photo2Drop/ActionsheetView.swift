@@ -25,6 +25,9 @@ class ActionsheetView: UIView {
     @IBOutlet weak var settingsBtn: UIButton!
     @IBOutlet weak var quitBtn: UIButton!
     
+    @IBOutlet weak var header: UIView!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -39,6 +42,8 @@ class ActionsheetView: UIView {
         
         quitBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.Left
         quitBtn.addTarget(self, action: "quitApp:", forControlEvents: .TouchUpInside)
+        
+        
     }
     
     func requestAuthorization(sender: AnyObject) {
