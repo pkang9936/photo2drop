@@ -8,6 +8,7 @@
 
 import Foundation
 public struct Storyboard {
+    static let segAlbumAuth = "seg_album_auth"
     static let seqMainScreenIdentifier = "Main Screen"
     static let seqAuthoScreenIdentifier = "Autho Screen"
     

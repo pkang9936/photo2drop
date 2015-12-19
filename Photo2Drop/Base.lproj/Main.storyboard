@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DCQ-Z9-z93">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AqB-zu-dvT">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -295,6 +295,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K9K-93-J4p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1835" y="342"/>
+        </scene>
+        <!--TouchID View Controller-->
+        <scene sceneID="KwA-sp-GYz">
+            <objects>
+                <viewController id="AqB-zu-dvT" customClass="TouchIDViewController" customModule="Photo2Drop" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zhd-CE-6jY"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ohc-wZ-yxT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9lu-h3-VnM">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchScreen_icon" translatesAutoresizingMaskIntoConstraints="NO" id="5tn-fg-Lix">
+                                <rect key="frame" x="224" y="114" width="152" height="152"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="BNM-kW-hXF"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="152" id="QfG-Wr-6Bx"/>
+                                    <constraint firstAttribute="height" constant="152" id="UWt-vZ-p7s"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wgf-ap-SdF">
+                                <rect key="frame" x="225" y="285" width="150" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="Kmj-db-bef"/>
+                                    <constraint firstAttribute="height" constant="30" id="VJU-eD-PXA"/>
+                                </constraints>
+                                <state key="normal" title="Authenticate"/>
+                                <connections>
+                                    <action selector="authenticateWithTouchID:" destination="AqB-zu-dvT" eventType="touchUpInside" id="ueb-aT-eIf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Photo2Drop" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="plf-gr-sIj">
+                                <rect key="frame" x="261.5" y="249" width="78" height="17"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5tn-fg-Lix" firstAttribute="centerX" secondItem="9lu-h3-VnM" secondAttribute="centerX" id="Kw7-Bc-JDJ"/>
+                            <constraint firstItem="wgf-ap-SdF" firstAttribute="top" secondItem="plf-gr-sIj" secondAttribute="bottom" constant="19" id="Pte-6c-pJM"/>
+                            <constraint firstItem="wgf-ap-SdF" firstAttribute="top" secondItem="5tn-fg-Lix" secondAttribute="bottom" constant="19" id="jb3-lT-WXE"/>
+                            <constraint firstItem="plf-gr-sIj" firstAttribute="centerX" secondItem="9lu-h3-VnM" secondAttribute="centerX" id="k3a-cv-26Q"/>
+                            <constraint firstItem="wgf-ap-SdF" firstAttribute="centerY" secondItem="9lu-h3-VnM" secondAttribute="centerY" id="uRY-vN-gLb"/>
+                            <constraint firstItem="wgf-ap-SdF" firstAttribute="centerX" secondItem="9lu-h3-VnM" secondAttribute="centerX" id="zVV-ef-s8r"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="authenticateBtn" destination="wgf-ap-SdF" id="8JU-Bb-X1v"/>
+                        <segue destination="DCQ-Z9-z93" kind="show" identifier="seg_album_auth" id="Sm5-8u-dsV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibF-9F-320" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-628" y="-424"/>
         </scene>
         <!--Splash Screen View Controller-->
         <scene sceneID="twW-20-xyO">

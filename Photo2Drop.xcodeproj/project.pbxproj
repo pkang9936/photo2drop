@@ -51,6 +51,8 @@
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
+		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetViewController.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
+		A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
+		A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthenticationHandler.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +168,7 @@
 		602AF5A11BFD1CF700700980 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				A828D5DA1C25294F00FD2ACA /* Authentication */,
 				60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */,
 				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
 				60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */,
@@ -298,6 +303,7 @@
 		60BCB3FF1C1F2EAF00E45EAD /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				A828D5DB1C252B9700FD2ACA /* Authentication */,
 				60BCB4001C1F2EC100E45EAD /* PhotosAlbum */,
 			);
 			name = Handler;
@@ -337,6 +343,22 @@
 				60BCB41A1C23712200E45EAD /* Settings.bundle */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		A828D5DA1C25294F00FD2ACA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */,
+			);
+			name = Authentication;
+			sourceTree = "<group>";
+		};
+		A828D5DB1C252B9700FD2ACA /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */,
+			);
+			name = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -485,6 +507,7 @@
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
 				60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */,
 				60BCB40D1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift in Sources */,
+				A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */,
 				60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */,
 				606A6A721C1B5CE2008621E3 /* MapViewController.swift in Sources */,
 				60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */,
@@ -508,6 +531,7 @@
 				602AF5A41BFD32CE00700980 /* AlbumCollectionViewCell.swift in Sources */,
 				60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */,
 				60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */,
+				A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
