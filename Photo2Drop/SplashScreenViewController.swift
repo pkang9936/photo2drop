@@ -10,7 +10,8 @@ import UIKit
 import Photos 
 
 class SplashScreenViewController: UIViewController{
-
+    
+    
     @IBOutlet weak var activityIcon: UIActivityIndicatorView!
     
     @IBOutlet weak var accessLabel: UILabel!
@@ -25,6 +26,8 @@ class SplashScreenViewController: UIViewController{
         self.photoAlbumHandler = GetAuthorizationToUsePhotoAlbumHandler()
         self.photoAlbumHandler.delegate = self
         self.photoAlbumHandler.checkAuthorizationToUsePhotoAlbum()
+        
+      
         
     }
 
@@ -152,4 +155,19 @@ extension SplashScreenViewController: ActionsheetViewDelegate {
     }
 
 }
+/*
 
+extension SplashScreenViewController: TouchIDAuthenticationHandlerDelegate {
+    func didSuccessfulAuthenticate() {
+        NSLog("Yes!")
+        self.determineStatus()
+    }
+    func didFailAuthenticate() {
+        NSLog("NO!")
+    }
+    func touchIDAuthenticationNotSupported() {
+        NSLog("Not support!")
+    }
+}
+
+*/

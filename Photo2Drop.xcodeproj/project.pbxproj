@@ -53,6 +53,10 @@
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
 		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */; settings = {ASSET_TAGS = (); }; };
+		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; settings = {ASSET_TAGS = (); }; };
+		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; settings = {ASSET_TAGS = (); }; };
+		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +132,10 @@
 		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
 		A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
 		A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthenticationHandler.swift; sourceTree = "<group>"; };
+		A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
+		A828D5E01C253DAD00FD2ACA /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
+		A828D5E31C253EDA00FD2ACA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +179,7 @@
 				A828D5DA1C25294F00FD2ACA /* Authentication */,
 				60BCB4081C21FF6400E45EAD /* SplashScreenViewController.swift */,
 				60675FD91BFA7A4F0079077E /* FullSizePhotoViewController.swift */,
+				A828D5E31C253EDA00FD2ACA /* MainViewController.swift */,
 				60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */,
 				60086A0A1BFF880300258603 /* SimpleViewController.swift */,
 				60086A0C1C0E0A6A00258603 /* HomeViewController.swift */,
@@ -230,6 +239,7 @@
 		60675FAA1BFA76DB0079077E /* Photo2Drop */ = {
 			isa = PBXGroup;
 			children = (
+				A828D5DE1C253D8C00FD2ACA /* Helper */,
 				60BCB4191C2370F900E45EAD /* Settings */,
 				60BCB40E1C2314E200E45EAD /* Bridge-ObjC */,
 				60BCB3FF1C1F2EAF00E45EAD /* Handler */,
@@ -359,6 +369,16 @@
 				A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */,
 			);
 			name = Authentication;
+			sourceTree = "<group>";
+		};
+		A828D5DE1C253D8C00FD2ACA /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */,
+				A828D5E01C253DAD00FD2ACA /* TWTButton.swift */,
+				A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -501,11 +521,13 @@
 				60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */,
 				60675FAE1BFA76DB0079077E /* Photo2DropViewController_bk.swift in Sources */,
 				60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */,
+				A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */,
 				607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */,
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
 				60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */,
+				A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */,
 				60BCB40D1C22FF5000E45EAD /* GetAuthorizationToUsePhotoAlbumHandler.swift in Sources */,
 				A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */,
 				60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */,
@@ -516,6 +538,7 @@
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
 				606A6A701C1B5AD6008621E3 /* SWRevealViewController.m in Sources */,
 				607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */,
+				A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */,
 				60BCB40B1C22045800E45EAD /* Storyboard.swift in Sources */,
 				60BCB4091C21FF6400E45EAD /* SplashScreenViewController.swift in Sources */,
 				60675FDE1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift in Sources */,
@@ -528,6 +551,7 @@
 				607336C71C173DC90009DABC /* DataTableViewCell.swift in Sources */,
 				60086A0B1BFF880300258603 /* SimpleViewController.swift in Sources */,
 				60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */,
+				A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */,
 				602AF5A41BFD32CE00700980 /* AlbumCollectionViewCell.swift in Sources */,
 				60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */,
 				60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */,
