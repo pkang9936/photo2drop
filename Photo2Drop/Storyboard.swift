@@ -15,4 +15,6 @@ public struct Storyboard {
     static let AlbumCellIdentifier = "Album Cell"
     static let PhotoThumbnailCellIdentifer = "Photo Cell"
     
+    static let DummyCellIdentifier = "Dummy Cell"
+    
 }

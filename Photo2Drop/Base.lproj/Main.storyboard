@@ -1038,40 +1038,33 @@
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="reveal-icon" translatesAutoresizingMaskIntoConstraints="NO" id="ukL-zT-3xD">
-                                        <rect key="frame" x="18" y="23" width="22" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="3cr-Kk-vzE"/>
-                                            <constraint firstAttribute="width" constant="22" id="JNg-hS-1o2"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="jio-2h-dF2" secondAttribute="trailing" id="7yJ-ZS-9Et"/>
                                     <constraint firstItem="Ags-Ar-Jaf" firstAttribute="top" secondItem="wWZ-Rd-akn" secondAttribute="top" constant="104" id="C2n-oC-i9w"/>
                                     <constraint firstAttribute="centerX" secondItem="Ags-Ar-Jaf" secondAttribute="centerX" id="Fva-vb-Ccs"/>
-                                    <constraint firstItem="ukL-zT-3xD" firstAttribute="leading" secondItem="wWZ-Rd-akn" secondAttribute="leadingMargin" constant="10" id="Rws-hj-UnX"/>
                                     <constraint firstAttribute="bottom" secondItem="jio-2h-dF2" secondAttribute="bottom" id="VZD-1I-vTr"/>
                                     <constraint firstItem="jio-2h-dF2" firstAttribute="top" secondItem="wWZ-Rd-akn" secondAttribute="top" id="Z5D-87-tHO"/>
-                                    <constraint firstItem="ukL-zT-3xD" firstAttribute="top" secondItem="wWZ-Rd-akn" secondAttribute="topMargin" constant="15" id="ioR-7g-qHT"/>
                                     <constraint firstAttribute="height" constant="107" id="pSh-eC-p3i"/>
                                     <constraint firstItem="jio-2h-dF2" firstAttribute="leading" secondItem="wWZ-Rd-akn" secondAttribute="leading" id="xMv-Ol-uLM"/>
                                 </constraints>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Np-AG-eQb" userLabel="Scrollview">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Np-AG-eQb" userLabel="Scrollview">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="751"/>
                                 <subviews>
-                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" image="_2" translatesAutoresizingMaskIntoConstraints="NO" id="w29-o4-Hxa" userLabel="AvatarImage" customClass="AvatarImageView" customModule="Photo2Drop" customModuleProvider="target">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qHT-C1-ASd">
+                                        <rect key="frame" x="8" y="23" width="22" height="17"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="22" id="d1M-cf-XHH"/>
+                                            <constraint firstAttribute="height" constant="17" id="mH9-Mk-Fme"/>
+                                        </constraints>
+                                        <state key="normal" image="reveal-icon"/>
+                                    </button>
+                                    <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w29-o4-Hxa" userLabel="AvatarImage" customClass="AvatarImageView" customModule="Photo2Drop" customModuleProvider="target">
                                         <rect key="frame" x="8" y="79" width="69" height="69"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera Roll" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTB-6g-UFK">
-                                        <rect key="frame" x="8" y="156" width="224" height="22"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
-                                        <color key="textColor" red="0.16078431369999999" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,735" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-Nl-iZX" userLabel="TwitterUsername">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-Nl-iZX">
                                         <rect key="frame" x="8" y="177" width="128" height="21"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                         <color key="textColor" red="0.40000000000000002" green="0.41960784309999999" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1163,6 +1156,12 @@
                                             <action selector="shamelessActionThatBringsYouToMyTwitterProfile" destination="frE-3p-nTF" eventType="touchUpInside" id="4fD-Bh-YF5"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTB-6g-UFK">
+                                        <rect key="frame" x="8" y="156" width="224" height="22"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="18"/>
+                                        <color key="textColor" red="0.16078431369999999" green="0.1843137255" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="W5k-Aa-Drv" secondAttribute="trailing" id="04b-6C-TaA"/>
@@ -1170,9 +1169,11 @@
                                     <constraint firstItem="hOf-ZN-eOv" firstAttribute="top" secondItem="0Np-AG-eQb" secondAttribute="top" constant="404" id="5E6-Na-8FI"/>
                                     <constraint firstItem="W5k-Aa-Drv" firstAttribute="leading" secondItem="0Np-AG-eQb" secondAttribute="leading" id="Boy-09-CMP"/>
                                     <constraint firstAttribute="trailing" secondItem="zkv-Nx-29V" secondAttribute="trailing" constant="8" id="DBv-j4-vic"/>
+                                    <constraint firstItem="qHT-C1-ASd" firstAttribute="top" secondItem="0Np-AG-eQb" secondAttribute="topMargin" constant="15" id="Ie6-cD-KuM"/>
                                     <constraint firstItem="W5k-Aa-Drv" firstAttribute="top" secondItem="0Np-AG-eQb" secondAttribute="top" constant="477" id="Nvj-uj-AA4"/>
                                     <constraint firstAttribute="centerX" secondItem="hOf-ZN-eOv" secondAttribute="centerX" constant="3" id="O7K-Wk-fwA"/>
                                     <constraint firstAttribute="bottom" secondItem="W5k-Aa-Drv" secondAttribute="bottom" constant="37" id="RnK-r6-FuK"/>
+                                    <constraint firstItem="qHT-C1-ASd" firstAttribute="leading" secondItem="0Np-AG-eQb" secondAttribute="leadingMargin" id="XIj-Pp-Jbi"/>
                                     <constraint firstItem="zkv-Nx-29V" firstAttribute="top" secondItem="0Np-AG-eQb" secondAttribute="top" constant="118" id="o91-It-EPQ"/>
                                     <constraint firstAttribute="bottom" secondItem="4Bt-bt-pom" secondAttribute="bottom" constant="708" id="udt-Tl-hl6"/>
                                     <constraint firstItem="4Bt-bt-pom" firstAttribute="leading" secondItem="0Np-AG-eQb" secondAttribute="leading" constant="131" id="xWP-Nc-zuj"/>
@@ -1197,9 +1198,12 @@
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <outlet property="albumCollectionView" destination="4Bt-bt-pom" id="det-yJ-J8D"/>
-                        <outlet property="avatarImage" destination="w29-o4-Hxa" id="HlU-8s-tbj"/>
+                        <outlet property="currentAlbumCount" destination="8Cz-Nl-iZX" id="Lr0-cU-fJs"/>
+                        <outlet property="currentAlbumImage" destination="w29-o4-Hxa" id="aNR-AT-4Na"/>
+                        <outlet property="currentAlbumName" destination="xTB-6g-UFK" id="h7O-fz-NfS"/>
                         <outlet property="header" destination="wWZ-Rd-akn" id="q3w-q1-DRY"/>
                         <outlet property="headerLabel" destination="Ags-Ar-Jaf" id="iHG-dZ-sgY"/>
+                        <outlet property="leftMenuButton" destination="qHT-C1-ASd" id="uea-LH-o5s"/>
                         <outlet property="scrollView" destination="0Np-AG-eQb" id="65Q-bd-FtO"/>
                     </connections>
                 </viewController>

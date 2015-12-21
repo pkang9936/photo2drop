@@ -19,11 +19,20 @@ protocol RearrangeableCollectionViewDelegate {
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView:UIScrollView!
-    @IBOutlet var avatarImage:UIImageView!
+    @IBOutlet var currentAlbumImage:UIImageView!
+    @IBOutlet weak var currentAlbumName: UILabel!
+    @IBOutlet weak var currentAlbumCount: UILabel!
+    
     @IBOutlet var header:UIView!
     @IBOutlet var headerLabel:UILabel!
+   
+    @IBOutlet weak var leftMenuButton: UIButton!
+    
+    
+    
     
     // MARK - Rearrange viewcell
+   
     var animating: Bool = false
     var canvas: UIView? {
         didSet {
@@ -32,7 +41,13 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             }
         }
     }
+    
+    // MARK - Album colleciton
     @IBOutlet weak var albumCollectionView: UICollectionView!
+    private var albums = [PhotoAlbumInfo]()
+    private var albumHandler = GetAlbumHandler()
+    private var photos = [PhotoInfo]()
+    private var currentAlbum: PhotoAlbumInfo?
     
     var collectionViewFrameInCanvas: CGRect = CGRectZero
     var hitTestRectangles = [String:CGRect]()
@@ -54,14 +69,27 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil {
+            leftMenuButton.addTarget(self.revealViewController(), action: "revealToggle:", forControlEvents: .TouchUpInside)
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            
+        }
+        
         scrollView.delegate = self
         
         self.setup()
+        
+         albumHandler.delegate = self
+        albumHandler.getAllAlbums()
     }
 
     override func viewDidAppear(animated: Bool) {
         
         header.clipsToBounds = true
+        
+        
+        albumCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -105,19 +133,19 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 
             // Avatar -----------
             
-            let avatarScaleFactor = (min(offset_HeaderStop, offset)) / avatarImage.bounds.height / 1.4 // Slow down the animation
-            let avatarSizeVariation = ((avatarImage.bounds.height * (1.0 + avatarScaleFactor)) - avatarImage.bounds.height) / 2.0
+            let avatarScaleFactor = (min(offset_HeaderStop, offset)) / currentAlbumImage.bounds.height / 1.4 // Slow down the animation
+            let avatarSizeVariation = ((currentAlbumImage.bounds.height * (1.0 + avatarScaleFactor)) - currentAlbumImage.bounds.height) / 2.0
             avatarTransform = CATransform3DTranslate(avatarTransform, 0, avatarSizeVariation, 0)
             avatarTransform = CATransform3DScale(avatarTransform, 1.0 - avatarScaleFactor, 1.0 - avatarScaleFactor, 0)
             
             if offset <= offset_HeaderStop {
                 
-                if avatarImage.layer.zPosition < header.layer.zPosition{
+                if currentAlbumImage.layer.zPosition < header.layer.zPosition{
                     header.layer.zPosition = 0
                 }
                 
             }else {
-                if avatarImage.layer.zPosition >= header.layer.zPosition{
+                if currentAlbumImage.layer.zPosition >= header.layer.zPosition{
                     header.layer.zPosition = 2
                 }
             }
@@ -126,7 +154,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         // Apply Transformations
         
         header.layer.transform = headerTransform
-        avatarImage.layer.transform = avatarTransform
+        currentAlbumImage.layer.transform = avatarTransform
     }
     
     @IBAction func shamelessActionThatBringsYouToMyTwitterProfile() {
@@ -302,7 +330,31 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.AlbumCellIdentifier, forIndexPath: indexPath)
+        if collectionView == self.albumCollectionView {
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.AlbumCellIdentifier, forIndexPath: indexPath) as! RearrangeableCollectionViewCell
+            let album = albums[indexPath.row] as PhotoAlbumInfo
+            cell.albumImg.image = album.albumImage
+            
+            if indexPath.row == 0 {
+                //current album
+                self.currentAlbum = album
+                
+                self.albumHandler.getPhotosForAlbum(albumInfo: self.currentAlbum)
+                
+                self.currentAlbumImage.image = album.albumImage
+                self.currentAlbumName.text = self.currentAlbum?.title
+                let count = self.currentAlbum?.photos.count as Int!
+                self.currentAlbumCount.text = "\(count)"
+                
+            }
+
+            
+            
+            return cell
+        }
+        
+        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.DummyCellIdentifier, forIndexPath: indexPath)
         
        
         return cell
@@ -365,4 +417,27 @@ extension MainViewController:  UIGestureRecognizerDelegate {
     
 }
 
+
+extension MainViewController: GetAlbumHandlerDelegate {
+    func didGetAlbums(albums: [PhotoAlbumInfo]) {
+        self.albums = albums
+        
+//        if albums.count > 0 {
+//            //current album
+//            self.currentAlbum = albums[0]
+//            
+//            self.albumHandler.getPhotosForAlbum(albumInfo: self.currentAlbum)
+//            
+//            self.currentAlbumImage.image = UIImage(named: "_2") //self.currentAlbum?.albumImage
+//            self.currentAlbumName.text = self.currentAlbum?.title
+//            let count = self.currentAlbum?.photos.count as Int!
+//            self.currentAlbumCount.text = "\(count)"
+//        }
+        
+    }
+    
+    func didGetPhotosForAlbum(photos : [PhotoInfo]) {
+        self.photos = photos
+    }
+}
 
