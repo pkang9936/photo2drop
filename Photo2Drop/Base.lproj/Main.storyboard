@@ -1121,6 +1121,7 @@
                                         </cells>
                                         <connections>
                                             <outlet property="dataSource" destination="frE-3p-nTF" id="n7f-3g-Afw"/>
+                                            <outlet property="delegate" destination="frE-3p-nTF" id="xJ9-cu-9BZ"/>
                                         </connections>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zkv-Nx-29V" userLabel="FollowButton" customClass="TWTButton" customModule="Photo2Drop" customModuleProvider="target">

@@ -12,6 +12,10 @@ let offset_HeaderStop:CGFloat = 40.0 // At this offset the Header stops its tran
 let offset_B_LabelHeader:CGFloat = 95.0 // At this offset the Black label reaches the Header
 let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the Header and the top of the White Label
 
+protocol RearrangeableCollectionViewDelegate {
+    func moveDataItem(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+}
+
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView:UIScrollView!
@@ -30,6 +34,21 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var albumCollectionView: UICollectionView!
     
     var collectionViewFrameInCanvas: CGRect = CGRectZero
+    var hitTestRectangles = [String:CGRect]()
+    
+    struct Bundle {
+        var offset: CGPoint = CGPointZero
+        var sourceCell : UICollectionViewCell
+        var representationImageView: UIView
+        var currentIndexPath: NSIndexPath
+    }
+    
+    var bundle: Bundle?
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     
     
     override func viewDidLoad() {
@@ -115,6 +134,23 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     // MARK - helping method to rearrange album celeection cell
+    func setup() {
+        if let collectionView = self.albumCollectionView {
+            
+            let longPressGestureRecogniser = UILongPressGestureRecognizer(target: collectionView, action: "handleGesture:")
+            
+            longPressGestureRecogniser.minimumPressDuration = 0.2
+            longPressGestureRecogniser.delegate = self
+            
+            collectionView.addGestureRecognizer(longPressGestureRecogniser)
+            
+            if self.canvas == nil {
+                self.canvas = collectionView.superview
+            }
+        }
+    }
+    
+    
     private func calculateBorders() {
         
         if let collectionview = self.albumCollectionView {
@@ -126,8 +162,89 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
             }
             
             var leftRect: CGRect = collectionViewFrameInCanvas
+            leftRect.size.width = 20.0
+            hitTestRectangles["left"] = leftRect
+            
+            var topRect: CGRect = collectionViewFrameInCanvas
+            topRect.size.height = 20.0
+            hitTestRectangles["top"] = topRect
+            
+            var rightRect: CGRect = collectionViewFrameInCanvas
+            rightRect.origin.x = rightRect.size.width - 20.0
+            rightRect.size.width = 20.0
+            hitTestRectangles["right"] = rightRect
+            
+            var bottomRect : CGRect = collectionViewFrameInCanvas
+            bottomRect.origin.y = bottomRect.origin.y + rightRect.size.height - 20.0
+            bottomRect.size.height = 20.0
+            hitTestRectangles["bottom"] = bottomRect
             
         }
+    }
+    
+    func handleGesture(gesture: UILongPressGestureRecognizer) -> Void {
+        
+        if let bundle = self.bundle {
+            
+            let dragPointOnCanvas = gesture.locationInView(self.canvas)
+            
+            if gesture.state == UIGestureRecognizerState.Began {
+                bundle.sourceCell.hidden = true
+                self.canvas?.addSubview(bundle.representationImageView)
+            }
+            
+            if gesture.state == UIGestureRecognizerState.Changed {
+                
+                //Update the representation image
+                var imageViewFrame = bundle.representationImageView.frame
+                var point = CGPointZero
+                point.x = dragPointOnCanvas.x - bundle.offset.x
+                point.y = dragPointOnCanvas.y - bundle.offset.y
+                imageViewFrame.origin = point
+                bundle.representationImageView.frame = imageViewFrame
+                
+                let dragPointOnCollectionView = gesture.locationInView(self.albumCollectionView)
+                
+                if let indexPath: NSIndexPath = self.albumCollectionView.indexPathForItemAtPoint(dragPointOnCollectionView) {
+                    
+                    self.checkForDraggingAtTheEdgeAndAnimatePaging(gesture)
+                    
+                    if indexPath.isEqual(bundle.currentIndexPath) == false {
+                        
+                        //If we have a collection view controller that implements the delegate we call the method first
+                        if let delegate = self.albumCollectionView.delegate as? RearrangeableCollectionViewDelegate {
+                            delegate.moveDataItem(bundle.currentIndexPath, toIndexPath: indexPath)
+                        }
+                        
+                        self.albumCollectionView.moveItemAtIndexPath(bundle.currentIndexPath, toIndexPath: indexPath)
+                        
+                        self.bundle?.currentIndexPath = indexPath
+                    }
+                }
+                
+            }
+            
+            if gesture.state == UIGestureRecognizerState.Ended {
+                
+                bundle.sourceCell.hidden = false
+                
+                if let dragCell = bundle.sourceCell as? RearrangeableCollectionViewCell {
+                    dragCell.dragging = false
+                }
+                
+                bundle.representationImageView.removeFromSuperview()
+                
+                if let _ = self.albumCollectionView.delegate as? RearrangeableCollectionViewDelegate {
+                    self.albumCollectionView.reloadData()
+                }
+                
+                self.bundle = nil
+            }
+        }
+    }
+    
+    func checkForDraggingAtTheEdgeAndAnimatePaging(gesture: UILongPressGestureRecognizer) -> Void {
+        
     }
 }
 
@@ -157,7 +274,35 @@ extension MainViewController: UICollectionViewFlowLayout {
     
 }
 
-extension MainViewController:  UIGestureRecognizer {
+extension MainViewController:  UIGestureRecognizerDelegate {
+    
+    func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        
+        if let ca = self.canvas {
+            
+            if let cv = self.albumCollectionView {
+                
+                let pointPressedInCanvas = gestureRecognizer.locationInView(ca)
+                
+                for cell in cv.visibleCells() {
+                    
+                    let cellInCanvasFrame = ca.convertRect(cell.frame, fromView: cv)
+                    
+                    if CGRectContainsPoint(cellInCanvasFrame, pointPressedInCanvas) {
+                        
+                        // apply any transformation to the cell
+                        
+                        if let dragCell = cell as? RearrangeableCollectionViewCell {
+                            dragCell.dragging = true
+                            
+                            let representationImage = cell.snapshotViewAfterScreenUpdates(true)
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
     
 }
 

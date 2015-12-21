@@ -57,6 +57,7 @@
 		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; settings = {ASSET_TAGS = (); }; };
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		A828D5E01C253DAD00FD2ACA /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
 		A828D5E31C253EDA00FD2ACA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderCollectionViewCell.swift; sourceTree = "<group>"; };
+		A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangeableCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 		602AF5A51BFD32E300700980 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A8C614951C27D13F00D0323B /* CollectionViewCell */,
 				60BCB4141C23416E00E45EAD /* Actionsheet */,
 				607336BD1C162DB80009DABC /* TableViewCell */,
 				602AF5A31BFD32CE00700980 /* AlbumCollectionViewCell.swift */,
@@ -381,6 +384,14 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+		A8C614951C27D13F00D0323B /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */,
+			);
+			name = CollectionViewCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,6 +527,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */,
 				607B605C1C178A350040E09B /* ImageHeaderView.swift in Sources */,
 				60675FDA1BFA7A4F0079077E /* FullSizePhotoViewController.swift in Sources */,
 				60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */,
