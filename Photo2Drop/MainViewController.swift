@@ -24,6 +24,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet var headerLabel:UILabel!
     
     // MARK - Rearrange viewcell
+    var animating: Bool = false
     var canvas: UIView? {
         didSet {
             if canvas != nil {
@@ -54,6 +55,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.delegate = self
+        
+        self.setup()
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -137,7 +140,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     func setup() {
         if let collectionView = self.albumCollectionView {
             
-            let longPressGestureRecogniser = UILongPressGestureRecognizer(target: collectionView, action: "handleGesture:")
+            let longPressGestureRecogniser = UILongPressGestureRecognizer(target: self, action: "handleGesture:")
             
             longPressGestureRecogniser.minimumPressDuration = 0.2
             longPressGestureRecogniser.delegate = self
@@ -244,7 +247,48 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
     
     func checkForDraggingAtTheEdgeAndAnimatePaging(gesture: UILongPressGestureRecognizer) -> Void {
+     
+        if self.animating == true {
+            return
+        }
         
+        if let bundle = self.bundle {
+            
+            var nextPageRect: CGRect = self.albumCollectionView.bounds
+            
+            if let layout = self.albumCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+                if layout.scrollDirection == UICollectionViewScrollDirection.Horizontal {
+                    if CGRectIntersectsRect(bundle.representationImageView.frame, hitTestRectangles["left"]!) {
+                        nextPageRect.origin.x -= nextPageRect.size.width
+                        
+                        if nextPageRect.origin.x < 0.0 {
+                            nextPageRect.origin.x = 0
+                        }
+                    } else if CGRectIntersectsRect(bundle.representationImageView.frame, hitTestRectangles["right"]!) {
+                        
+                        nextPageRect.origin.x += nextPageRect.size.width
+                        
+                        if nextPageRect.origin.x + nextPageRect.size.width > albumCollectionView.contentSize.width {
+                            
+                            nextPageRect.origin.x = albumCollectionView.contentSize.width - nextPageRect.size.width
+                            
+                        }
+                    }
+                }
+                
+                if !CGRectEqualToRect(nextPageRect, albumCollectionView.bounds) {
+                    let delayTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
+                    dispatch_after(delayTime, dispatch_get_main_queue(), { () -> Void in
+                        self.animating = false
+                        self.handleGesture(gesture)
+                    })
+                    
+                    self.animating = true
+                    self.albumCollectionView.scrollRectToVisible(nextPageRect, animated: true)
+                }
+            }
+            
+        }
     }
 }
 
@@ -270,9 +314,7 @@ extension MainViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
 }
 
-extension MainViewController: UICollectionViewFlowLayout {
-    
-}
+
 
 extension MainViewController:  UIGestureRecognizerDelegate {
     
@@ -296,12 +338,29 @@ extension MainViewController:  UIGestureRecognizerDelegate {
                             dragCell.dragging = true
                             
                             let representationImage = cell.snapshotViewAfterScreenUpdates(true)
+                            representationImage.frame = cellInCanvasFrame
+                            representationImage.frame.size.width = representationImage.frame.size.width + 8
+                            representationImage.frame.size.height = representationImage.frame.size.height  + 8
+                            var newOrigin = representationImage.frame.origin
+                            newOrigin.x = newOrigin.x - 4
+                            newOrigin.y = newOrigin.y - 4
+                            representationImage.frame.origin = newOrigin
+                            
+                            
+                            let offset = CGPointMake(pointPressedInCanvas.x - cellInCanvasFrame.origin.x, pointPressedInCanvas.y - cellInCanvasFrame.origin.y)
+                            
+                            let indexPath: NSIndexPath = cv.indexPathForCell(cell as UICollectionViewCell)!
+                            
+                            self.bundle = Bundle(offset: offset, sourceCell: cell, representationImageView: representationImage, currentIndexPath: indexPath)
+                            
+                            break
                             
                         }
                     }
                 }
             }
         }
+        return self.bundle != nil
     }
     
 }
