@@ -51,15 +51,15 @@
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
-		A819C14B1C294F6300ED43E7 /* PhotoUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */; settings = {ASSET_TAGS = (); }; };
-		A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */; settings = {ASSET_TAGS = (); }; };
-		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */; settings = {ASSET_TAGS = (); }; };
-		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; settings = {ASSET_TAGS = (); }; };
-		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; settings = {ASSET_TAGS = (); }; };
-		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		A819C14B1C294F6300ED43E7 /* PhotoUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */; };
+		A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */; };
+		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; };
+		A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */; };
+		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; };
+		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; };
+		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
+		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
+		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,7 +216,6 @@
 				60BCB4141C23416E00E45EAD /* Actionsheet */,
 				607336BD1C162DB80009DABC /* TableViewCell */,
 				602AF5A31BFD32CE00700980 /* AlbumCollectionViewCell.swift */,
-				60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */,
 				607B605A1C178A350040E09B /* ImageHeaderView.swift */,
 				607B605B1C178A350040E09B /* ImageHeaderView.xib */,
 				60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */,
@@ -368,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */,
+				60675FDD1BFB87830079077E /* PhotoThumbnailCollectionViewCell.swift */,
 			);
 			name = Photo;
 			sourceTree = "<group>";

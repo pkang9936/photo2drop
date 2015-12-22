@@ -132,7 +132,7 @@ extension Photo2DropViewController_bk: UICollectionViewDataSource {
         let asset: PHAsset = photosAsset[indexPath.item] as! PHAsset
         PHImageManager.defaultManager().requestImageForAsset(asset, targetSize: PHImageManagerMaximumSize, contentMode: .AspectFill, options: nil){
             result , info in
-            cell.setThumbnailImage(result!)
+            //cell.setThumbnailImage(result!)
             
         }
         return cell

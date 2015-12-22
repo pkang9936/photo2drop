@@ -16,6 +16,7 @@ protocol RearrangeableCollectionViewDelegate {
     func moveDataItem(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
 }
 
+
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet var scrollView:UIScrollView!
@@ -44,10 +45,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     // MARK - Album colleciton
     @IBOutlet weak var albumCollectionView: UICollectionView!
-    private var albums = [PhotoAlbumInfo]()
+    private var albums: [PhotoAlbumInfo]?
     private var albumHandler = GetAlbumHandler()
-    private var photos = [PhotoInfo]()
-    private var currentAlbum: PhotoAlbumInfo?
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
@@ -82,23 +81,36 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         self.setup()
         
-         albumHandler.delegate = self
+        albumHandler.delegate = self
         albumHandler.getAllAlbums()
     }
 
     override func viewDidAppear(animated: Bool) {
         
         header.clipsToBounds = true
+        guard let count = albums?.count else { return }
         
-        
-        albumCollectionView.reloadData()
-        photoCollectionView.reloadData()
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+        if count > 0 {
+            var selectedIndex = 0
+            let indexPaths = self.albumCollectionView.indexPathsForSelectedItems()! as [NSIndexPath]
+            
+            if indexPaths.count > 0 {
+                selectedIndex = indexPaths[0].row
+            }
+            self.loadCurrentAlbumProfile(albums![selectedIndex])
+        }
     }
     
+    private func loadCurrentAlbumProfile(currentAlbum: PhotoAlbumInfo) {
+        albumHandler.getPhotosForAlbum(albumInfo: currentAlbum)
+        currentAlbumImage.image = currentAlbum.albumImage
+        currentAlbumName.text = currentAlbum.title
+        currentAlbumCount.text = "\(currentAlbum.photos.count)"
+        headerLabel.text = currentAlbum.title
+        
+       
+    }
+
     func scrollViewDidScroll(scrollView: UIScrollView) {
         
         let offset = scrollView.contentOffset.y
@@ -158,13 +170,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         header.layer.transform = headerTransform
         currentAlbumImage.layer.transform = avatarTransform
-    }
-    
-    @IBAction func shamelessActionThatBringsYouToMyTwitterProfile() {
-        
-        if !UIApplication.sharedApplication().openURL(NSURL(string:"twitter://user?screen_name=bitwaker")!){
-            UIApplication.sharedApplication().openURL(NSURL(string:"https://twitter.com/bitwaker")!)
-        }
     }
     
     // MARK - helping method to rearrange album celeection cell
@@ -323,53 +328,6 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     }
 }
 
-extension MainViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return albums.count
-        
-    }
-    
-    
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        
-        if collectionView == self.albumCollectionView {
-            let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.AlbumCellIdentifier, forIndexPath: indexPath) as! RearrangeableCollectionViewCell
-            let album = albums[indexPath.row] as PhotoAlbumInfo
-            cell.albumImg.image = album.albumImage
-            
-            if indexPath.row == 0 {
-                //current album
-                self.currentAlbum = album
-                
-                self.albumHandler.getPhotosForAlbum(albumInfo: self.currentAlbum)
-                
-                self.currentAlbumImage.image = album.albumImage
-                self.currentAlbumName.text = self.currentAlbum?.title
-                let count = self.currentAlbum?.photos.count as Int!
-                self.currentAlbumCount.text = "\(count)"
-                
-            }
-
-            
-            
-            return cell
-        }
-        
-        
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.DummyCellIdentifier, forIndexPath: indexPath)
-        
-       
-        return cell
-    }
-    
-    
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-}
-
 
 
 extension MainViewController:  UIGestureRecognizerDelegate {
@@ -425,23 +383,16 @@ extension MainViewController:  UIGestureRecognizerDelegate {
 extension MainViewController: GetAlbumHandlerDelegate {
     func didGetAlbums(albums: [PhotoAlbumInfo]) {
         self.albums = albums
-        
-//        if albums.count > 0 {
-//            //current album
-//            self.currentAlbum = albums[0]
-//            
-//            self.albumHandler.getPhotosForAlbum(albumInfo: self.currentAlbum)
-//            
-//            self.currentAlbumImage.image = UIImage(named: "_2") //self.currentAlbum?.albumImage
-//            self.currentAlbumName.text = self.currentAlbum?.title
-//            let count = self.currentAlbum?.photos.count as Int!
-//            self.currentAlbumCount.text = "\(count)"
-//        }
+        if let albumController = self.albumCollectionView as? AlbumUICollectionView{
+            albumController.albums = albums
+        }
         
     }
     
     func didGetPhotosForAlbum(photos : [PhotoInfo]) {
-        self.photos = photos
+        if let photoController = self.photoCollectionView as? PhotoUICollectionView {
+            photoController.photos = photos
+        }
     }
 }
 

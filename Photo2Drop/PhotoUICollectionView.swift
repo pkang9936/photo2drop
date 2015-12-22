@@ -37,8 +37,8 @@ extension PhotoUICollectionView: UICollectionViewDataSource, UICollectionViewDel
     
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.DummyCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
-        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.PhotoThumbnailCellIdentifer, forIndexPath: indexPath) as! PhotoThumbnailCollectionViewCell
+        cell.photo = photos?[indexPath.row]
         return cell
     }
    
