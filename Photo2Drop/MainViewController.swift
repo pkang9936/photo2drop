@@ -49,6 +49,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     private var photos = [PhotoInfo]()
     private var currentAlbum: PhotoAlbumInfo?
     
+    @IBOutlet weak var photoCollectionView: UICollectionView!
+    
     var collectionViewFrameInCanvas: CGRect = CGRectZero
     var hitTestRectangles = [String:CGRect]()
     
@@ -90,6 +92,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         
         albumCollectionView.reloadData()
+        photoCollectionView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {

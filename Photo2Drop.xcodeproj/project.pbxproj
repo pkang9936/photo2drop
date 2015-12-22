@@ -51,6 +51,8 @@
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
+		A819C14B1C294F6300ED43E7 /* PhotoUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */; settings = {ASSET_TAGS = (); }; };
+		A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */; settings = {ASSET_TAGS = (); }; };
 		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		A828D5DD1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */; settings = {ASSET_TAGS = (); }; };
 		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; settings = {ASSET_TAGS = (); }; };
@@ -131,6 +133,8 @@
 		60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetViewController.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWFrontViewController.swift; sourceTree = "<group>"; };
+		A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoUICollectionView.swift; sourceTree = "<group>"; };
+		A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumUICollectionView.swift; sourceTree = "<group>"; };
 		A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDViewController.swift; sourceTree = "<group>"; };
 		A828D5DC1C252BBC00FD2ACA /* TouchIDAuthenticationHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchIDAuthenticationHandler.swift; sourceTree = "<group>"; };
 		A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
@@ -206,6 +210,8 @@
 		602AF5A51BFD32E300700980 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A819C14D1C295F3000ED43E7 /* Album */,
+				A819C14C1C2957AF00ED43E7 /* Photo */,
 				A8C614951C27D13F00D0323B /* CollectionViewCell */,
 				60BCB4141C23416E00E45EAD /* Actionsheet */,
 				607336BD1C162DB80009DABC /* TableViewCell */,
@@ -356,6 +362,22 @@
 				60BCB41A1C23712200E45EAD /* Settings.bundle */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		A819C14C1C2957AF00ED43E7 /* Photo */ = {
+			isa = PBXGroup;
+			children = (
+				A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */,
+			);
+			name = Photo;
+			sourceTree = "<group>";
+		};
+		A819C14D1C295F3000ED43E7 /* Album */ = {
+			isa = PBXGroup;
+			children = (
+				A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */,
+			);
+			name = Album;
 			sourceTree = "<group>";
 		};
 		A828D5DA1C25294F00FD2ACA /* Authentication */ = {
@@ -530,12 +552,14 @@
 				A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */,
 				607B605C1C178A350040E09B /* ImageHeaderView.swift in Sources */,
 				60675FDA1BFA7A4F0079077E /* FullSizePhotoViewController.swift in Sources */,
+				A819C14B1C294F6300ED43E7 /* PhotoUICollectionView.swift in Sources */,
 				60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */,
 				60675FAE1BFA76DB0079077E /* Photo2DropViewController_bk.swift in Sources */,
 				60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */,
 				A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */,
 				607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */,
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
+				A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
 				60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */,
