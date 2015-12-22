@@ -12,6 +12,7 @@ class RearrangeableCollectionViewCell: RoundBorderCollectionViewCell {
     
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var albumImg: UIImageView!
+
     var baseBackgroundColor: UIColor?
     
     var dragging: Bool = false {

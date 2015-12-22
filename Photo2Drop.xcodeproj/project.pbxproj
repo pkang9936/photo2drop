@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60063EE21C29EAC10024C549 /* DragAndDropManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60063EE11C29EAC10024C549 /* DragAndDropManager.swift */; };
+		60063EE41C29FB650024C549 /* DragAndDropCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60063EE31C29FB650024C549 /* DragAndDropCollectionView.swift */; };
 		60086A0B1BFF880300258603 /* SimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60086A0A1BFF880300258603 /* SimpleViewController.swift */; };
 		60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60086A0C1C0E0A6A00258603 /* HomeViewController.swift */; };
 		60086A101C0E0C2F00258603 /* PhotoAlbumInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60086A0F1C0E0C2F00258603 /* PhotoAlbumInfo.swift */; };
@@ -80,6 +82,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		60063EE11C29EAC10024C549 /* DragAndDropManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropManager.swift; sourceTree = "<group>"; };
+		60063EE31C29FB650024C549 /* DragAndDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropCollectionView.swift; sourceTree = "<group>"; };
 		60086A0A1BFF880300258603 /* SimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
 		60086A0C1C0E0A6A00258603 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		60086A0F1C0E0C2F00258603 /* PhotoAlbumInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoAlbumInfo.swift; sourceTree = "<group>"; };
@@ -170,6 +174,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		60063EE01C29EA830024C549 /* DragAndDrop */ = {
+			isa = PBXGroup;
+			children = (
+				60063EE11C29EAC10024C549 /* DragAndDropManager.swift */,
+			);
+			name = DragAndDrop;
+			sourceTree = "<group>";
+		};
 		60086A0E1C0E0C1500258603 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -210,6 +222,7 @@
 		602AF5A51BFD32E300700980 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				60063EE01C29EA830024C549 /* DragAndDrop */,
 				A819C14D1C295F3000ED43E7 /* Album */,
 				A819C14C1C2957AF00ED43E7 /* Photo */,
 				A8C614951C27D13F00D0323B /* CollectionViewCell */,
@@ -376,6 +389,7 @@
 			isa = PBXGroup;
 			children = (
 				A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */,
+				60063EE31C29FB650024C549 /* DragAndDropCollectionView.swift */,
 			);
 			name = Album;
 			sourceTree = "<group>";
@@ -558,6 +572,7 @@
 				60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */,
 				A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */,
 				607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */,
+				60063EE41C29FB650024C549 /* DragAndDropCollectionView.swift in Sources */,
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
 				A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
@@ -573,6 +588,7 @@
 				607336C41C173C1B0009DABC /* UIColor.swift in Sources */,
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
 				606A6A701C1B5AD6008621E3 /* SWRevealViewController.m in Sources */,
+				60063EE21C29EAC10024C549 /* DragAndDropManager.swift in Sources */,
 				607336B31C10EEDB0009DABC /* PhotoInfo.swift in Sources */,
 				A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */,
 				60BCB40B1C22045800E45EAD /* Storyboard.swift in Sources */,

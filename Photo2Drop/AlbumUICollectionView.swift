@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlbumUICollectionView: UICollectionView {
+class AlbumUICollectionView: DragAndDropCollectionView {
     
     var albums: [PhotoAlbumInfo]? {
         didSet {
@@ -59,7 +59,7 @@ class AlbumUICollectionView: UICollectionView {
     }
 }
 
-extension AlbumUICollectionView: UICollectionViewDataSource {
+extension AlbumUICollectionView: DragAndDropCollectionViewDataSource {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -73,11 +73,47 @@ extension AlbumUICollectionView: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.AlbumCellIdentifier, forIndexPath: indexPath) as! RearrangeableCollectionViewCell
         let album = albums![indexPath.row] as PhotoAlbumInfo
+        album.indexPath = indexPath
         cell.albumImg.image = album.albumImage
         
         return cell
 
     }
+    
+    func collectionView(collectionView: UICollectionView, indexPathForDataItem dataItem: AnyObject) -> NSIndexPath? {
+        if let candidate : PhotoAlbumInfo = dataItem as? PhotoAlbumInfo {
+            
+            for item : PhotoAlbumInfo in albums! {
+                if candidate  == item {
+                    
+                    let position = albums!.indexOf(item)! // ! if we are inside the condition we are guaranteed a position
+                    let indexPath = NSIndexPath(forItem: position, inSection: 0)
+                    return indexPath
+                }
+            }
+        }
+        
+        return nil
+    }
+    func collectionView(collectionView: UICollectionView, dataItemForIndexPath indexPath: NSIndexPath) -> AnyObject {
+        return albums![indexPath.item]
+    }
+    
+    func collectionView(collectionView: UICollectionView, moveDataItemFromIndexPath from: NSIndexPath, toIndexPath to : NSIndexPath) -> Void {
+        let fromDataItem: PhotoAlbumInfo = albums![from.item]
+        albums?.removeAtIndex(from.item)
+        albums?.insert(fromDataItem, atIndex: to.item)
+    }
+    
+    func collectionView(collectionView: UICollectionView, insertDataItem dataItem : AnyObject, atIndexPath indexPath: NSIndexPath) -> Void {
+        if let di = dataItem as? PhotoAlbumInfo {
+            albums!.insert(di, atIndex: indexPath.item)
+        }
+    }
+    func collectionView(collectionView: UICollectionView, deleteDataItemAtIndexPath indexPath: NSIndexPath) -> Void {
+        albums!.removeAtIndex(indexPath.item)
+    }
+    
 }
 
 extension AlbumUICollectionView:  UIGestureRecognizerDelegate {

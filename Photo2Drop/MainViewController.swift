@@ -36,7 +36,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
     
     @IBOutlet weak var photoCollectionView: UICollectionView!
     
-
+    // MARK - Dag & Drop helpers
+    var dragAndDropManager : DragAndDropManager?
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -57,6 +58,8 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         
         albumHandler.delegate = self
         albumHandler.getAllAlbums()
+        
+        //self.dragAndDropManager = DragAndDropManager(canvas: self.view, views: [albumCollectionView])
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -81,8 +84,11 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         currentAlbumName.text = currentAlbum.title
         currentAlbumCount.text = "\(currentAlbum.photos.count)"
         headerLabel.text = currentAlbum.title
-        
-       
+//        
+//        (albumCollectionView as? AlbumUICollectionView)!.albums?.removeAtIndex(currentAlbum.indexPath!.row)
+//        self.albumCollectionView.deleteItemsAtIndexPaths([currentAlbum.indexPath!])
+       // self.albumCollectionView.reloadData()
+
     }
 
     func scrollViewDidScroll(scrollView: UIScrollView) {

@@ -9,7 +9,10 @@
 import Foundation
 import UIKit
 
-public class PhotoAlbumInfo {
+public class PhotoAlbumInfo: Equatable {
+    var indexPath: NSIndexPath?
+    var indexes: String = ""
+    
     var albumImage: UIImage!
     var name = ""
     var title = ""
@@ -49,4 +52,8 @@ public class PhotoAlbumInfo {
             PhotoAlbumInfo(title: "Burst", albumImage: UIImage(named: "_5"), numberOfPhotos: 8, photos: [])
         ]
     }
+}
+
+public func == (lhs: PhotoAlbumInfo, rhs: PhotoAlbumInfo) -> Bool {
+    return lhs.indexes == rhs.indexes
 }
