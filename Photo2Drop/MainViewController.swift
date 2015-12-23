@@ -19,6 +19,7 @@ protocol RearrangeableCollectionViewDelegate {
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
 
+    @IBOutlet weak var photoWrapperView: UIView!
     @IBOutlet var scrollView:UIScrollView!
     @IBOutlet var currentAlbumImage:UIImageView!
     @IBOutlet weak var currentAlbumName: UILabel!
@@ -60,6 +61,9 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         albumHandler.getAllAlbums()
         
         //self.dragAndDropManager = DragAndDropManager(canvas: self.view, views: [albumCollectionView])
+        
+        (self.albumCollectionView as? AlbumUICollectionView)?.photoScrollView = self.photoWrapperView
+        (self.albumCollectionView as? AlbumUICollectionView)?.albumDropDelegate = self
     }
 
     override func viewDidAppear(animated: Bool) {
@@ -175,6 +179,30 @@ extension MainViewController: GetAlbumHandlerDelegate {
         if let photoController = self.photoCollectionView as? PhotoUICollectionView {
             photoController.photos = photos
         }
+    }
+}
+
+extension MainViewController: AlbumUICollectionViewDropDelegate {
+    
+    func dropDataItem(bundle: Bundle) -> Void {
+        //bundle.representationImageView.center = self.currentAlbumImage.frame.origin
+        let representationView = bundle.representationImageView
+        let indexPath = bundle.currentIndexPath
+        
+        UIView.animateWithDuration(0.3, delay: 0.0, options: UIViewAnimationOptions.CurveLinear, animations: {
+            //bundle.representationImageView.center = self.currentAlbumImage.frame.origin
+            let profileFrame = self.view.convertRect(self.currentAlbumImage.frame, fromView:self.scrollView)
+            bundle.representationImageView.center = CGPointMake(profileFrame.origin.x + 35, profileFrame.origin.y + 34)
+            }, completion: { _ in
+                
+               self.currentAlbumImage.image = (bundle.sourceCell as? RearrangeableCollectionViewCell)?.albumImg.image
+                representationView.removeFromSuperview()
+               self.photoWrapperView!.backgroundColor = UIColor.clearColor()
+                self.photoWrapperView!.hidden = true
+                self.loadCurrentAlbumProfile(self.albums![indexPath.item])
+
+        })
+        
     }
 }
 

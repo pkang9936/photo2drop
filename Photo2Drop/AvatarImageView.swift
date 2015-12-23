@@ -7,4 +7,5 @@ class AvatarImageView: UIImageView {
         self.layer.borderColor = UIColor.whiteColor().CGColor
         self.layer.borderWidth = 3.0
     }
+    
 }

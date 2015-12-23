@@ -8,7 +8,22 @@
 
 import UIKit
 
-class AlbumUICollectionView: DragAndDropCollectionView {
+struct Bundle {
+    var offset: CGPoint = CGPointZero
+    var sourceCell : UICollectionViewCell
+    var representationImageView: UIView
+    var currentIndexPath: NSIndexPath
+}
+
+protocol AlbumUICollectionViewDropDelegate {
+    func dropDataItem(bundle: Bundle) -> Void
+}
+
+class AlbumUICollectionView: UICollectionView {
+    
+    var albumDropDelegate: AlbumUICollectionViewDropDelegate?
+    
+    var photoScrollView: UIView?
     
     var albums: [PhotoAlbumInfo]? {
         didSet {
@@ -28,12 +43,7 @@ class AlbumUICollectionView: DragAndDropCollectionView {
     var collectionViewFrameInCanvas: CGRect = CGRectZero
     var hitTestRectangles = [String:CGRect]()
 
-    struct Bundle {
-        var offset: CGPoint = CGPointZero
-        var sourceCell : UICollectionViewCell
-        var representationImageView: UIView
-        var currentIndexPath: NSIndexPath
-    }
+
     
     var bundle: Bundle?
     
@@ -56,6 +66,30 @@ class AlbumUICollectionView: DragAndDropCollectionView {
                 self.canvas = collectionView.superview
             }
         }
+    }
+    
+    // MARK: Helper Methods
+    func convertRectToCanvas(rect : CGRect, fromView view : UIView) -> CGRect {
+        
+        var r : CGRect = rect
+        
+        var v = view
+        
+        while v != self.canvas {
+            
+            if let sv = v.superview {
+                
+                r.origin.x += sv.frame.origin.x
+                r.origin.y += sv.frame.origin.y
+                
+                v = sv
+                
+                continue
+            }
+            break
+        }
+        
+        return r
     }
 }
 
@@ -201,13 +235,12 @@ extension AlbumUICollectionView:  UIGestureRecognizerDelegate {
             
             let dragPointOnCanvas = gesture.locationInView(self.canvas)
             
-            if gesture.state == UIGestureRecognizerState.Began {
+            switch gesture.state {
+            case .Began:
                 bundle.sourceCell.hidden = true
                 self.canvas?.addSubview(bundle.representationImageView)
-            }
-            
-            if gesture.state == UIGestureRecognizerState.Changed {
-                
+
+            case .Changed:
                 //Update the representation image
                 var imageViewFrame = bundle.representationImageView.frame
                 var point = CGPointZero
@@ -235,24 +268,52 @@ extension AlbumUICollectionView:  UIGestureRecognizerDelegate {
                     }
                 }
                 
-            }
-            
-            if gesture.state == UIGestureRecognizerState.Ended {
+                //photo scroll view
+                let photoViewFrameOnCanvas = self.convertRectToCanvas(self.photoScrollView!.frame, fromView: self.photoScrollView!)
                 
+                let intersectionNew = CGRectIntersection(bundle.representationImageView.frame, photoViewFrameOnCanvas).size
+                if (intersectionNew.width * intersectionNew.height) > 0.0 {
+                    self.photoScrollView!.hidden = false
+                    self.photoScrollView!.backgroundColor = UIColor(red: 111.0/255.0, green: 141.0/255.0, blue: 189.0/255.0, alpha: 1.0)
+                    
+                }else {
+                    self.photoScrollView!.backgroundColor = UIColor.clearColor()
+                    self.photoScrollView!.hidden = true
+                }
+                
+            case .Ended:
                 bundle.sourceCell.hidden = false
                 
                 if let dragCell = bundle.sourceCell as? RearrangeableCollectionViewCell {
                     dragCell.dragging = false
                 }
                 
-                bundle.representationImageView.removeFromSuperview()
+                //photo scroll view
+                let photoViewFrameOnCanvas = self.convertRectToCanvas(self.photoScrollView!.frame, fromView: self.photoScrollView!)
+                let intersectionNew = CGRectIntersection(bundle.representationImageView.frame, photoViewFrameOnCanvas).size
+                if (intersectionNew.width * intersectionNew.height) > 0.0 {
+                    self.albumDropDelegate?.dropDataItem(bundle)
+                } else {
+                    bundle.representationImageView.removeFromSuperview()
+                }
+                
+                
+                
+               
                 
                 if let _ = self.delegate as? RearrangeableCollectionViewDelegate {
                     self.reloadData()
                 }
-                
+//                bundle.representationImageView.removeFromSuperview()
                 self.bundle = nil
+//                self.photoScrollView!.backgroundColor = UIColor.clearColor()
+//                self.photoScrollView!.hidden = true
+                
+               
+            default:
+                break
             }
+            
         }
     }
     
