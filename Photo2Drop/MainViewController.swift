@@ -12,9 +12,7 @@ let offset_HeaderStop:CGFloat = 40.0 // At this offset the Header stops its tran
 let offset_B_LabelHeader:CGFloat = 95.0 // At this offset the Black label reaches the Header
 let distance_W_LabelHeader:CGFloat = 35.0 // The distance between the bottom of the Header and the top of the White Label
 
-protocol RearrangeableCollectionViewDelegate {
-    func moveDataItem(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
-}
+
 
 
 class MainViewController: UIViewController, UIScrollViewDelegate {
@@ -61,8 +59,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
         albumHandler.getAllAlbums()
         
         //self.dragAndDropManager = DragAndDropManager(canvas: self.view, views: [albumCollectionView])
-        
-        (self.albumCollectionView as? AlbumUICollectionView)?.photoScrollView = self.photoWrapperView
+
         (self.albumCollectionView as? AlbumUICollectionView)?.albumDropDelegate = self
     }
 
@@ -92,6 +89,7 @@ class MainViewController: UIViewController, UIScrollViewDelegate {
 //        (albumCollectionView as? AlbumUICollectionView)!.albums?.removeAtIndex(currentAlbum.indexPath!.row)
 //        self.albumCollectionView.deleteItemsAtIndexPaths([currentAlbum.indexPath!])
        // self.albumCollectionView.reloadData()
+        self.photoCollectionView.reloadData()
 
     }
 
@@ -184,7 +182,63 @@ extension MainViewController: GetAlbumHandlerDelegate {
 
 extension MainViewController: AlbumUICollectionViewDropDelegate {
     
-    func dropDataItem(bundle: Bundle) -> Void {
+    func dropDataItem(item: PhotoAlbumInfo, representationView: UIView, completion: (result: Bool) -> Void) -> Void {
+        UIView.animateWithDuration(0.2, animations: { () -> Void in
+            
+            let rect1 = self.scrollView.convertRect(representationView.frame, fromView: representationView)
+
+            
+            let photoViewFrameOnCanvas = self.scrollView.convertRect(self.photoWrapperView.frame, fromView: self.photoWrapperView)
+            
+            let intersectionNew = CGRectIntersection(rect1, photoViewFrameOnCanvas).size
+            if (intersectionNew.width * intersectionNew.height) > 0.0 {
+                var profileAlbumInView = self.scrollView.convertRect(self.currentAlbumImage.frame, fromView: self.scrollView)
+                
+                profileAlbumInView.origin.x += profileAlbumInView.width/2
+                profileAlbumInView.origin.y += profileAlbumInView.height/2 
+                
+                representationView.center = CGPointMake(profileAlbumInView.origin.x, profileAlbumInView.origin.y)
+                
+                self.loadCurrentAlbumProfile(item)
+                self.photoWrapperView!.backgroundColor = UIColor.clearColor()
+                self.photoWrapperView!.hidden = true
+
+            }
+            
+            }) { (result: Bool) -> Void in
+                completion(result: result)
+        }
+        
+    }
+    
+    func dragOver(representationView: UIView) -> Void {
+        let rect1 = self.scrollView.convertRect(representationView.frame, fromView: representationView)
+        
+        let photoViewFrameOnCanvas = self.scrollView.convertRect(self.photoWrapperView.frame, fromView: self.photoWrapperView)
+        
+        photoViewFrameOnCanvas.printRect("photoViewFrameOnCanvas")
+        rect1.printRect("representationView")
+        
+        self.scrollView.frame.printRect("self.scrollView.frame")
+        
+        
+        
+        let intersectionNew = CGRectIntersection(rect1, photoViewFrameOnCanvas).size
+        if (intersectionNew.width * intersectionNew.height) > 0.0 {
+            self.photoWrapperView.hidden = false
+            self.photoWrapperView.backgroundColor = UIColor(red: 111.0/255.0, green: 141.0/255.0, blue: 189.0/255.0, alpha: 1.0)
+            
+        }else {
+            self.photoWrapperView.backgroundColor = UIColor.clearColor()
+            self.photoWrapperView.hidden = true
+        }
+
+    }
+
+    /*
+    func dropDataItem(item: PhotoAlbumInfo) -> Void {
+        self.loadCurrentAlbumProfile(item)
+       
         //bundle.representationImageView.center = self.currentAlbumImage.frame.origin
         let representationView = bundle.representationImageView
         let indexPath = bundle.currentIndexPath
@@ -202,7 +256,8 @@ extension MainViewController: AlbumUICollectionViewDropDelegate {
                 self.loadCurrentAlbumProfile(self.albums![indexPath.item])
 
         })
+
         
-    }
+    }*/
 }
 

@@ -15,22 +15,22 @@ struct Bundle {
     var currentIndexPath: NSIndexPath
 }
 
+protocol RearrangeableCollectionViewDelegate {
+    func moveDataItem(fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath)
+}
+
 protocol AlbumUICollectionViewDropDelegate {
-    func dropDataItem(bundle: Bundle) -> Void
+    func dropDataItem(item: PhotoAlbumInfo, representationView: UIView, completion: (result: Bool) -> Void) -> Void
+    
+    func dragOver(representationView: UIView) -> Void
 }
 
 class AlbumUICollectionView: UICollectionView {
     
     var albumDropDelegate: AlbumUICollectionViewDropDelegate?
     
-    var photoScrollView: UIView?
     
-    var albums: [PhotoAlbumInfo]? {
-        didSet {
-            self.reloadData()
-            self.dataSource = self
-        }
-    }
+    var albums: [PhotoAlbumInfo]?
     
     var animating: Bool = false
     var canvas: UIView? {
@@ -54,6 +54,8 @@ class AlbumUICollectionView: UICollectionView {
     
     func setup() {
         if let collectionView = self as UICollectionView! {
+            collectionView.dataSource = self
+            collectionView.delegate = self
             
             let longPressGestureRecogniser = UILongPressGestureRecognizer(target: self, action: "handleGesture:")
             
@@ -93,7 +95,7 @@ class AlbumUICollectionView: UICollectionView {
     }
 }
 
-extension AlbumUICollectionView: DragAndDropCollectionViewDataSource {
+extension AlbumUICollectionView: DragAndDropCollectionViewDataSource, UICollectionViewDelegate {
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -268,19 +270,8 @@ extension AlbumUICollectionView:  UIGestureRecognizerDelegate {
                     }
                 }
                 
-                //photo scroll view
-                let photoViewFrameOnCanvas = self.convertRectToCanvas(self.photoScrollView!.frame, fromView: self.photoScrollView!)
-                
-                let intersectionNew = CGRectIntersection(bundle.representationImageView.frame, photoViewFrameOnCanvas).size
-                if (intersectionNew.width * intersectionNew.height) > 0.0 {
-                    self.photoScrollView!.hidden = false
-                    self.photoScrollView!.backgroundColor = UIColor(red: 111.0/255.0, green: 141.0/255.0, blue: 189.0/255.0, alpha: 1.0)
-                    
-                }else {
-                    self.photoScrollView!.backgroundColor = UIColor.clearColor()
-                    self.photoScrollView!.hidden = true
-                }
-                
+                self.albumDropDelegate?.dragOver(bundle.representationImageView)
+                               
             case .Ended:
                 bundle.sourceCell.hidden = false
                 
@@ -288,18 +279,16 @@ extension AlbumUICollectionView:  UIGestureRecognizerDelegate {
                     dragCell.dragging = false
                 }
                 
-                //photo scroll view
-                let photoViewFrameOnCanvas = self.convertRectToCanvas(self.photoScrollView!.frame, fromView: self.photoScrollView!)
-                let intersectionNew = CGRectIntersection(bundle.representationImageView.frame, photoViewFrameOnCanvas).size
-                if (intersectionNew.width * intersectionNew.height) > 0.0 {
-                    self.albumDropDelegate?.dropDataItem(bundle)
-                } else {
-                    bundle.representationImageView.removeFromSuperview()
-                }
+                self.albumDropDelegate?.dropDataItem(
+                    albums![bundle.currentIndexPath.row],
+                    representationView: bundle.representationImageView,
+                    completion: { (_) -> Void in
+                        bundle.representationImageView.removeFromSuperview()
+                        self.bundle = nil
+                        
+                })
                 
-                
-                
-               
+                               
                 
                 if let _ = self.delegate as? RearrangeableCollectionViewDelegate {
                     self.reloadData()
@@ -362,5 +351,18 @@ extension AlbumUICollectionView:  UIGestureRecognizerDelegate {
         }
     }
     
+}
+
+extension AlbumUICollectionView: RearrangeableCollectionViewDelegate {
+    
+    func moveDataItem(fromIndexPath : NSIndexPath, toIndexPath: NSIndexPath) -> Void {
+        
+        let item = self.albums![fromIndexPath.item]
+        
+        self.albums!.removeAtIndex(fromIndexPath.item)
+        
+        self.albums!.insert(item, atIndex: toIndexPath.item)
+        
+    }
 }
 

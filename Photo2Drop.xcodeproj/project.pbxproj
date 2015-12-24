@@ -61,6 +61,7 @@
 		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; };
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
+		A88F75A61C2BC5210065D194 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F75A51C2BC5210065D194 /* CGRect.swift */; settings = {ASSET_TAGS = (); }; };
 		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		A828D5E01C253DAD00FD2ACA /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
 		A828D5E31C253EDA00FD2ACA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderCollectionViewCell.swift; sourceTree = "<group>"; };
+		A88F75A51C2BC5210065D194 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangeableCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -327,6 +329,7 @@
 				607B605E1C178CD80040E09B /* UITableView.swift */,
 				60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */,
 				60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */,
+				A88F75A51C2BC5210065D194 /* CGRect.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -584,6 +587,7 @@
 				60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */,
 				606A6A721C1B5CE2008621E3 /* MapViewController.swift in Sources */,
 				60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */,
+				A88F75A61C2BC5210065D194 /* CGRect.swift in Sources */,
 				60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */,
 				607336C41C173C1B0009DABC /* UIColor.swift in Sources */,
 				60086A0D1C0E0A6A00258603 /* HomeViewController.swift in Sources */,
