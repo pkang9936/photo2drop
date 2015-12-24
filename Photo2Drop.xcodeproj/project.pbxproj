@@ -38,6 +38,8 @@
 		607B605C1C178A350040E09B /* ImageHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B605A1C178A350040E09B /* ImageHeaderView.swift */; };
 		607B605D1C178A350040E09B /* ImageHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607B605B1C178A350040E09B /* ImageHeaderView.xib */; };
 		607B605F1C178CD80040E09B /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B605E1C178CD80040E09B /* UITableView.swift */; };
+		608EC17D1C2C5B7D00AB2055 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */; };
+		608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17E1C2C654700AB2055 /* WeatherViewController.swift */; };
 		609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */; };
 		60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */; };
 		60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */; };
@@ -61,7 +63,7 @@
 		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; };
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
-		A88F75A61C2BC5210065D194 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F75A51C2BC5210065D194 /* CGRect.swift */; settings = {ASSET_TAGS = (); }; };
+		A88F75A61C2BC5210065D194 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F75A51C2BC5210065D194 /* CGRect.swift */; };
 		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +124,8 @@
 		607B605A1C178A350040E09B /* ImageHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageHeaderView.swift; sourceTree = "<group>"; };
 		607B605B1C178A350040E09B /* ImageHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ImageHeaderView.xib; sourceTree = "<group>"; };
 		607B605E1C178CD80040E09B /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
+		608EC17E1C2C654700AB2055 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPhotoHandler.swift; sourceTree = "<group>"; };
 		60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlbumHandler.swift; sourceTree = "<group>"; };
@@ -208,6 +212,8 @@
 				60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */,
 				606A6A711C1B5CE2008621E3 /* MapViewController.swift */,
 				60BCB40A1C22045800E45EAD /* Storyboard.swift */,
+				608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */,
+				608EC17E1C2C654700AB2055 /* WeatherViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -601,7 +607,9 @@
 				60086A101C0E0C2F00258603 /* PhotoAlbumInfo.swift in Sources */,
 				607336CA1C1744E80009DABC /* UIImageView.swift in Sources */,
 				60675FAC1BFA76DB0079077E /* AppDelegate.swift in Sources */,
+				608EC17D1C2C5B7D00AB2055 /* ToolsViewController.swift in Sources */,
 				605AA24B1C19EFF400D631DC /* SettingsViewController.swift in Sources */,
+				608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */,
 				607336CC1C17481D0009DABC /* UIView.swift in Sources */,
 				607336C21C1739950009DABC /* String.swift in Sources */,
 				607336C71C173DC90009DABC /* DataTableViewCell.swift in Sources */,
