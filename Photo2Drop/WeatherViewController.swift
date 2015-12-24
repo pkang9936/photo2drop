@@ -22,10 +22,34 @@ class WeatherViewController: UIViewController {
         style()
         render(UIImage(named: "DefaultImage"))
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
+}
+// MARK: Setup
+private extension WeatherViewController {
+    func setup() {
+        backgroundView.contentMode = .ScaleAspectFill
+        backgroundView.clipsToBounds = true
+        view.addSubview(backgroundView)
+    }
+}
+
+// MARK: Layout
+extension WeatherViewController {
+    func layoutView() {
+        
+    }
+}
+
+private extension WeatherViewController {
+    func render(image: UIImage?) {
+        if let image = image {
+            backgroundView.image = image
+        }
+    }
+}
+
+private extension WeatherViewController {
+    func style() {
+        
+    }
 }
