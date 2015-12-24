@@ -12,6 +12,7 @@ enum LeftMenu: Int {
     case Spacer = 0
     case PhotoAlbum
     case Tools
+    case Weather
     case Setting
     
 }
@@ -23,7 +24,7 @@ protocol LeftMenuProtocol: class {
 class LeftMenuViewController: UIViewController, LeftMenuProtocol {
     
     @IBOutlet weak var tableView: UITableView!
-    var menus = ["spacer","Photo Album", "Tools","Settings"]
+    var menus = ["spacer","Photo Album", "Tools","Weather","Settings"]
     var imageHeaderView: ImageHeaderView!
     
     // MARK: - 
@@ -106,7 +107,7 @@ extension LeftMenuViewController : UITableViewDelegate {
             switch menu {
             case .Spacer:
                 return 10
-            case .PhotoAlbum, .Setting, .Tools:
+            case .PhotoAlbum, .Setting,.Weather, .Tools:
                 return BaseTableViewCell.height()
             }
         }
@@ -145,6 +146,10 @@ extension LeftMenuViewController: UITableViewDataSource {
                 cell.textLabel?.text = menus[indexPath.row]
             case .Setting:
                 cell.imageView?.image = UIImage(named: "menu_settings")
+                cell.textLabel?.text = menus[indexPath.row]
+            case .Weather:
+                    
+                cell.imageView?.image = UIImage(named: "menu_weather")
                 cell.textLabel?.text = menus[indexPath.row]
             case .Tools:
                 cell.imageView?.image = UIImage(named: "menu_tools")

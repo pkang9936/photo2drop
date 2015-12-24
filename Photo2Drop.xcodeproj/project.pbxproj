@@ -55,6 +55,7 @@
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
 		60F907B81C1A2FF2006C41CE /* SWFrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F907B71C1A2FF2006C41CE /* SWFrontViewController.swift */; };
+		89C5F4B168F8C44A3FC9CF44 /* Pods_Photo2Drop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB77691FEE82265BCEBA4326 /* Pods_Photo2Drop.framework */; };
 		A819C14B1C294F6300ED43E7 /* PhotoUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14A1C294F6300ED43E7 /* PhotoUICollectionView.swift */; };
 		A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A819C14E1C295F6C00ED43E7 /* AlbumUICollectionView.swift */; };
 		A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5D81C25294900FD2ACA /* TouchIDViewController.swift */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		11587B677FB96193257DCCB6 /* Pods-Photo2Drop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo2Drop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Photo2Drop/Pods-Photo2Drop.release.xcconfig"; sourceTree = "<group>"; };
 		60063EE11C29EAC10024C549 /* DragAndDropManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropManager.swift; sourceTree = "<group>"; };
 		60063EE31C29FB650024C549 /* DragAndDropCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DragAndDropCollectionView.swift; sourceTree = "<group>"; };
 		60086A0A1BFF880300258603 /* SimpleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleViewController.swift; sourceTree = "<group>"; };
@@ -152,6 +154,8 @@
 		A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderCollectionViewCell.swift; sourceTree = "<group>"; };
 		A88F75A51C2BC5210065D194 /* CGRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGRect.swift; sourceTree = "<group>"; };
 		A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RearrangeableCollectionViewCell.swift; sourceTree = "<group>"; };
+		C07768510C467C2EDF75DAC7 /* Pods-Photo2Drop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photo2Drop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Photo2Drop/Pods-Photo2Drop.debug.xcconfig"; sourceTree = "<group>"; };
+		FB77691FEE82265BCEBA4326 /* Pods_Photo2Drop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Photo2Drop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -160,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				60675FDC1BFB78F60079077E /* Photos.framework in Frameworks */,
+				89C5F4B168F8C44A3FC9CF44 /* Pods_Photo2Drop.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,6 +185,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		083F93FB6F5F1DB8D3BC91EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB77691FEE82265BCEBA4326 /* Pods_Photo2Drop.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		60063EE01C29EA830024C549 /* DragAndDrop */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +265,8 @@
 				60675FBF1BFA76DB0079077E /* Photo2DropTests */,
 				60675FCA1BFA76DB0079077E /* Photo2DropUITests */,
 				60675FA91BFA76DB0079077E /* Products */,
+				A632592C33F6BC13D2C03B98 /* Pods */,
+				083F93FB6F5F1DB8D3BC91EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -282,6 +297,7 @@
 				60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */,
 				60675FB71BFA76DB0079077E /* Info.plist */,
 				609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */,
+				607336B51C1249330009DABC /* Photo2Drop-Bridging-Header.h */,
 			);
 			path = Photo2Drop;
 			sourceTree = "<group>";
@@ -309,7 +325,6 @@
 			children = (
 				606A6A6E1C1B5AD6008621E3 /* SWRevealViewController.h */,
 				606A6A6F1C1B5AD6008621E3 /* SWRevealViewController.m */,
-				607336B51C1249330009DABC /* Photo2Drop-Bridging-Header.h */,
 			);
 			name = SWRevealViewController;
 			sourceTree = "<group>";
@@ -385,6 +400,15 @@
 			name = Settings;
 			sourceTree = "<group>";
 		};
+		A632592C33F6BC13D2C03B98 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C07768510C467C2EDF75DAC7 /* Pods-Photo2Drop.debug.xcconfig */,
+				11587B677FB96193257DCCB6 /* Pods-Photo2Drop.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A819C14C1C2957AF00ED43E7 /* Photo */ = {
 			isa = PBXGroup;
 			children = (
@@ -444,9 +468,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60675FD01BFA76DB0079077E /* Build configuration list for PBXNativeTarget "Photo2Drop" */;
 			buildPhases = (
+				BA27A896CF1A468F52F09080 /* Check Pods Manifest.lock */,
 				60675FA41BFA76DB0079077E /* Sources */,
 				60675FA51BFA76DB0079077E /* Frameworks */,
 				60675FA61BFA76DB0079077E /* Resources */,
+				3DCF1A31799951C938C70C6F /* Embed Pods Frameworks */,
+				31C5C328B0FEE0E89457B58E /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -566,6 +593,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		31C5C328B0FEE0E89457B58E /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo2Drop/Pods-Photo2Drop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DCF1A31799951C938C70C6F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Photo2Drop/Pods-Photo2Drop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA27A896CF1A468F52F09080 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60675FA41BFA76DB0079077E /* Sources */ = {
@@ -757,6 +832,7 @@
 		};
 		60675FD11BFA76DB0079077E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C07768510C467C2EDF75DAC7 /* Pods-Photo2Drop.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -773,6 +849,7 @@
 		};
 		60675FD21BFA76DB0079077E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 11587B677FB96193257DCCB6 /* Pods-Photo2Drop.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
