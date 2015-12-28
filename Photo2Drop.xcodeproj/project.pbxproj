@@ -41,7 +41,6 @@
 		608EC17D1C2C5B7D00AB2055 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */; };
 		608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17E1C2C654700AB2055 /* WeatherViewController.swift */; };
 		609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */; };
-		60BAF71F1C319C9800C00BCB /* PlummerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BAF71E1C319C9800C00BCB /* PlummerFramework.framework */; };
 		60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */; };
 		60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */; };
 		60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */; };
@@ -179,7 +178,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				60BAF71F1C319C9800C00BCB /* PlummerFramework.framework in Frameworks */,
 				60675FDC1BFB78F60079077E /* Photos.framework in Frameworks */,
 				89C5F4B168F8C44A3FC9CF44 /* Pods_Photo2Drop.framework in Frameworks */,
 			);

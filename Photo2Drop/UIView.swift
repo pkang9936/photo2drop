@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-import PlummerFramework
+//import PlummerFramework
 
 extension UIView {
 
@@ -23,7 +23,7 @@ extension UIView {
     
     func printCoordinate() {
         let msg = "x:\(self.frame.origin.x),y:\(self.frame.origin.y)"
-        Log.info(message: msg, data: nil)
+      //  Log.info(message: msg, data: nil)
     }
     
     // MARK: - Frame
