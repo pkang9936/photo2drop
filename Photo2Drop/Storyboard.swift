@@ -17,4 +17,6 @@ public struct Storyboard {
     
     static let DummyCellIdentifier = "Dummy Cell"
     
+    static let hourlyWeatherForecastCell = "Hourly Weather cell"
+    
 }

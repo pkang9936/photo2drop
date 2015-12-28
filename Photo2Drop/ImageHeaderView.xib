@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="131" id="KGk-i7-Jjw" customClass="ImageHeaderView" customModule="Photo2Drop" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="258" height="142"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="129" id="KGk-i7-Jjw" customClass="ImageHeaderView" customModule="Photo2Drop" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="257" height="140"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
+                <rect key="frame" x="0.0" y="0.0" width="257" height="139.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-pT-zrG">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="Wd8-pT-zrG">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
                     </imageView>
-                    <visualEffectView alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GGf-Hp-O2V">
+                    <visualEffectView alpha="0.80000000000000004" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GGf-Hp-O2V">
                         <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
                         <view key="contentView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="YGX-YJ-ON8">
                             <rect key="frame" x="0.0" y="0.0" width="258" height="141"/>
@@ -55,7 +55,7 @@
                 <outlet property="backgroundImage" destination="Wd8-pT-zrG" id="WDz-wY-czN"/>
                 <outlet property="profileImage" destination="rLt-1f-1DQ" id="pI6-QV-ivv"/>
             </connections>
-            <point key="canvasLocation" x="492" y="328"/>
+            <point key="canvasLocation" x="412.5" y="217"/>
         </tableViewCell>
     </objects>
     <resources>

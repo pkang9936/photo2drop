@@ -15,6 +15,10 @@ target 'Photo2Drop' do
     pod 'FXBlurView', '~> 1.6.4'
     pod 'LatoFont', :git => "https://github.com/gscalzo/LatoFont.git"
 end
+#
+#target :PrettyWeather do
+#    xcodeproj '../PrettyWeather/PrettyWeather.xcodeproj'
+#end
 
 
 

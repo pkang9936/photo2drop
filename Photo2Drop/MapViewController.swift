@@ -17,14 +17,14 @@ class MapViewController: SWFrontViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        var location = CLLocationCoordinate2DMake(44.089642, 92.52457)
+        let location = CLLocationCoordinate2DMake(44.089642, 92.52457)
         
-        var span = MKCoordinateSpanMake(0.0002, 0.0002)
-        var region = MKCoordinateRegion(center: location, span: span)
+        let span = MKCoordinateSpanMake(0.0002, 0.0002)
+        let region = MKCoordinateRegion(center: location, span: span)
         
         Map.setRegion(region, animated: true)
         
-        var annotation = MKPointAnnotation()
+        let annotation = MKPointAnnotation()
         annotation.coordinate = location
         annotation.title = "Veata home"
         annotation.subtitle = "Rainalee fmaily"
