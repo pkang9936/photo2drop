@@ -41,6 +41,7 @@
 		608EC17D1C2C5B7D00AB2055 /* ToolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */; };
 		608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17E1C2C654700AB2055 /* WeatherViewController.swift */; };
 		609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */; };
+		60BAF71F1C319C9800C00BCB /* PlummerFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60BAF71E1C319C9800C00BCB /* PlummerFramework.framework */; };
 		60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */; };
 		60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */; };
 		60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */; };
@@ -65,13 +66,13 @@
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
 		A88F75A61C2BC5210065D194 /* CGRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = A88F75A51C2BC5210065D194 /* CGRect.swift */; };
-		A8A570721C2D121F00E02BE0 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A570711C2D121F00E02BE0 /* CurrentWeatherView.swift */; settings = {ASSET_TAGS = (); }; };
-		A8A570761C2D231300E02BE0 /* WeatherDaysForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A570751C2D231300E02BE0 /* WeatherDaysForecastView.swift */; settings = {ASSET_TAGS = (); }; };
-		A8AECABA1C2FD04B00D7A332 /* WeatherHourlyForecastCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECAB91C2FD04B00D7A332 /* WeatherHourlyForecastCollectionView.swift */; settings = {ASSET_TAGS = (); }; };
-		A8AECABC1C2FD1A000D7A332 /* WeatherHourlyForecastCollectionViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECABB1C2FD1A000D7A332 /* WeatherHourlyForecastCollectionViewCollectionViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		A8AECABF1C2FD80200D7A332 /* WeatherDayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECABD1C2FD80200D7A332 /* WeatherDayForecastView.swift */; settings = {ASSET_TAGS = (); }; };
-		A8AECAC01C2FD80200D7A332 /* WeatherDayForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AECABE1C2FD80200D7A332 /* WeatherDayForecastView.xib */; settings = {ASSET_TAGS = (); }; };
-		A8AF46761C2DE6EF00129642 /* CurrentWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AF46751C2DE6EF00129642 /* CurrentWeatherView.xib */; settings = {ASSET_TAGS = (); }; };
+		A8A570721C2D121F00E02BE0 /* CurrentWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A570711C2D121F00E02BE0 /* CurrentWeatherView.swift */; };
+		A8A570761C2D231300E02BE0 /* WeatherDaysForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A570751C2D231300E02BE0 /* WeatherDaysForecastView.swift */; };
+		A8AECABA1C2FD04B00D7A332 /* WeatherHourlyForecastCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECAB91C2FD04B00D7A332 /* WeatherHourlyForecastCollectionView.swift */; };
+		A8AECABC1C2FD1A000D7A332 /* WeatherHourlyForecastCollectionViewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECABB1C2FD1A000D7A332 /* WeatherHourlyForecastCollectionViewCollectionViewCell.swift */; };
+		A8AECABF1C2FD80200D7A332 /* WeatherDayForecastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AECABD1C2FD80200D7A332 /* WeatherDayForecastView.swift */; };
+		A8AECAC01C2FD80200D7A332 /* WeatherDayForecastView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AECABE1C2FD80200D7A332 /* WeatherDayForecastView.xib */; };
+		A8AF46761C2DE6EF00129642 /* CurrentWeatherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A8AF46751C2DE6EF00129642 /* CurrentWeatherView.xib */; };
 		A8C614971C27D17000D0323B /* RearrangeableCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C614961C27D17000D0323B /* RearrangeableCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -136,6 +137,7 @@
 		608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolsViewController.swift; sourceTree = "<group>"; };
 		608EC17E1C2C654700AB2055 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		60BAF71E1C319C9800C00BCB /* PlummerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PlummerFramework.framework; path = "../../../../Library/Developer/Xcode/DerivedData/photo2drop-addamynzcvqdemddqpjvjtvesfxk/Build/Products/Debug-iphoneos/PlummerFramework.framework"; sourceTree = "<group>"; };
 		60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPhotoHandler.swift; sourceTree = "<group>"; };
 		60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlbumHandler.swift; sourceTree = "<group>"; };
 		60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				60BAF71F1C319C9800C00BCB /* PlummerFramework.framework in Frameworks */,
 				60675FDC1BFB78F60079077E /* Photos.framework in Frameworks */,
 				89C5F4B168F8C44A3FC9CF44 /* Pods_Photo2Drop.framework in Frameworks */,
 			);
@@ -202,6 +205,7 @@
 		083F93FB6F5F1DB8D3BC91EA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				60BAF71E1C319C9800C00BCB /* PlummerFramework.framework */,
 				FB77691FEE82265BCEBA4326 /* Pods_Photo2Drop.framework */,
 			);
 			name = Frameworks;

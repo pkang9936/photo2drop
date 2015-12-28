@@ -13,6 +13,8 @@ class WeatherDaysForecastView: UIView {
     
     private var didSetupConstraints = false
     private var forecastCells = Array<WeatherDayForecastView>()
+    
+    var viewDics = [String : AnyObject]()
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -27,10 +29,13 @@ class WeatherDaysForecastView: UIView {
     }
     
     func setup () {
-        for _ in 0..<7 {
+        for index in 0..<7 {
             let cell = WeatherDayForecastView.loadNib()
             self.forecastCells.append(cell)
             self.addSubview(cell)
+            
+            viewDics["cell\(index)"] = cell
+            
             
         }
     }
@@ -39,41 +44,44 @@ class WeatherDaysForecastView: UIView {
             super.updateConstraints()
             return
         }
-        layoutView()
+       layoutView()
         super.updateConstraints()
         didSetupConstraints = true
     }
     
     
     func layoutView() {
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.backgroundColor = UIColor.redColor()
 
         layoutToTop(forecastCells.first!)
-
-//        layout(forecastCells.first!) { view in
-//            view.top == view.superview!.top
-//        }
-//        
-//        for idx in 1..<forecastCells.count {
-//            let previousCell = forecastCells[idx-1]
-//            let cell = forecastCells[idx]
-//            layout(cell, previousCell) { view, view2 in
-//                view.top == view2.bottom
-//            }
-//        }
+        var index = 0
+        for cell in forecastCells {
+            cell.translatesAutoresizingMaskIntoConstraints = false
+           // cell.setHeight(50.0)
+            
+            let view1_constraint_V = NSLayoutConstraint.constraintsWithVisualFormat(
+                "V:[cell\(index)(50)]",
+                options: NSLayoutFormatOptions(rawValue:0),
+                metrics: nil, views: viewDics)
+            cell.addConstraints(view1_constraint_V)
+            index += 1
+        }
+        
+        for idx in 1..<forecastCells.count {
+            let previousCell = forecastCells[idx-1]
+            let cell = forecastCells[idx]
+            layoutViewsVertically(cell, view2: previousCell)
+        }
         for cell in forecastCells {
             layoutToLeft(cell)
             layoutToRight(cell)
         }
-//        layout(forecastCells.last!) { view in
-//            view.bottom == view.superview!.bottom
-//        }
+
         layoutToBottom(forecastCells.last!)
     }
     
     func layoutToTop(view: UIView) {
-        
-        let newConstraint = NSLayoutConstraint(
+                let newConstraint = NSLayoutConstraint(
             item: view,
             attribute: .Top,
             relatedBy: .Equal,
@@ -84,9 +92,12 @@ class WeatherDaysForecastView: UIView {
         
         view.superview!.addConstraint(newConstraint)
         view.superview!.layoutIfNeeded()
+        //print("\ncell to top:bound:[x=\(view.frame.origin.x),y=\(view.frame.origin.y)")
+        
     }
     
     func layoutToBottom(view: UIView) {
+        
         let newConstraint = NSLayoutConstraint(
             item: view,
             attribute: .Bottom,
@@ -94,7 +105,7 @@ class WeatherDaysForecastView: UIView {
             toItem: view.superview,
             attribute: .Bottom,
             multiplier: 1.0,
-            constant: 0.0)
+            constant: 20.0)
         
         view.superview!.addConstraint(newConstraint)
         view.superview!.layoutIfNeeded()
@@ -115,6 +126,7 @@ class WeatherDaysForecastView: UIView {
         view.superview!.layoutIfNeeded()
     }
     
+    
     func layoutToRight(view: UIView) {
         let newConstraint = NSLayoutConstraint(
             item: view,
@@ -127,6 +139,20 @@ class WeatherDaysForecastView: UIView {
         
         view.superview!.addConstraint(newConstraint)
         view.superview!.layoutIfNeeded()
+    }
+    
+    func layoutViewsVertically(view1: UIView, view2: UIView) {
+        let newConstraint = NSLayoutConstraint(
+            item: view1,
+            attribute: .Top,
+            relatedBy: .Equal,
+            toItem: view2,
+            attribute: .Top,
+            multiplier: 1.0,
+            constant: 20.0)
+        
+        view1.superview!.addConstraint(newConstraint)
+        view1.superview!.layoutIfNeeded()
     }
     
     func render() {

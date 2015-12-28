@@ -55,7 +55,9 @@ class WeatherViewController: SWFrontViewController {
         
         
     }
-    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
+    }
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
