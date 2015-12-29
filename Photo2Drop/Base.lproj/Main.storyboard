@@ -345,6 +345,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="Vdg-cZ-gn2">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="7Mk-Ab-n5S">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                            </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8QI-MU-Jo1">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -360,7 +363,7 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y9u-h0-s7v">
-                                        <rect key="frame" x="0.0" y="184" width="320" height="100"/>
+                                        <rect key="frame" x="0.0" y="165" width="320" height="100"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Seg-nF-01c" customClass="WeatherHourlyForecastCollectionView" customModule="Photo2Drop" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
@@ -380,7 +383,7 @@
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hourLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-OA-9OG">
-                                                                    <rect key="frame" x="16" y="8" width="77" height="21"/>
+                                                                    <rect key="frame" x="16" y="8" width="76.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -395,7 +398,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tempsLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVO-XA-9ZS">
-                                                                    <rect key="frame" x="10" y="72" width="90" height="21"/>
+                                                                    <rect key="frame" x="10" y="71" width="89.5" height="20.5"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -430,10 +433,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="at4-iK-Lkz" customClass="WeatherDaysForecastView" customModule="Photo2Drop" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="284" width="320" height="300"/>
+                                        <rect key="frame" x="0.0" y="265" width="320" height="270"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="300" id="xQN-60-D0O"/>
+                                            <constraint firstAttribute="height" constant="270" id="xQN-60-D0O"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -443,7 +446,7 @@
                                     <constraint firstAttribute="bottom" secondItem="Dhb-65-Xb5" secondAttribute="bottom" constant="20" symbolic="YES" id="Qtv-YC-Pub"/>
                                     <constraint firstItem="at4-iK-Lkz" firstAttribute="top" secondItem="Y9u-h0-s7v" secondAttribute="bottom" id="R1g-DJ-h0g"/>
                                     <constraint firstItem="Dhb-65-Xb5" firstAttribute="top" secondItem="0sA-ei-r4j" secondAttribute="top" id="V7j-LA-kb0"/>
-                                    <constraint firstAttribute="bottom" secondItem="at4-iK-Lkz" secondAttribute="bottom" constant="-5" id="XyD-Je-UEI"/>
+                                    <constraint firstAttribute="bottom" secondItem="at4-iK-Lkz" secondAttribute="bottom" constant="14" id="XyD-Je-UEI"/>
                                     <constraint firstItem="Y9u-h0-s7v" firstAttribute="leading" secondItem="0sA-ei-r4j" secondAttribute="leading" id="Zs8-mg-gfB"/>
                                     <constraint firstItem="at4-iK-Lkz" firstAttribute="centerX" secondItem="0sA-ei-r4j" secondAttribute="centerX" id="Zzg-9o-Szz"/>
                                     <constraint firstItem="Dhb-65-Xb5" firstAttribute="centerX" secondItem="0sA-ei-r4j" secondAttribute="centerX" id="d7e-lA-u4a"/>
@@ -451,7 +454,7 @@
                                     <constraint firstAttribute="trailing" secondItem="Y9u-h0-s7v" secondAttribute="trailing" id="jDU-OQ-Pgf"/>
                                     <constraint firstAttribute="trailing" secondItem="Dhb-65-Xb5" secondAttribute="trailing" id="pes-ED-Y2p"/>
                                     <constraint firstAttribute="bottom" secondItem="Dhb-65-Xb5" secondAttribute="bottom" constant="408" id="tMr-wu-aQ6"/>
-                                    <constraint firstItem="Y9u-h0-s7v" firstAttribute="top" secondItem="Dhb-65-Xb5" secondAttribute="bottom" constant="24" id="veW-ea-6m5"/>
+                                    <constraint firstItem="Y9u-h0-s7v" firstAttribute="top" secondItem="Dhb-65-Xb5" secondAttribute="bottom" constant="5" id="veW-ea-6m5"/>
                                     <constraint firstItem="Dhb-65-Xb5" firstAttribute="centerX" secondItem="0sA-ei-r4j" secondAttribute="centerX" id="zgl-qP-gea"/>
                                 </constraints>
                                 <variation key="default">
@@ -477,15 +480,21 @@
                             <constraint firstItem="0sA-ei-r4j" firstAttribute="top" secondItem="bhV-SM-kKE" secondAttribute="top" id="nLr-XQ-ddM"/>
                             <constraint firstItem="Vdg-cZ-gn2" firstAttribute="leading" secondItem="bhV-SM-kKE" secondAttribute="leading" id="oOk-2h-IxL"/>
                             <constraint firstItem="SAx-M4-hMt" firstAttribute="top" secondItem="8QI-MU-Jo1" secondAttribute="bottom" id="qWY-yJ-RZb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7Mk-Ab-n5S" secondAttribute="trailing" constant="-20" id="scf-Z0-HDC"/>
                             <constraint firstItem="Vdg-cZ-gn2" firstAttribute="top" secondItem="bhV-SM-kKE" secondAttribute="top" id="vYi-9c-sBE"/>
+                            <constraint firstItem="7Mk-Ab-n5S" firstAttribute="top" secondItem="bhV-SM-kKE" secondAttribute="topMargin" id="vgk-p3-bgv"/>
+                            <constraint firstItem="7Mk-Ab-n5S" firstAttribute="leading" secondItem="bhV-SM-kKE" secondAttribute="leadingMargin" constant="-20" id="yBv-tc-GKC"/>
+                            <constraint firstItem="SAx-M4-hMt" firstAttribute="top" secondItem="7Mk-Ab-n5S" secondAttribute="bottom" id="yPM-Um-aSe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iRy-mb-mx6"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="backgroundView" destination="Vdg-cZ-gn2" id="ezu-YE-OTb"/>
                         <outlet property="currentWeatherViewWrapper" destination="Dhb-65-Xb5" id="gMl-92-DGy"/>
                         <outlet property="daysForecastView" destination="at4-iK-Lkz" id="2iA-eo-vao"/>
                         <outlet property="gradientView" destination="8QI-MU-Jo1" id="414-b9-Mk9"/>
+                        <outlet property="overlayView" destination="7Mk-Ab-n5S" id="yMX-J4-dc8"/>
                         <outlet property="scrollView" destination="0sA-ei-r4j" id="xRA-cO-yxJ"/>
                         <outlet property="topConstraint" destination="V7j-LA-kb0" id="lrN-Ad-Uk7"/>
                     </connections>

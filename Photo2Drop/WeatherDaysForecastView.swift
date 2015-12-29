@@ -114,7 +114,7 @@ class WeatherDaysForecastView: UIView {
             toItem: view.superview,
             attribute: .Bottom,
             multiplier: 1.0,
-            constant: 20.0)
+            constant: 35.0)
         
         view.superview!.addConstraint(newConstraint)
         view.superview!.layoutIfNeeded()

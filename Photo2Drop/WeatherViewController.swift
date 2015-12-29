@@ -19,6 +19,13 @@ class WeatherViewController: SWFrontViewController {
     
     @IBOutlet weak var daysForecastView: WeatherDaysForecastView!
     var currentWeatherView: CurrentWeatherView!
+    
+    @IBOutlet weak var overlayView: UIImageView!
+    
+    @IBOutlet weak var backgroundView: UIImageView!
+    
+    private var locationDatastore: LocationDatastore?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -54,6 +61,33 @@ class WeatherViewController: SWFrontViewController {
         //})
         
         
+        //
+//        overlayView.contentMode = .ScaleAspectFill
+//        overlayView.clipsToBounds = true
+//        
+//        view.addSubview(overlayView)
+        
+        scrollView.delegate = self
+        
+        overlayView.image = UIImage(named: "DefaultImage")?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
+        overlayView.alpha = 0
+        
+        let lat: Double = 48.8567
+        let lon: Double = 2.3508
+        FlickrDatastore().retrieveImageAtLat(lat,lon: lon) {
+            image in
+            self.render(image)
+        }
+        
+//        locationDatastore = LocationDatastore() { [weak self] location in
+//            
+//            FlickrDatastore().retrieveImageAtLat(location.lat, lon: location.lon)
+//                { (image) -> Void in
+//                    self?.render(image)
+//                    return
+//                }
+//        }
+        
     }
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
         return UIInterfaceOrientationMask.Portrait
@@ -79,6 +113,15 @@ class WeatherViewController: SWFrontViewController {
         gradientView.layer.mask = gradientLayer
     }
     
+    func render(image: UIImage?){
+        if let image = image {
+            backgroundView.image = image
+            print("Image updated backgroundView.frame (w=\(backgroundView.frame .size.width)")
+            overlayView.image = image.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
+            overlayView.alpha = 0
+        }
+    }
+    
 }
 
 private extension WeatherViewController{
@@ -90,4 +133,13 @@ private extension WeatherViewController{
     }
 }
 
+// MARK: UIScrollViewDelegate
+extension WeatherViewController: UIScrollViewDelegate{
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let offset = scrollView.contentOffset.y
+        let treshold: CGFloat = CGFloat(view.frame.height)/2
+        overlayView.alpha = min (1.0, offset/treshold)
+        
+    }
+}
 

@@ -19,5 +19,4 @@ class SWFrontViewController: UIViewController {
             
         }
     }
-
 }
