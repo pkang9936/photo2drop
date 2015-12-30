@@ -11,6 +11,7 @@ import LatoFont
 import WeatherIconsKit
 
 class CurrentWeatherView: UIView {
+    @IBOutlet weak var cityImage: AvatarImageView!
     @IBOutlet weak var cityLabel: UILabel!
     
     @IBOutlet weak var iconLabel: UILabel!

@@ -46,6 +46,16 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW6-On-00y">
+                    <rect key="frame" x="20" y="139" width="42" height="21"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="lgX-2x-0ZC"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="feW-1f-D0L">
                     <rect key="frame" x="115" y="130" width="200" height="30"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -57,21 +67,19 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AW6-On-00y">
-                    <rect key="frame" x="20" y="139" width="42" height="21"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_2" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-WG-bzL" customClass="AvatarImageView" customModule="Photo2Drop" customModuleProvider="target">
+                    <rect key="frame" x="245" y="52" width="70" height="70"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="lgX-2x-0ZC"/>
+                        <constraint firstAttribute="height" constant="70" id="Onb-V8-fVQ"/>
+                        <constraint firstAttribute="width" constant="70" id="PDh-2r-Kj1"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="diM-qN-rJz" firstAttribute="leading" secondItem="7Lc-uJ-LrF" secondAttribute="trailing" constant="10" id="0Vk-Zv-jSP"/>
                 <constraint firstItem="d9h-2f-quf" firstAttribute="leading" secondItem="AW6-On-00y" secondAttribute="trailing" constant="10" id="E7B-XP-5HK"/>
+                <constraint firstItem="tyn-WG-bzL" firstAttribute="trailing" secondItem="feW-1f-D0L" secondAttribute="trailing" id="Edw-lH-zzX"/>
                 <constraint firstItem="d9h-2f-quf" firstAttribute="height" secondItem="AW6-On-00y" secondAttribute="height" id="EyF-TB-PzP"/>
                 <constraint firstAttribute="bottom" secondItem="AW6-On-00y" secondAttribute="bottom" id="Il1-ra-2yG"/>
                 <constraint firstItem="AW6-On-00y" firstAttribute="top" secondItem="JQq-lz-jm4" secondAttribute="bottom" id="Iqz-bL-YNL"/>
@@ -83,12 +91,14 @@
                 <constraint firstItem="7Lc-uJ-LrF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="ZvS-qc-qQn"/>
                 <constraint firstItem="7Lc-uJ-LrF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="cMd-hS-1pA"/>
                 <constraint firstAttribute="trailing" secondItem="feW-1f-D0L" secondAttribute="trailing" constant="10" id="plZ-QX-8fV"/>
+                <constraint firstItem="feW-1f-D0L" firstAttribute="top" secondItem="tyn-WG-bzL" secondAttribute="bottom" constant="8" id="sey-kF-Pyc"/>
                 <constraint firstItem="AW6-On-00y" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="w3k-R6-rK9"/>
                 <constraint firstItem="JQq-lz-jm4" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="xyc-od-fao"/>
                 <constraint firstItem="JQq-lz-jm4" firstAttribute="top" secondItem="7Lc-uJ-LrF" secondAttribute="bottom" id="z9N-Wd-xVp"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
+                <outlet property="cityImage" destination="tyn-WG-bzL" id="JuG-LH-r38"/>
                 <outlet property="cityLabel" destination="feW-1f-D0L" id="8lf-ZA-UKv"/>
                 <outlet property="currentLabel" destination="JQq-lz-jm4" id="vf0-TQ-XPw"/>
                 <outlet property="iconLabel" destination="7Lc-uJ-LrF" id="Ol5-ub-t0r"/>
@@ -99,4 +109,7 @@
             <point key="canvasLocation" x="-438.5" y="-102"/>
         </view>
     </objects>
+    <resources>
+        <image name="_2" width="1024" height="768"/>
+    </resources>
 </document>

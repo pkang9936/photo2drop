@@ -72,21 +72,7 @@ class WeatherViewController: SWFrontViewController {
         overlayView.image = UIImage(named: "DefaultImage")?.blurredImageWithRadius(10, iterations: 20, tintColor: UIColor.clearColor())
         overlayView.alpha = 0
         
-        let lat: Double = 48.8567
-        let lon: Double = 2.3508
-        FlickrDatastore().retrieveImageAtLat(lat,lon: lon) {
-            image in
-            self.render(image)
-        }
         
-//        locationDatastore = LocationDatastore() { [weak self] location in
-//            
-//            FlickrDatastore().retrieveImageAtLat(location.lat, lon: location.lon)
-//                { (image) -> Void in
-//                    self?.render(image)
-//                    return
-//                }
-//        }
         
     }
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
@@ -95,6 +81,23 @@ class WeatherViewController: SWFrontViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        let lat: Double = 48.8567
+        let lon: Double = 2.3508
+        FlickrDatastore().retrieveImageAtLat(lat,lon: lon) {
+            image in
+            self.currentWeatherView.cityImage.image = image
+            
+        }
+        
+        locationDatastore = LocationDatastore() { [weak self] location in
+            
+            FlickrDatastore().retrieveImageAtLat(location.lat, lon: location.lon)
+                { (image) -> Void in
+                    self?.currentWeatherView.cityImage.image = image
+                    return
+            }
+        }
+
     }
     
     func style(){
