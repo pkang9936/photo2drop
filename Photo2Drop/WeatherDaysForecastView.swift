@@ -184,7 +184,11 @@ class WeatherDaysForecastView: UIView {
     }
     
     func render() {
-        
+        func render(weatherConditions: Array<WeatherCondition>){
+            for (idx, view) in forecastCells.enumerate() {
+                view.render(weatherConditions[idx])
+            }
+        }
     }
 
 }

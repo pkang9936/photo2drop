@@ -97,8 +97,23 @@ class WeatherViewController: SWFrontViewController {
                     return
             }
             let weatherDatastore = WeatherDatastore()
+            weatherDatastore.retrieveCurrentWeatherAtLat(location.lat, lon: location.lon, block: { (weatherCondition) -> Void in
+                self?.renderCurrent(weatherCondition)
+                return
+                            })
+            
+            weatherDatastore.retrieveHourlyForecastAtLat(location.lat, lon: location.lon){
+                hourlyWeatherConditions in
+                
+                self?.renderHourly(hourlyWeatherConditions)
+                return
+            }
             
             
+            weatherDatastore.retrieveDailyForecastAtLat(location.lat, lon: location.lon, dayCnt: 7, block: { (weatherConditions) -> Void in
+                self?.renderDaily(weatherConditions)
+                return
+            })
         }
 
     }
@@ -128,15 +143,29 @@ class WeatherViewController: SWFrontViewController {
         }
     }
     
+    
 }
 
 private extension WeatherViewController{
-    func renderSubviews() {
-        currentWeatherView.render()
-        
-        daysForecastView.render()
-        
+//    func renderSubviews() {
+//        currentWeatherView.render()
+//        
+//        daysForecastView.render()
+//        
+//    }
+    
+    func renderCurrent(currentWeatherConditions: WeatherCondition) {
+        currentWeatherView.render(currentWeatherConditions)
     }
+    
+    func renderHourly(weatherConditions: Array<WeatherCondition>){
+        //hourlyForecastView.render(weatherConditions)
+    }
+    
+    func renderDaily(weatherConditions: Array<WeatherCondition>){
+        daysForecastView.render(weatherConditions)
+    }
+    
 }
 
 // MARK: UIScrollViewDelegate

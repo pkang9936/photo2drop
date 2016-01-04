@@ -36,18 +36,20 @@ class WeatherDatastore {
             let url = "http://api.openweathermap.org/data/2.5/forecast"
             let params = ["lat":lat, "lon":lon]
             Alamofire.request(.GET, url, parameters: params)
-                .responseJSON { (request, response, json, error) in
-                    if(error != nil || json == nil) {
-                        println("Error: \(error)")
-                    }
-                    else {
-                        let json = JSON(json!)
+                .responseJSON { (_, _, result) in
+                    
+                    switch result {
+                    case .Success(let data):
+                        let json = JSON(data)
                         let list: Array<JSON> = json["list"].arrayValue
                         
                         let weatherConditions: Array<WeatherCondition> = list.map() {
                             return self.createWeatherConditionFronJson($0)
                         }
+                        
                         block(weatherConditions: weatherConditions)
+                    case .Failure(_, let error):
+                        print("\(error)")
                     }
             }
     }

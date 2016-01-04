@@ -16,16 +16,25 @@ class WeatherDayForecastView: UIView {
     @IBOutlet weak var tempsLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        render()
     }
     
-    func render() {
+    func render(weatherCondition: WeatherCondition){
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "EEEE"
-        dayLabel.text = dateFormatter.stringFromDate(NSDate())
-        iconLabel.attributedText = WIKFontIcon.wiDaySunnyIconWithSize(30).attributedString()
+        dayLabel.text = dateFormatter.stringFromDate(weatherCondition.time)
+        iconLabel.attributedText = iconStringFromIcon(weatherCondition.icon!, size: 30)
         
-        tempsLabel.text = "7°      11°"
+        var usesMetric = false
+        
+        if let localeSystem = NSLocale.currentLocale().objectForKey(NSLocaleUsesMetricSystem) as? Bool {
+            usesMetric = localeSystem
+        }
+        
+        if usesMetric {
+            tempsLabel.text = "\(weatherCondition.minTempCelsius.roundToInt())°     \(weatherCondition.maxTempCelsius.roundToInt())°"
+        } else {
+            tempsLabel.text = "\(weatherCondition.minTempFahrenheit.roundToInt())°     \(weatherCondition.maxTempFahrenheit.roundToInt())°"
+        }
         
         dayLabel.font = UIFont.latoFontOfSize(20)
         tempsLabel.font = UIFont.latoFontOfSize(20)

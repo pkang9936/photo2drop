@@ -42,6 +42,8 @@
 		608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608EC17E1C2C654700AB2055 /* WeatherViewController.swift */; };
 		609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */; };
 		60BAF7211C34888000C00BCB /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BAF7201C34888000C00BCB /* WeatherCondition.swift */; };
+		60BAF7231C3B2F8100C00BCB /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BAF7221C3B2F8100C00BCB /* Double.swift */; };
+		60BAF7251C3B339800C00BCB /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BAF7241C3B339800C00BCB /* Functions.swift */; };
 		60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */; };
 		60BCB4041C1F2F0F00E45EAD /* GetAlbumHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */; };
 		60BCB4061C1F5F2700E45EAD /* PHFetchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */; };
@@ -64,7 +66,7 @@
 		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; };
 		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; };
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
-		A829EAC31C3A4877004BC401 /* WeatherDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829EAC21C3A4877004BC401 /* WeatherDatastore.swift */; settings = {ASSET_TAGS = (); }; };
+		A829EAC31C3A4877004BC401 /* WeatherDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829EAC21C3A4877004BC401 /* WeatherDatastore.swift */; };
 		A87B07F71C3215B70009AC3C /* FlickrDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87B07F61C3215B70009AC3C /* FlickrDatastore.swift */; };
 		A87B07F91C322AE40009AC3C /* LocationDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87B07F81C322AE40009AC3C /* LocationDatastore.swift */; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
@@ -142,6 +144,8 @@
 		609A96611BFE696800F2D6EB /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 		60BAF71E1C319C9800C00BCB /* PlummerFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PlummerFramework.framework; path = "../../../../Library/Developer/Xcode/DerivedData/photo2drop-addamynzcvqdemddqpjvjtvesfxk/Build/Products/Debug-iphoneos/PlummerFramework.framework"; sourceTree = "<group>"; };
 		60BAF7201C34888000C00BCB /* WeatherCondition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCondition.swift; sourceTree = "<group>"; };
+		60BAF7221C3B2F8100C00BCB /* Double.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		60BAF7241C3B339800C00BCB /* Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		60BCB4011C1F2EF700E45EAD /* GetPhotoHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetPhotoHandler.swift; sourceTree = "<group>"; };
 		60BCB4031C1F2F0F00E45EAD /* GetAlbumHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetAlbumHandler.swift; sourceTree = "<group>"; };
 		60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PHFetchResult.swift; sourceTree = "<group>"; };
@@ -369,6 +373,7 @@
 		607336C01C1739820009DABC /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				60BAF7241C3B339800C00BCB /* Functions.swift */,
 				607336C31C173C1B0009DABC /* UIColor.swift */,
 				607336C11C1739950009DABC /* String.swift */,
 				607336C91C1744E80009DABC /* UIImageView.swift */,
@@ -378,6 +383,7 @@
 				60BCB4051C1F5F2700E45EAD /* PHFetchResult.swift */,
 				60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */,
 				A88F75A51C2BC5210065D194 /* CGRect.swift */,
+				60BAF7221C3B2F8100C00BCB /* Double.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -757,6 +763,8 @@
 				602AF5A41BFD32CE00700980 /* AlbumCollectionViewCell.swift in Sources */,
 				60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */,
 				60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */,
+				60BAF7251C3B339800C00BCB /* Functions.swift in Sources */,
+				60BAF7231C3B2F8100C00BCB /* Double.swift in Sources */,
 				A828D5D91C25294900FD2ACA /* TouchIDViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

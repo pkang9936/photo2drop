@@ -9,6 +9,12 @@
 import UIKit
 
 class WeatherHourlyForecastCollectionView: UICollectionView {
+    
+    var weatherConditions:Array<WeatherCondition> = Array <WeatherCondition> () {
+        didSet{
+            self.reloadData()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -18,11 +24,11 @@ class WeatherHourlyForecastCollectionView: UICollectionView {
 extension WeatherHourlyForecastCollectionView: UICollectionViewDataSource {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return 15
+        return weatherConditions.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.hourlyWeatherForecastCell, forIndexPath: indexPath)
-        
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Storyboard.hourlyWeatherForecastCell, forIndexPath: indexPath) as! WeatherHourlyForecastCollectionViewCollectionViewCell
+        cell.render(weatherConditions[indexPath.row])
         return cell
         
     }
