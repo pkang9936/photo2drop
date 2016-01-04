@@ -64,6 +64,7 @@
 		A828D5E11C253DAD00FD2ACA /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */; };
 		A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E01C253DAD00FD2ACA /* TWTButton.swift */; };
 		A828D5E41C253EDA00FD2ACA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A828D5E31C253EDA00FD2ACA /* MainViewController.swift */; };
+		A829EAC31C3A4877004BC401 /* WeatherDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829EAC21C3A4877004BC401 /* WeatherDatastore.swift */; settings = {ASSET_TAGS = (); }; };
 		A87B07F71C3215B70009AC3C /* FlickrDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87B07F61C3215B70009AC3C /* FlickrDatastore.swift */; };
 		A87B07F91C322AE40009AC3C /* LocationDatastore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87B07F81C322AE40009AC3C /* LocationDatastore.swift */; };
 		A87CECE01C2677760039A355 /* RoundBorderCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */; };
@@ -163,6 +164,7 @@
 		A828D5DF1C253DAD00FD2ACA /* AvatarImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		A828D5E01C253DAD00FD2ACA /* TWTButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TWTButton.swift; sourceTree = "<group>"; };
 		A828D5E31C253EDA00FD2ACA /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		A829EAC21C3A4877004BC401 /* WeatherDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDatastore.swift; sourceTree = "<group>"; };
 		A87B07F61C3215B70009AC3C /* FlickrDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrDatastore.swift; sourceTree = "<group>"; };
 		A87B07F81C322AE40009AC3C /* LocationDatastore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDatastore.swift; sourceTree = "<group>"; };
 		A87CECDF1C2677760039A355 /* RoundBorderCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBorderCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -483,6 +485,7 @@
 			children = (
 				A87B07F61C3215B70009AC3C /* FlickrDatastore.swift */,
 				A87B07F81C322AE40009AC3C /* LocationDatastore.swift */,
+				A829EAC21C3A4877004BC401 /* WeatherDatastore.swift */,
 			);
 			name = Datastores;
 			sourceTree = "<group>";
@@ -715,6 +718,7 @@
 				A87B07F91C322AE40009AC3C /* LocationDatastore.swift in Sources */,
 				A8AECABC1C2FD1A000D7A332 /* WeatherHourlyForecastCollectionViewCollectionViewCell.swift in Sources */,
 				A8AECABF1C2FD80200D7A332 /* WeatherDayForecastView.swift in Sources */,
+				A829EAC31C3A4877004BC401 /* WeatherDatastore.swift in Sources */,
 				607336BF1C17388D0009DABC /* BaseTableViewCell.swift in Sources */,
 				607B605F1C178CD80040E09B /* UITableView.swift in Sources */,
 				60BCB4021C1F2EF700E45EAD /* GetPhotoHandler.swift in Sources */,

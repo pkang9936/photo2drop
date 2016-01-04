@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -67,7 +67,7 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_2" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-WG-bzL" customClass="AvatarImageView" customModule="Photo2Drop" customModuleProvider="target">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="current_loc" translatesAutoresizingMaskIntoConstraints="NO" id="tyn-WG-bzL" customClass="AvatarImageView" customModule="Photo2Drop" customModuleProvider="target">
                     <rect key="frame" x="245" y="52" width="70" height="70"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="70" id="Onb-V8-fVQ"/>
@@ -110,6 +110,6 @@
         </view>
     </objects>
     <resources>
-        <image name="_2" width="1024" height="768"/>
+        <image name="current_loc" width="113" height="100"/>
     </resources>
 </document>

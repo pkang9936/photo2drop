@@ -96,6 +96,9 @@ class WeatherViewController: SWFrontViewController {
                     self?.currentWeatherView.cityImage.image = image
                     return
             }
+            let weatherDatastore = WeatherDatastore()
+            
+            
         }
 
     }
