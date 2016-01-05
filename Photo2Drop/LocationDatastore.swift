@@ -29,7 +29,7 @@ class LocationDatastore: NSObject, CLLocationManagerDelegate{
     }
     
     private func startUpdating() {
-        locationManager.startUpdatingHeading()
+        locationManager.startUpdatingLocation()
     }
     
     private func stopUpdating() {
