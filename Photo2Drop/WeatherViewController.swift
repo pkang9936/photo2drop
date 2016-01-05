@@ -47,7 +47,7 @@ class WeatherViewController: SWFrontViewController {
             multiplier: 1.0,
             constant: y)
         
-        self.renderSubviews()
+      //  self.renderSubviews()
 //        self.view.removeConstraint(self.topConstraint)
 //        self.view.addConstraint(newConstraint)
 //        self.view.layoutIfNeeded()
@@ -81,13 +81,13 @@ class WeatherViewController: SWFrontViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        let lat: Double = 48.8567
-        let lon: Double = 2.3508
-        FlickrDatastore().retrieveImageAtLat(lat,lon: lon) {
-            image in
-            self.currentWeatherView.cityImage.image = image
-            
-        }
+//        let lat: Double = 48.8567
+//        let lon: Double = 2.3508
+//        FlickrDatastore().retrieveImageAtLat(lat,lon: lon) {
+//            image in
+//            self.currentWeatherView.cityImage.image = image
+//            
+//        }
         
         locationDatastore = LocationDatastore() { [weak self] location in
             
