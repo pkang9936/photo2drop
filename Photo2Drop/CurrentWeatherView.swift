@@ -79,13 +79,13 @@ extension CurrentWeatherView{
         }
         
         if usesMetric {
-            minTempLabel.text = "\(weatherCondition.minTempCelsius.roundToInt())"
-            maxTempLabel.text = "\(weatherCondition.maxTempCelsius.roundToInt())"
-            currentLabel.text = "\(weatherCondition.tempCelsius.roundToInt())"
+            minTempLabel.text = "\(weatherCondition.minTempCelsius.roundToInt())°"
+            maxTempLabel.text = "\(weatherCondition.maxTempCelsius.roundToInt())°"
+            currentLabel.text = "\(weatherCondition.tempCelsius.roundToInt())°"
         } else {
-            minTempLabel.text = "\(weatherCondition.minTempFahrenheit.roundToInt())"
-            maxTempLabel.text =  "\(weatherCondition.maxTempFahrenheit.roundToInt())"
-            currentLabel.text = "\(weatherCondition.tempFahrenheit.roundToInt())"
+            minTempLabel.text = "\(weatherCondition.minTempFahrenheit.roundToInt())°"
+            maxTempLabel.text =  "\(weatherCondition.maxTempFahrenheit.roundToInt())°"
+            currentLabel.text = "\(weatherCondition.tempFahrenheit.roundToInt())°"
         }
         
         cityLabel.text = weatherCondition.cityName ?? ""

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SWFrontViewController: UIViewController { 
+class SWFrontViewController: UIViewController{
 
     override func viewDidLoad() {
         super.viewDidLoad()

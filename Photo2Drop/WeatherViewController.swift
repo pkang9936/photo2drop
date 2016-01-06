@@ -17,6 +17,7 @@ class WeatherViewController: SWFrontViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var currentWeatherViewWrapper: UIView!
     
+    @IBOutlet weak var hourlyForecastCollectionView: WeatherHourlyForecastCollectionView!
     @IBOutlet weak var daysForecastView: WeatherDaysForecastView!
     var currentWeatherView: CurrentWeatherView!
     
@@ -89,6 +90,9 @@ class WeatherViewController: SWFrontViewController {
 //            
 //        }
         
+        hourlyForecastCollectionView.layer.borderWidth = 0.5
+        hourlyForecastCollectionView.layer.borderColor = UIColor.whiteColor().CGColor
+        
         locationDatastore = LocationDatastore() { [weak self] location in
             
             FlickrDatastore().retrieveImageAtLat(location.lat, lon: location.lon)
@@ -159,7 +163,7 @@ private extension WeatherViewController{
     }
     
     func renderHourly(weatherConditions: Array<WeatherCondition>){
-        //hourlyForecastView.render(weatherConditions)
+        hourlyForecastCollectionView.weatherConditions = weatherConditions
     }
     
     func renderDaily(weatherConditions: Array<WeatherCondition>){

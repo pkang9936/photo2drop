@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DCQ-Z9-z93">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="DCQ-Z9-z93">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -366,7 +366,7 @@
                                         <rect key="frame" x="0.0" y="165" width="320" height="100"/>
                                         <subviews>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Seg-nF-01c" customClass="WeatherHourlyForecastCollectionView" customModule="Photo2Drop" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                                <rect key="frame" x="-1" y="0.0" width="322" height="100"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Y2Y-LS-MiF">
                                                     <size key="itemSize" width="109" height="100"/>
@@ -390,9 +390,6 @@
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iconLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lsx-7i-8lf">
                                                                     <rect key="frame" x="17" y="40" width="74" height="21"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="height" constant="20.5" id="ueQ-7U-cOn"/>
-                                                                    </constraints>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
@@ -425,8 +422,8 @@
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="Seg-nF-01c" secondAttribute="trailing" id="CEo-iE-EOi"/>
-                                            <constraint firstItem="Seg-nF-01c" firstAttribute="leading" secondItem="Y9u-h0-s7v" secondAttribute="leading" id="LxN-Wq-W1K"/>
+                                            <constraint firstAttribute="trailing" secondItem="Seg-nF-01c" secondAttribute="trailing" constant="-1" id="CEo-iE-EOi"/>
+                                            <constraint firstItem="Seg-nF-01c" firstAttribute="leading" secondItem="Y9u-h0-s7v" secondAttribute="leading" constant="-1" id="LxN-Wq-W1K"/>
                                             <constraint firstAttribute="height" constant="100" id="N3j-dW-vIA"/>
                                             <constraint firstItem="Seg-nF-01c" firstAttribute="top" secondItem="Y9u-h0-s7v" secondAttribute="top" id="atF-Ow-BuG"/>
                                             <constraint firstAttribute="bottom" secondItem="Seg-nF-01c" secondAttribute="bottom" id="kzx-DI-YyF"/>
@@ -494,6 +491,7 @@
                         <outlet property="currentWeatherViewWrapper" destination="Dhb-65-Xb5" id="gMl-92-DGy"/>
                         <outlet property="daysForecastView" destination="at4-iK-Lkz" id="2iA-eo-vao"/>
                         <outlet property="gradientView" destination="8QI-MU-Jo1" id="414-b9-Mk9"/>
+                        <outlet property="hourlyForecastCollectionView" destination="Seg-nF-01c" id="g54-ZA-vpl"/>
                         <outlet property="overlayView" destination="7Mk-Ab-n5S" id="yMX-J4-dc8"/>
                         <outlet property="scrollView" destination="0sA-ei-r4j" id="xRA-cO-yxJ"/>
                         <outlet property="topConstraint" destination="V7j-LA-kb0" id="lrN-Ad-Uk7"/>
@@ -960,6 +958,6 @@
         <image name="veata" width="960" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dbR-I4-Lid"/>
+        <segue reference="BjD-K5-3u7"/>
     </inferredMetricsTieBreakers>
 </document>

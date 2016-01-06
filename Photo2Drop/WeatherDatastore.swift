@@ -15,9 +15,9 @@ class WeatherDatastore {
     func retrieveCurrentWeatherAtLat(lat: CLLocationDegrees, lon: CLLocationDegrees,
         block: (weatherCondition: WeatherCondition) -> Void) {
             let url = "http://api.openweathermap.org/data/2.5/weather"
-            let params = ["lat":lat, "lon":lon]
+            let params = ["lat":lat, "lon":lon, "APPID":"1638d5c865d34b1e211f4dab77a15602"]
             
-            Alamofire.request(.GET, url, parameters: params)
+            Alamofire.request(.GET, url, parameters: params as? [String: AnyObject])
                 .responseJSON { (_, _, result) in
                     
                     switch result {
@@ -34,8 +34,8 @@ class WeatherDatastore {
         lon: CLLocationDegrees,
         block: (weatherConditions: Array<WeatherCondition>) -> Void) {
             let url = "http://api.openweathermap.org/data/2.5/forecast"
-            let params = ["lat":lat, "lon":lon]
-            Alamofire.request(.GET, url, parameters: params)
+            let params = ["lat":lat, "lon":lon, "APPID":"1638d5c865d34b1e211f4dab77a15602"]
+            Alamofire.request(.GET, url, parameters: params as? [String: AnyObject])
                 .responseJSON { (_, _, result) in
                     
                     switch result {
@@ -59,8 +59,8 @@ class WeatherDatastore {
         dayCnt: Int,
         block: (weatherConditions: Array<WeatherCondition>) -> Void) {
             let url = "http://api.openweathermap.org/data/2.5/forecast/daily"
-            let params = ["lat":lat, "lon":lon, "cnt":Double(dayCnt+1)]
-            Alamofire.request(.GET, url, parameters: params)
+            let params = ["lat":lat, "lon":lon, "cnt":Double(dayCnt+1), "APPID":"1638d5c865d34b1e211f4dab77a15602"]
+            Alamofire.request(.GET, url, parameters: params as? [String: AnyObject])
                 .responseJSON { (_, _, result) in
                     switch result {
                     case .Success(let data):
