@@ -276,6 +276,17 @@
                                             <segue destination="w6W-BJ-fJc" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="1YL-H2-VD2"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Scanner" id="qpR-zn-UK0">
+                                        <rect key="frame" x="0.0" y="425" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qpR-zn-UK0" id="zy6-bq-beS">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="01T-BL-ifO" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="hDW-9b-W4z"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="fOv-ii-rW2" id="mbH-xr-OJX"/>
@@ -329,6 +340,27 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="81O-dx-vkk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2950" y="-493"/>
+        </scene>
+        <!--Scanner-->
+        <scene sceneID="eHO-1P-Q08">
+            <objects>
+                <viewController id="AgP-d0-1qv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ETP-S1-gz6"/>
+                        <viewControllerLayoutGuide type="bottom" id="8bh-tv-SPS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="p1p-D9-7xZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Scanner" id="da8-Cq-jng">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Hxe-bd-xez"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fVw-I1-GgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2747" y="238"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="66U-gA-qQ7">
@@ -499,7 +531,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEh-WK-ow3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2125" y="138"/>
+            <point key="canvasLocation" x="3268" y="129"/>
         </scene>
         <!--Tools-->
         <scene sceneID="w6d-cT-cLD">
@@ -946,6 +978,24 @@
             </objects>
             <point key="canvasLocation" x="2148" y="-1289"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h92-2S-iQm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="01T-BL-ifO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfi-XD-gGz">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AgP-d0-1qv" kind="relationship" relationship="rootViewController" id="jUP-qn-eRx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mBC-U1-0mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2004" y="243"/>
+        </scene>
     </scenes>
     <resources>
         <image name="DefaultImage" width="640" height="1136"/>
@@ -958,6 +1008,6 @@
         <image name="veata" width="960" height="1280"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BjD-K5-3u7"/>
+        <segue reference="dbR-I4-Lid"/>
     </inferredMetricsTieBreakers>
 </document>
