@@ -414,7 +414,32 @@
                     <view key="view" contentMode="scaleToFill" id="ZA9-GJ-ZPh">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fq6-xt-xpC">
+                                <rect key="frame" x="0.0" y="64" width="600" height="60"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fCC-Zo-Q8F">
+                                        <rect key="frame" x="207" y="16" width="187" height="29"/>
+                                        <segments>
+                                            <segment title="Amazon.com"/>
+                                            <segment title="Review"/>
+                                        </segments>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="0.94446443260000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="30e-6S-HHj"/>
+                                    <constraint firstItem="fCC-Zo-Q8F" firstAttribute="centerX" secondItem="fq6-xt-xpC" secondAttribute="centerX" id="Sk3-3Z-8E4"/>
+                                    <constraint firstItem="fCC-Zo-Q8F" firstAttribute="centerY" secondItem="fq6-xt-xpC" secondAttribute="centerY" id="kiv-E3-1Z7"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fq6-xt-xpC" firstAttribute="leading" secondItem="ZA9-GJ-ZPh" secondAttribute="leadingMargin" constant="-20" id="JPr-O4-oME"/>
+                            <constraint firstItem="fq6-xt-xpC" firstAttribute="top" secondItem="bIy-qp-ksg" secondAttribute="bottom" id="Ovp-3P-396"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fq6-xt-xpC" secondAttribute="trailing" constant="-20" id="bPU-gR-pFU"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EGW-hp-JD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
