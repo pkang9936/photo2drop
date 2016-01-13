@@ -284,7 +284,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="01T-BL-ifO" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="hDW-9b-W4z"/>
+                                            <segue destination="svL-Fq-x4j" kind="custom" customClass="SWRevealViewControllerSeguePushController" id="9Y3-f3-K2j"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -341,10 +341,10 @@
             </objects>
             <point key="canvasLocation" x="2950" y="-493"/>
         </scene>
-        <!--Scanner-->
+        <!--Barcode Scanner-->
         <scene sceneID="eHO-1P-Q08">
             <objects>
-                <viewController id="AgP-d0-1qv" sceneMemberID="viewController">
+                <viewController id="AgP-d0-1qv" customClass="ScannerViewController" customModule="Photo2Drop" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ETP-S1-gz6"/>
                         <viewControllerLayoutGuide type="bottom" id="8bh-tv-SPS"/>
@@ -352,15 +352,74 @@
                     <view key="view" contentMode="scaleToFill" id="p1p-D9-7xZ">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b6z-YY-xpX">
+                                <rect key="frame" x="134" y="142" width="333" height="316"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="barcode-scan-icon" translatesAutoresizingMaskIntoConstraints="NO" id="6rn-hn-sWz">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="316"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0g-fS-2Wq">
+                                        <rect key="frame" x="0.0" y="0.0" width="333" height="316"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="doScanBarCode:" destination="AgP-d0-1qv" eventType="touchUpInside" id="54Q-TY-LrN"/>
+                                            <segue destination="K7u-HM-CsV" kind="show" id="p7f-Y7-EBL"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to scan barcode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJ6-TI-gBB">
+                                        <rect key="frame" x="88" y="202" width="156" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="h0g-fS-2Wq" firstAttribute="leading" secondItem="b6z-YY-xpX" secondAttribute="leading" id="2Cn-m7-A5L"/>
+                                    <constraint firstAttribute="bottom" secondItem="6rn-hn-sWz" secondAttribute="bottom" id="9DL-iC-fHd"/>
+                                    <constraint firstItem="6rn-hn-sWz" firstAttribute="top" secondItem="b6z-YY-xpX" secondAttribute="top" id="EX3-3E-sp6"/>
+                                    <constraint firstAttribute="height" constant="316" id="IAD-iT-cGh"/>
+                                    <constraint firstAttribute="bottom" secondItem="UJ6-TI-gBB" secondAttribute="bottom" constant="93" id="KkL-0F-7Rs"/>
+                                    <constraint firstItem="h0g-fS-2Wq" firstAttribute="top" secondItem="b6z-YY-xpX" secondAttribute="top" id="MD6-ZS-ktt"/>
+                                    <constraint firstItem="UJ6-TI-gBB" firstAttribute="centerX" secondItem="b6z-YY-xpX" secondAttribute="centerX" id="Z0B-tA-ATL"/>
+                                    <constraint firstAttribute="trailing" secondItem="6rn-hn-sWz" secondAttribute="trailing" id="nB2-7Z-Psa"/>
+                                    <constraint firstItem="6rn-hn-sWz" firstAttribute="leading" secondItem="b6z-YY-xpX" secondAttribute="leading" id="nVD-uv-AGa"/>
+                                    <constraint firstAttribute="trailing" secondItem="h0g-fS-2Wq" secondAttribute="trailing" id="syZ-QL-Edy"/>
+                                    <constraint firstAttribute="width" constant="333" id="vdN-bt-cDR"/>
+                                    <constraint firstAttribute="bottom" secondItem="h0g-fS-2Wq" secondAttribute="bottom" id="ys8-wG-NSQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="b6z-YY-xpX" firstAttribute="centerY" secondItem="p1p-D9-7xZ" secondAttribute="centerY" id="83g-q5-rsV"/>
+                            <constraint firstItem="b6z-YY-xpX" firstAttribute="centerX" secondItem="p1p-D9-7xZ" secondAttribute="centerX" id="ojz-I1-Dn9"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Scanner" id="da8-Cq-jng">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Hxe-bd-xez"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Barcode Scanner" id="da8-Cq-jng"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fVw-I1-GgI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2747" y="238"/>
+            <point key="canvasLocation" x="3139" y="221"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4zY-L8-Agi">
+            <objects>
+                <viewController id="K7u-HM-CsV" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bIy-qp-ksg"/>
+                        <viewControllerLayoutGuide type="bottom" id="1BX-6q-sPJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZA9-GJ-ZPh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EGW-hp-JD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3867" y="221"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="66U-gA-qQ7">
@@ -531,7 +590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vEh-WK-ow3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3268" y="129"/>
+            <point key="canvasLocation" x="4080" y="129"/>
         </scene>
         <!--Tools-->
         <scene sceneID="w6d-cT-cLD">
@@ -979,22 +1038,22 @@
             <point key="canvasLocation" x="2148" y="-1289"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="h92-2S-iQm">
+        <scene sceneID="Hwp-FP-kvP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="01T-BL-ifO" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="svL-Fq-x4j" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sfi-XD-gGz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jrf-3O-d71">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="AgP-d0-1qv" kind="relationship" relationship="rootViewController" id="jUP-qn-eRx"/>
+                        <segue destination="AgP-d0-1qv" kind="relationship" relationship="rootViewController" id="1Bn-DS-dYf"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mBC-U1-0mg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eMR-C3-53T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2004" y="243"/>
+            <point key="canvasLocation" x="2327" y="221"/>
         </scene>
     </scenes>
     <resources>
@@ -1002,6 +1061,7 @@
         <image name="LaunchScreen_icon" width="256" height="256"/>
         <image name="_2" width="1024" height="768"/>
         <image name="background" width="1024" height="683"/>
+        <image name="barcode-scan-icon" width="300" height="300"/>
         <image name="reveal-icon" width="22" height="17"/>
         <image name="tab_album" width="29" height="29"/>
         <image name="tab_map" width="29" height="29"/>

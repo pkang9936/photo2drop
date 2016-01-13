@@ -54,6 +54,7 @@
 		60BCB4171C2341B900E45EAD /* ActionsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60BCB4151C2341B900E45EAD /* ActionsheetView.swift */; };
 		60BCB4181C2341B900E45EAD /* ActionsheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB4161C2341B900E45EAD /* ActionsheetView.xib */; };
 		60BCB41B1C23712200E45EAD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB41A1C23712200E45EAD /* Settings.bundle */; };
+		60C0BA0D1C455F6E0021CD5D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */; };
 		60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */; };
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
@@ -157,6 +158,7 @@
 		60BCB4151C2341B900E45EAD /* ActionsheetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionsheetView.swift; sourceTree = "<group>"; };
 		60BCB4161C2341B900E45EAD /* ActionsheetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionsheetView.xib; sourceTree = "<group>"; };
 		60BCB41A1C23712200E45EAD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
 		60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableHeader.swift; sourceTree = "<group>"; };
 		60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetViewController.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				60BCB40A1C22045800E45EAD /* Storyboard.swift */,
 				608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */,
 				608EC17E1C2C654700AB2055 /* WeatherViewController.swift */,
+				60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				607336CA1C1744E80009DABC /* UIImageView.swift in Sources */,
 				60675FAC1BFA76DB0079077E /* AppDelegate.swift in Sources */,
 				608EC17D1C2C5B7D00AB2055 /* ToolsViewController.swift in Sources */,
+				60C0BA0D1C455F6E0021CD5D /* ScannerViewController.swift in Sources */,
 				605AA24B1C19EFF400D631DC /* SettingsViewController.swift in Sources */,
 				608EC17F1C2C654700AB2055 /* WeatherViewController.swift in Sources */,
 				607336CC1C17481D0009DABC /* UIView.swift in Sources */,
