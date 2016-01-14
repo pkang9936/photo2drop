@@ -16,6 +16,7 @@
 		605AA24B1C19EFF400D631DC /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 605AA24A1C19EFF400D631DC /* SettingsViewController.swift */; };
 		60675FAC1BFA76DB0079077E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FAB1BFA76DB0079077E /* AppDelegate.swift */; };
 		60675FAE1BFA76DB0079077E /* Photo2DropViewController_bk.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */; };
+		60675FB11BFA76DB0079077E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60675FAF1BFA76DB0079077E /* Main.storyboard */; };
 		60675FB31BFA76DB0079077E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60675FB21BFA76DB0079077E /* Assets.xcassets */; };
 		60675FB61BFA76DB0079077E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */; };
 		60675FC11BFA76DB0079077E /* Photo2DropTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60675FC01BFA76DB0079077E /* Photo2DropTests.swift */; };
@@ -54,7 +55,6 @@
 		60BCB4181C2341B900E45EAD /* ActionsheetView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB4161C2341B900E45EAD /* ActionsheetView.xib */; };
 		60BCB41B1C23712200E45EAD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60BCB41A1C23712200E45EAD /* Settings.bundle */; };
 		60C0BA0D1C455F6E0021CD5D /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */; };
-		60C0BA101C480CE00021CD5D /* ScannerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60C0BA0F1C480CE00021CD5D /* ScannerDetailViewController.swift */; };
 		60E1198C1C18D56200626DB9 /* LeftMenuTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */; };
 		60F0A8251C24C02B00CF5B43 /* CustomActionSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */; };
 		60F2FB261C17743C004FD4DB /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F2FB251C17743C004FD4DB /* UIImage.swift */; };
@@ -111,6 +111,7 @@
 		60675FA81BFA76DB0079077E /* Photo2Drop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photo2Drop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60675FAB1BFA76DB0079077E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60675FAD1BFA76DB0079077E /* Photo2DropViewController_bk.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo2DropViewController_bk.swift; sourceTree = "<group>"; };
+		60675FB01BFA76DB0079077E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60675FB21BFA76DB0079077E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60675FB51BFA76DB0079077E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		60675FB71BFA76DB0079077E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -158,7 +159,6 @@
 		60BCB4161C2341B900E45EAD /* ActionsheetView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionsheetView.xib; sourceTree = "<group>"; };
 		60BCB41A1C23712200E45EAD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
-		60C0BA0F1C480CE00021CD5D /* ScannerDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScannerDetailViewController.swift; sourceTree = "<group>"; };
 		60E1198B1C18D56200626DB9 /* LeftMenuTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenuTableHeader.swift; sourceTree = "<group>"; };
 		60F0A8241C24C02B00CF5B43 /* CustomActionSheetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomActionSheetViewController.swift; sourceTree = "<group>"; };
 		60F2FB251C17743C004FD4DB /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
@@ -259,7 +259,6 @@
 				608EC17C1C2C5B7D00AB2055 /* ToolsViewController.swift */,
 				608EC17E1C2C654700AB2055 /* WeatherViewController.swift */,
 				60C0BA0C1C455F6E0021CD5D /* ScannerViewController.swift */,
-				60C0BA0F1C480CE00021CD5D /* ScannerDetailViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -267,6 +266,7 @@
 		602AF5A21BFD1D3900700980 /* Storyboad */ = {
 			isa = PBXGroup;
 			children = (
+				60675FAF1BFA76DB0079077E /* Main.storyboard */,
 				60675FB21BFA76DB0079077E /* Assets.xcassets */,
 			);
 			name = Storyboad;
@@ -275,7 +275,6 @@
 		602AF5A51BFD32E300700980 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				60C0BA0E1C480C690021CD5D /* BarcodeScanner */,
 				A8A570701C2D11FE00E02BE0 /* Weather */,
 				60063EE01C29EA830024C549 /* DragAndDrop */,
 				A819C14D1C295F3000ED43E7 /* Album */,
@@ -435,13 +434,6 @@
 				60BCB41A1C23712200E45EAD /* Settings.bundle */,
 			);
 			name = Settings;
-			sourceTree = "<group>";
-		};
-		60C0BA0E1C480C690021CD5D /* BarcodeScanner */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = BarcodeScanner;
 			sourceTree = "<group>";
 		};
 		A632592C33F6BC13D2C03B98 /* Pods */ = {
@@ -642,6 +634,7 @@
 				60BCB4181C2341B900E45EAD /* ActionsheetView.xib in Resources */,
 				60675FB31BFA76DB0079077E /* Assets.xcassets in Resources */,
 				A8AECAC01C2FD80200D7A332 /* WeatherDayForecastView.xib in Resources */,
+				60675FB11BFA76DB0079077E /* Main.storyboard in Resources */,
 				A8AF46761C2DE6EF00129642 /* CurrentWeatherView.xib in Resources */,
 				607336C81C173DC90009DABC /* DataTableViewCell.xib in Resources */,
 				60BCB41B1C23712200E45EAD /* Settings.bundle in Resources */,
@@ -728,7 +721,6 @@
 				60BCB4131C2315D900E45EAD /* ExitAppHandler.m in Sources */,
 				A828D5E21C253DAD00FD2ACA /* TWTButton.swift in Sources */,
 				607336BA1C161BE70009DABC /* LeftMenuViewController.swift in Sources */,
-				60C0BA101C480CE00021CD5D /* ScannerDetailViewController.swift in Sources */,
 				60063EE41C29FB650024C549 /* DragAndDropCollectionView.swift in Sources */,
 				609A96621BFE696800F2D6EB /* UIImageViewExtension.swift in Sources */,
 				A819C14F1C295F6C00ED43E7 /* AlbumUICollectionView.swift in Sources */,
@@ -813,6 +805,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		60675FAF1BFA76DB0079077E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60675FB01BFA76DB0079077E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
 		60675FB41BFA76DB0079077E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
