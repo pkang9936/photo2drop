@@ -19,6 +19,16 @@ class ScannerViewController: SWFrontViewController, AVCaptureMetadataOutputObjec
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
+        for theItem in metadataObjects {
+            if let _item = theItem as? AVMetadataMachineReadableCodeObject {
+                print("We read\(_item.stringValue) from a barcode of type: \(_item.type)")
+            }
+        }
+    }
+    @IBAction func doScanBarCode(sender: AnyObject) {
         let allCameras = AVCaptureDevice.devicesWithMediaType(AVMediaTypeVideo)
         
         for camera in allCameras {
@@ -57,18 +67,9 @@ class ScannerViewController: SWFrontViewController, AVCaptureMetadataOutputObjec
             
         }
         session.startRunning()
-    }
-    
-    func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!) {
-        for theItem in metadataObjects {
-            if let _item = theItem as? AVMetadataMachineReadableCodeObject {
-                print("We read\(_item.stringValue) from a barcode of type: \(_item.type)")
-            }
-        }
-    }
-    @IBAction func doScanBarCode(sender: AnyObject) {
 
     }
+    
 }
 
 

@@ -19,4 +19,6 @@ public struct Storyboard {
     
     static let hourlyWeatherForecastCell = "Hourly Weather cell"
     
+    static let segBardCodeDetialView = "barcodeDetail"
+    
 }
